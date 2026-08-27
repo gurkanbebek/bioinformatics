@@ -1,0 +1,41 @@
+project:
+  type: book
+
+book:
+  title: "Systems Biology and Translational Bioinformatics"
+  author: "Gurkan Bebek"
+
+  chapters:
+    - index.qmd
+
+    - chapters/01-introduction.qmd
+    - chapters/02-workflow.qmd
+    - chapters/03-databases.qmd
+#   - chapters/04-ontologies.qmd
+#    - chapters/05-statistics.qmd
+#
+#    - chapters/06-genomics.qmd
+#    - chapters/07-transcriptomics.qmd
+#    - chapters/08-proteomics.qmd
+#    - chapters/09-metabolomics.qmd
+#    - chapters/10-metagenomics.qmd
+
+#    - chapters/11-gsea.qmd
+#    - chapters/12-visualization.qmd
+#    - chapters/13-machine-learning.qmd
+#    - chapters/14-network-biology.qmd
+#    - chapters/15-multiomics.qmd
+
+#    - chapters/16-pharmacogenomics.qmd
+#    - chapters/17-clinical-informatics.qmd
+#    - chapters/18-cancer-omics.qmd
+#    - chapters/19-immunogenomics.qmd
+#    - chapters/20-translational-systems-biology.qmd
+
+format:
+  html:
+    toc: true
+    number-sections: true
+
+  pdf:
+    documentclass: scrbook

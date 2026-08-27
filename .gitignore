@@ -1,0 +1,16 @@
+# Quarto generated files
+_book/
+.quarto/
+
+# Mac
+.DS_Store
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Temporary files
+*~
+#*
+.#*

@@ -1,0 +1,58 @@
+# Biological Databases and Knowledge Resources
+
+## Learning Objectives
+
+After reading this chapter, you should be able to:
+
+- Explain the role of biological databases.
+- Differentiate primary and secondary databases.
+- Use databases to answer biological questions.
+
+## Why This Matters
+
+Imagine you have discovered a new gene associated with disease.
+
+Where do you look first?
+
+Modern biological discovery depends on databases.
+
+## Core Concepts
+
+### What is a Database?
+
+...
+
+### Primary Databases
+
+...
+
+### Secondary Databases
+
+...
+
+## Case Study
+
+A researcher identifies PTEN as a candidate tumor suppressor.
+
+How can databases help determine its function?
+
+## Practical Exercise
+
+1. Navigate GeneCards.
+2. Navigate UCSC Genome Browser.
+3. Find known disease associations.
+
+## Summary
+
+Key points:
+
+- Databases store biological knowledge.
+- Annotation adds context.
+- Genome browsers integrate multiple resources.
+
+## Discussion Questions
+
+1. Why are databases essential?
+2. What is metadata?
+3. What are annotation tracks?
+``
