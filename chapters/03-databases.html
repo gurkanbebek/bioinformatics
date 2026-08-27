@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers – Systems Biology and Translational Bioinformatics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/02-workflow.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7d8ad657b878717df1156ab40fed854c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-databases.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Systems Biology and Translational Bioinformatics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Systems Biology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Translational Bioinformatics Workflow</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-databases.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3.1</span> Learning Objectives</a></li>
+  <li><a href="#the-challenge-of-modern-biology" id="toc-the-challenge-of-modern-biology" class="nav-link" data-scroll-target="#the-challenge-of-modern-biology"><span class="header-section-number">3.2</span> 3.1 The Challenge of Modern Biology</a></li>
+  <li><a href="#why-biological-databases-matter" id="toc-why-biological-databases-matter" class="nav-link" data-scroll-target="#why-biological-databases-matter"><span class="header-section-number">3.3</span> 3.2 Why Biological Databases Matter</a></li>
+  <li><a href="#two-paradigms-for-understanding-biological-systems" id="toc-two-paradigms-for-understanding-biological-systems" class="nav-link" data-scroll-target="#two-paradigms-for-understanding-biological-systems"><span class="header-section-number">3.4</span> 3.3 Two Paradigms for Understanding Biological Systems</a>
+  <ul class="collapse">
+  <li><a href="#disease-gene-prioritization" id="toc-disease-gene-prioritization" class="nav-link" data-scroll-target="#disease-gene-prioritization"><span class="header-section-number">3.4.1</span> Disease Gene Prioritization</a></li>
+  <li><a href="#systems-description" id="toc-systems-description" class="nav-link" data-scroll-target="#systems-description"><span class="header-section-number">3.4.2</span> Systems Description</a></li>
+  </ul></li>
+  <li><a href="#a-data-centric-view-of-biology" id="toc-a-data-centric-view-of-biology" class="nav-link" data-scroll-target="#a-data-centric-view-of-biology"><span class="header-section-number">3.5</span> 3.4 A Data-Centric View of Biology</a></li>
+  <li><a href="#genome-annotation-adding-meaning-to-sequence" id="toc-genome-annotation-adding-meaning-to-sequence" class="nav-link" data-scroll-target="#genome-annotation-adding-meaning-to-sequence"><span class="header-section-number">3.6</span> 3.5 Genome Annotation: Adding Meaning to Sequence</a>
+  <ul class="collapse">
+  <li><a href="#gene-annotations" id="toc-gene-annotations" class="nav-link" data-scroll-target="#gene-annotations"><span class="header-section-number">3.6.1</span> Gene Annotations</a></li>
+  <li><a href="#regulatory-annotations" id="toc-regulatory-annotations" class="nav-link" data-scroll-target="#regulatory-annotations"><span class="header-section-number">3.6.2</span> Regulatory Annotations</a></li>
+  <li><a href="#variation-annotations" id="toc-variation-annotations" class="nav-link" data-scroll-target="#variation-annotations"><span class="header-section-number">3.6.3</span> Variation Annotations</a></li>
+  <li><a href="#comparative-annotations" id="toc-comparative-annotations" class="nav-link" data-scroll-target="#comparative-annotations"><span class="header-section-number">3.6.4</span> Comparative Annotations</a></li>
+  </ul></li>
+  <li><a href="#genome-browsers-as-knowledge-integration-platforms" id="toc-genome-browsers-as-knowledge-integration-platforms" class="nav-link" data-scroll-target="#genome-browsers-as-knowledge-integration-platforms"><span class="header-section-number">3.7</span> 3.6 Genome Browsers as Knowledge Integration Platforms</a></li>
+  <li><a href="#the-ucsc-genome-browser" id="toc-the-ucsc-genome-browser" class="nav-link" data-scroll-target="#the-ucsc-genome-browser"><span class="header-section-number">3.8</span> 3.7 The UCSC Genome Browser</a>
+  <ul class="collapse">
+  <li><a href="#genes-and-gene-prediction" id="toc-genes-and-gene-prediction" class="nav-link" data-scroll-target="#genes-and-gene-prediction"><span class="header-section-number">3.8.1</span> Genes and Gene Prediction</a></li>
+  <li><a href="#variation" id="toc-variation" class="nav-link" data-scroll-target="#variation"><span class="header-section-number">3.8.2</span> Variation</a></li>
+  <li><a href="#regulation" id="toc-regulation" class="nav-link" data-scroll-target="#regulation"><span class="header-section-number">3.8.3</span> Regulation</a></li>
+  <li><a href="#comparative-genomics" id="toc-comparative-genomics" class="nav-link" data-scroll-target="#comparative-genomics"><span class="header-section-number">3.8.4</span> Comparative Genomics</a></li>
+  <li><a href="#phenotype-and-disease" id="toc-phenotype-and-disease" class="nav-link" data-scroll-target="#phenotype-and-disease"><span class="header-section-number">3.8.5</span> Phenotype and Disease</a></li>
+  </ul></li>
+  <li><a href="#interpreting-genomic-context" id="toc-interpreting-genomic-context" class="nav-link" data-scroll-target="#interpreting-genomic-context"><span class="header-section-number">3.9</span> 3.8 Interpreting Genomic Context</a></li>
+  <li><a href="#sequence-based-discovery-with-blat" id="toc-sequence-based-discovery-with-blat" class="nav-link" data-scroll-target="#sequence-based-discovery-with-blat"><span class="header-section-number">3.10</span> 3.9 Sequence-Based Discovery with BLAT</a></li>
+  <li><a href="#case-studies-in-genome-exploration" id="toc-case-studies-in-genome-exploration" class="nav-link" data-scroll-target="#case-studies-in-genome-exploration"><span class="header-section-number">3.11</span> 3.10 Case Studies in Genome Exploration</a>
+  <ul class="collapse">
+  <li><a href="#case-study-1-pten" id="toc-case-study-1-pten" class="nav-link" data-scroll-target="#case-study-1-pten"><span class="header-section-number">3.11.1</span> Case Study 1: PTEN</a></li>
+  <li><a href="#case-study-2-akt1" id="toc-case-study-2-akt1" class="nav-link" data-scroll-target="#case-study-2-akt1"><span class="header-section-number">3.11.2</span> Case Study 2: AKT1</a></li>
+  <li><a href="#case-study-3-kras" id="toc-case-study-3-kras" class="nav-link" data-scroll-target="#case-study-3-kras"><span class="header-section-number">3.11.3</span> Case Study 3: KRAS</a></li>
+  </ul></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">3.12</span> Chapter Summary</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">3.13</span> Key Terms</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-objectives" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<p>After completing this chapter, students will be able to:</p>
+<ul>
+<li>Explain why biological databases are critical for modern research.</li>
+<li>Distinguish between Disease Gene Prioritization and Systems Description paradigms.</li>
+<li>Describe the data-centric view of biology.</li>
+<li>Understand the purpose of genome annotation.</li>
+<li>Interpret common genomic features such as genes, variants, and regulatory elements.</li>
+<li>Explain how genome browsers integrate biological knowledge.</li>
+<li>Use genomic data to generate biological hypotheses.</li>
+</ul>
+</section>
+<section id="the-challenge-of-modern-biology" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="the-challenge-of-modern-biology"><span class="header-section-number">3.2</span> 3.1 The Challenge of Modern Biology</h2>
+<p>Imagine you have just completed an RNA-seq experiment.</p>
+<p>After weeks of sample preparation, sequencing, quality control, and statistical analysis, you obtain a list of several hundred differentially expressed genes. Alternatively, perhaps you have performed whole genome sequencing and identified thousands of genetic variants.</p>
+<p>Congratulations.</p>
+<p>Now what?</p>
+<p>The challenge facing modern biology is no longer simply generating data. Advances in sequencing, proteomics, imaging, and other high-throughput technologies have enabled researchers to measure biological systems at unprecedented scale. However, understanding what those measurements mean remains difficult.</p>
+<p>A list of genes is not a biological explanation.</p>
+<p>Researchers must determine:</p>
+<ul>
+<li>What these genes do.</li>
+<li>How they interact.</li>
+<li>Whether they are associated with disease.</li>
+<li>Which pathways they influence.</li>
+<li>How they contribute to biological function.</li>
+</ul>
+<p>Transforming data into knowledge requires access to existing biological information and tools capable of integrating diverse sources of evidence.</p>
+</section>
+<section id="why-biological-databases-matter" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="why-biological-databases-matter"><span class="header-section-number">3.3</span> 3.2 Why Biological Databases Matter</h2>
+<p>Biological systems are inherently multidimensional.</p>
+<p>A single disease may involve:</p>
+<ul>
+<li>Genetic mutations</li>
+<li>Changes in RNA expression</li>
+<li>Altered protein abundance</li>
+<li>Epigenetic modifications</li>
+<li>Environmental influences</li>
+</ul>
+<p>Different experimental technologies measure different aspects of these systems. As a result, modern biology depends heavily on biological databases that organize and store knowledge generated over decades of research.</p>
+<p>Examples of biological information stored in databases include:</p>
+<ul>
+<li>Gene locations</li>
+<li>Gene functions</li>
+<li>Protein sequences</li>
+<li>Regulatory elements</li>
+<li>Disease associations</li>
+<li>Pathways</li>
+<li>Molecular interactions</li>
+<li>Genetic variants</li>
+</ul>
+<p>Biological databases serve as the collective memory of the scientific community.</p>
+<p>Without these resources, every investigator would need to rediscover what is already known.</p>
+</section>
+<section id="two-paradigms-for-understanding-biological-systems" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="two-paradigms-for-understanding-biological-systems"><span class="header-section-number">3.4</span> 3.3 Two Paradigms for Understanding Biological Systems</h2>
+<p>When researchers attempt to understand disease and biological function, they generally adopt one of two complementary perspectives.</p>
+<section id="disease-gene-prioritization" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="disease-gene-prioritization"><span class="header-section-number">3.4.1</span> Disease Gene Prioritization</h3>
+<p>The first paradigm asks:</p>
+<blockquote class="blockquote">
+<p>Which genes are most likely to contribute to a disease?</p>
+</blockquote>
+<p>In many studies, researchers begin with hundreds or thousands of candidate genes. Only a small subset are likely to have true biological relevance.</p>
+<p>Disease Gene Prioritization seeks to rank these candidates according to their likelihood of involvement in a phenotype or disease.</p>
+<p>Evidence used for prioritization may include:</p>
+<ul>
+<li>Genetic association studies</li>
+<li>Functional annotation</li>
+<li>Protein interactions</li>
+<li>Pathway membership</li>
+<li>Evolutionary conservation</li>
+<li>Literature evidence</li>
+<li>Computational prediction</li>
+</ul>
+<p>The goal is to focus experimental effort on the most promising candidates.</p>
+<section id="applications" class="level4" data-number="3.4.1.1">
+<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="applications"><span class="header-section-number">3.4.1.1</span> Applications</h4>
+<ul>
+<li>Disease gene discovery</li>
+<li>Biomarker identification</li>
+<li>Drug target development</li>
+<li>Precision medicine</li>
+</ul>
+<p>In essence, Disease Gene Prioritization helps identify the most important players.</p>
+</section>
+</section>
+<section id="systems-description" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="systems-description"><span class="header-section-number">3.4.2</span> Systems Description</h3>
+<p>The second paradigm asks:</p>
+<blockquote class="blockquote">
+<p>How does the biological system function?</p>
+</blockquote>
+<p>Knowing which genes are important is only part of the story.</p>
+<p>Biological functions emerge from interactions among genes, proteins, metabolites, and cellular processes.</p>
+<p>Systems Description focuses on:</p>
+<ul>
+<li>Networks</li>
+<li>Pathways</li>
+<li>Regulatory circuits</li>
+<li>Molecular interactions</li>
+<li>Emergent biological behavior</li>
+</ul>
+<p>Rather than studying isolated components, systems biology seeks to understand how components operate together as a coordinated system.</p>
+<section id="applications-1" class="level4" data-number="3.4.2.1">
+<h4 data-number="3.4.2.1" class="anchored" data-anchor-id="applications-1"><span class="header-section-number">3.4.2.1</span> Applications</h4>
+<ul>
+<li>Disease mechanism discovery</li>
+<li>Network medicine</li>
+<li>Multi-omics integration</li>
+<li>Therapeutic target identification</li>
+</ul>
+<p>While Disease Gene Prioritization identifies the players, Systems Description explains the game.</p>
+</section>
+</section>
+</section>
+<section id="a-data-centric-view-of-biology" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="a-data-centric-view-of-biology"><span class="header-section-number">3.5</span> 3.4 A Data-Centric View of Biology</h2>
+<p>Traditional biology is often described through the central dogma:</p>
+<pre class="text"><code>DNA → RNA → Protein</code></pre>
+<p>While useful, this representation is incomplete.</p>
+<p>Modern biology operates through complex layers of interconnected information:</p>
+<pre class="text"><code>DNA
+ ↓
+Genes
+ ↓
+Transcripts
+ ↓
+Proteins
+ ↓
+Pathways
+ ↓
+Phenotypes
+ ↓
+Disease</code></pre>
+<p>Each level generates its own forms of data and its own specialized databases.</p>
+<p>For example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Biological Entity</th>
+<th>Example Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DNA</td>
+<td>Genetic variants</td>
+</tr>
+<tr class="even">
+<td>Genes</td>
+<td>Gene structure</td>
+</tr>
+<tr class="odd">
+<td>RNA</td>
+<td>Expression levels</td>
+</tr>
+<tr class="even">
+<td>Proteins</td>
+<td>Function, interactions</td>
+</tr>
+<tr class="odd">
+<td>Pathways</td>
+<td>Biological processes</td>
+</tr>
+<tr class="even">
+<td>Diseases</td>
+<td>Clinical associations</td>
+</tr>
+</tbody>
+</table>
+<p>As investigators, our task is to connect observations across these layers.</p>
+</section>
+<section id="genome-annotation-adding-meaning-to-sequence" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="genome-annotation-adding-meaning-to-sequence"><span class="header-section-number">3.6</span> 3.5 Genome Annotation: Adding Meaning to Sequence</h2>
+<p>A genome sequence by itself is simply a string of nucleotides.</p>
+<p>For example:</p>
+<pre class="text"><code>ATCGGACTAA...</code></pre>
+<p>Without additional information, we cannot determine:</p>
+<ul>
+<li>Where genes are located.</li>
+<li>Which regions are regulatory.</li>
+<li>Which variants affect function.</li>
+<li>Which regions are evolutionarily conserved.</li>
+</ul>
+<p>This additional information is called <em>annotation</em>.</p>
+<p>Genome annotations assign biological meaning to genomic coordinates.</p>
+<section id="gene-annotations" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="gene-annotations"><span class="header-section-number">3.6.1</span> Gene Annotations</h3>
+<p>Identify:</p>
+<ul>
+<li>Gene boundaries</li>
+<li>Exons</li>
+<li>Introns</li>
+<li>Untranslated regions (UTRs)</li>
+</ul>
+</section>
+<section id="regulatory-annotations" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="regulatory-annotations"><span class="header-section-number">3.6.2</span> Regulatory Annotations</h3>
+<p>Identify:</p>
+<ul>
+<li>Promoters</li>
+<li>Enhancers</li>
+<li>Transcription factor binding sites</li>
+</ul>
+</section>
+<section id="variation-annotations" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="variation-annotations"><span class="header-section-number">3.6.3</span> Variation Annotations</h3>
+<p>Identify:</p>
+<ul>
+<li>SNPs</li>
+<li>Insertions</li>
+<li>Deletions</li>
+<li>Structural variants</li>
+</ul>
+</section>
+<section id="comparative-annotations" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="comparative-annotations"><span class="header-section-number">3.6.4</span> Comparative Annotations</h3>
+<p>Identify:</p>
+<ul>
+<li>Conserved regions</li>
+<li>Orthologous genes</li>
+<li>Evolutionary relationships</li>
+</ul>
+<p>Annotation transforms sequence into knowledge.</p>
+</section>
+</section>
+<section id="genome-browsers-as-knowledge-integration-platforms" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="genome-browsers-as-knowledge-integration-platforms"><span class="header-section-number">3.7</span> 3.6 Genome Browsers as Knowledge Integration Platforms</h2>
+<p>A common misconception is that genome browsers are databases.</p>
+<p>They are not.</p>
+<p>A genome browser is better viewed as a visualization and integration platform.</p>
+<p>Genome browsers combine information from many databases and display it within a shared genomic coordinate system.</p>
+<p>Think of a genome browser as Google Maps for the genome.</p>
+<p>The reference genome serves as the map.</p>
+<p>Individual annotation tracks represent different layers of information.</p>
+<p>Examples include:</p>
+<ul>
+<li>Genes</li>
+<li>SNPs</li>
+<li>Disease associations</li>
+<li>Regulatory elements</li>
+<li>Expression data</li>
+<li>Conservation scores</li>
+<li>Scientific literature</li>
+</ul>
+<p>Researchers can view all these layers simultaneously and understand how different pieces of biological information relate to one another.</p>
+</section>
+<section id="the-ucsc-genome-browser" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="the-ucsc-genome-browser"><span class="header-section-number">3.8</span> 3.7 The UCSC Genome Browser</h2>
+<p>One of the most widely used genome browsers is the UCSC Genome Browser.</p>
+<p>It provides access to thousands of annotation tracks organized into categories such as:</p>
+<section id="genes-and-gene-prediction" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="genes-and-gene-prediction"><span class="header-section-number">3.8.1</span> Genes and Gene Prediction</h3>
+<ul>
+<li>RefSeq genes</li>
+<li>UCSC genes</li>
+<li>Transcript evidence</li>
+</ul>
+</section>
+<section id="variation" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="variation"><span class="header-section-number">3.8.2</span> Variation</h3>
+<ul>
+<li>SNPs</li>
+<li>Structural variants</li>
+<li>Population variation</li>
+</ul>
+</section>
+<section id="regulation" class="level3" data-number="3.8.3">
+<h3 data-number="3.8.3" class="anchored" data-anchor-id="regulation"><span class="header-section-number">3.8.3</span> Regulation</h3>
+<ul>
+<li>Promoters</li>
+<li>Enhancers</li>
+<li>Transcription factor binding sites</li>
+</ul>
+</section>
+<section id="comparative-genomics" class="level3" data-number="3.8.4">
+<h3 data-number="3.8.4" class="anchored" data-anchor-id="comparative-genomics"><span class="header-section-number">3.8.4</span> Comparative Genomics</h3>
+<ul>
+<li>Cross-species alignments</li>
+<li>Conservation scores</li>
+</ul>
+</section>
+<section id="phenotype-and-disease" class="level3" data-number="3.8.5">
+<h3 data-number="3.8.5" class="anchored" data-anchor-id="phenotype-and-disease"><span class="header-section-number">3.8.5</span> Phenotype and Disease</h3>
+<ul>
+<li>Disease associations</li>
+<li>Clinical variants</li>
+</ul>
+<p>Because these annotations share common genomic coordinates, relationships between different data types become immediately visible.</p>
+</section>
+</section>
+<section id="interpreting-genomic-context" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="interpreting-genomic-context"><span class="header-section-number">3.9</span> 3.8 Interpreting Genomic Context</h2>
+<p>One of the most important skills in genomics is interpreting biological context.</p>
+<p>Consider a variant.</p>
+<blockquote class="blockquote">
+<p>Is it important?</p>
+</blockquote>
+<p>The answer depends on context.</p>
+<p>Questions might include:</p>
+<ul>
+<li>Does it occur inside a gene?</li>
+<li>Does it alter a protein sequence?</li>
+<li>Does it occur in a promoter?</li>
+<li>Is it evolutionarily conserved?</li>
+<li>Has it been linked to disease?</li>
+</ul>
+<p>Genome browsers enable researchers to gather evidence from multiple sources simultaneously.</p>
+<p>Biological interpretation emerges from integration.</p>
+</section>
+<section id="sequence-based-discovery-with-blat" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="sequence-based-discovery-with-blat"><span class="header-section-number">3.10</span> 3.9 Sequence-Based Discovery with BLAT</h2>
+<p>Researchers often need to determine where a sequence originates within the genome.</p>
+<p>The UCSC Genome Browser provides a tool called <strong>BLAT (BLAST-Like Alignment Tool)</strong>.</p>
+<p>BLAT allows investigators to:</p>
+<ul>
+<li>Align DNA sequences</li>
+<li>Align RNA sequences</li>
+<li>Map protein sequences</li>
+<li>Identify homologous regions</li>
+</ul>
+<p>Because BLAT indexes the genome, it performs rapid searches when sequence similarity is high.</p>
+<p>Applications include:</p>
+<ul>
+<li>Gene identification</li>
+<li>Homolog discovery</li>
+<li>Verification of transcript sequences</li>
+<li>Comparative genomics</li>
+</ul>
+</section>
+<section id="case-studies-in-genome-exploration" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="case-studies-in-genome-exploration"><span class="header-section-number">3.11</span> 3.10 Case Studies in Genome Exploration</h2>
+<section id="case-study-1-pten" class="level3" data-number="3.11.1">
+<h3 data-number="3.11.1" class="anchored" data-anchor-id="case-study-1-pten"><span class="header-section-number">3.11.1</span> Case Study 1: PTEN</h3>
+<p><strong>Question:</strong></p>
+<blockquote class="blockquote">
+<p>Does the mouse <em>PTEN</em> gene contain nonsynonymous SNPs?</p>
+</blockquote>
+<p>This investigation requires:</p>
+<ul>
+<li>Locating the gene</li>
+<li>Examining variation tracks</li>
+<li>Identifying coding variants</li>
+<li>Evaluating external functional evidence</li>
+</ul>
+</section>
+<section id="case-study-2-akt1" class="level3" data-number="3.11.2">
+<h3 data-number="3.11.2" class="anchored" data-anchor-id="case-study-2-akt1"><span class="header-section-number">3.11.2</span> Case Study 2: AKT1</h3>
+<p><strong>Question:</strong></p>
+<blockquote class="blockquote">
+<p>What is the human homolog of rat <em>AKT1</em>?</p>
+</blockquote>
+<p>This investigation demonstrates:</p>
+<ul>
+<li>Comparative genomics</li>
+<li>BLAT searches</li>
+<li>Sequence alignment</li>
+<li>Variant exploration</li>
+</ul>
+</section>
+<section id="case-study-3-kras" class="level3" data-number="3.11.3">
+<h3 data-number="3.11.3" class="anchored" data-anchor-id="case-study-3-kras"><span class="header-section-number">3.11.3</span> Case Study 3: KRAS</h3>
+<p><strong>Question:</strong></p>
+<blockquote class="blockquote">
+<p>What regulatory features exist near <em>KRAS</em>?</p>
+</blockquote>
+<p>This exercise examines:</p>
+<ul>
+<li>Promoters</li>
+<li>Transcription factor binding sites</li>
+<li>Structural variation</li>
+<li>Regulatory architecture</li>
+</ul>
+<p>These examples illustrate how genome browsers support real biological inquiry rather than simple data visualization.</p>
+</section>
+</section>
+<section id="chapter-summary" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">3.12</span> Chapter Summary</h2>
+<p>Modern biological research depends on our ability to transform large-scale data into meaningful knowledge.</p>
+<p>Two complementary paradigms guide this process:</p>
+<ol type="1">
+<li><strong>Disease Gene Prioritization</strong> identifies genes most relevant to disease.</li>
+<li><strong>Systems Description</strong> reveals how biological components interact within larger systems.</li>
+</ol>
+<p>Genome annotation adds meaning to raw DNA sequence by identifying genes, variants, regulatory elements, and evolutionary features. Genome browsers then integrate these diverse annotations into a unified visual framework, enabling researchers to investigate biological questions and generate new hypotheses.</p>
+<p>Ultimately, modern genomics is not simply about collecting data. It is about connecting information across multiple levels of biology to gain insight into how living systems function.</p>
+</section>
+<section id="key-terms" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">3.13</span> Key Terms</h2>
+<ul>
+<li>Genome</li>
+<li>Genomics</li>
+<li>Genotype</li>
+<li>Annotation</li>
+<li>Metadata</li>
+<li>Disease Gene Prioritization</li>
+<li>Systems Description</li>
+<li>SNP</li>
+<li>Structural Variant</li>
+<li>Regulatory Element</li>
+<li>Genome Browser</li>
+<li>UCSC Genome Browser</li>
+<li>BLAT</li>
+<li>Comparative Genomics</li>
+<li>Biological Network</li>
+<li>Pathway Analysis</li>
+<li>Systems Biology</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/02-workflow.html" class="pagination-link" aria-label="The Translational Bioinformatics Workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Translational Bioinformatics Workflow</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
