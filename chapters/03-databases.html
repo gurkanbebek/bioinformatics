@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers – Systems Biology and Translational Bioinformatics</title>
+<title>2&nbsp; From Biological Data to Biological Knowledge – Systems Biology and Translational Bioinformatics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,6 +94,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -88,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-databases.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03-databases.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -128,13 +150,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-databases.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">“High-Throughput Sequencing: Technologies and Applications in Modern Biology”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
   </div>
 </li>
     </ul>
@@ -156,32 +178,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#systems-description" id="toc-systems-description" class="nav-link" data-scroll-target="#systems-description"><span class="header-section-number">2.4.2</span> Systems Description</a></li>
   </ul></li>
   <li><a href="#a-data-centric-view-of-biology" id="toc-a-data-centric-view-of-biology" class="nav-link" data-scroll-target="#a-data-centric-view-of-biology"><span class="header-section-number">2.5</span> A Data-Centric View of Biology</a></li>
-  <li><a href="#genome-annotation-adding-meaning-to-sequence" id="toc-genome-annotation-adding-meaning-to-sequence" class="nav-link" data-scroll-target="#genome-annotation-adding-meaning-to-sequence"><span class="header-section-number">2.6</span> Genome Annotation: Adding Meaning to Sequence</a>
+  <li><a href="#genome-annotation-adding-meaning-to-sequence" id="toc-genome-annotation-adding-meaning-to-sequence" class="nav-link" data-scroll-target="#genome-annotation-adding-meaning-to-sequence"><span class="header-section-number">2.6</span> Genome Annotation Adding Meaning to Sequence</a></li>
+  <li><a href="#genome-browsers-as-knowledge-integration-platforms" id="toc-genome-browsers-as-knowledge-integration-platforms" class="nav-link" data-scroll-target="#genome-browsers-as-knowledge-integration-platforms"><span class="header-section-number">2.7</span> Genome Browsers as Knowledge Integration Platforms</a>
   <ul class="collapse">
-  <li><a href="#gene-annotations" id="toc-gene-annotations" class="nav-link" data-scroll-target="#gene-annotations"><span class="header-section-number">2.6.1</span> Gene Annotations</a></li>
-  <li><a href="#regulatory-annotations" id="toc-regulatory-annotations" class="nav-link" data-scroll-target="#regulatory-annotations"><span class="header-section-number">2.6.2</span> Regulatory Annotations</a></li>
-  <li><a href="#variation-annotations" id="toc-variation-annotations" class="nav-link" data-scroll-target="#variation-annotations"><span class="header-section-number">2.6.3</span> Variation Annotations</a></li>
-  <li><a href="#comparative-annotations" id="toc-comparative-annotations" class="nav-link" data-scroll-target="#comparative-annotations"><span class="header-section-number">2.6.4</span> Comparative Annotations</a></li>
+  <li><a href="#the-ucsc-genome-browser" id="toc-the-ucsc-genome-browser" class="nav-link" data-scroll-target="#the-ucsc-genome-browser"><span class="header-section-number">2.7.1</span> The UCSC Genome Browser</a></li>
   </ul></li>
-  <li><a href="#genome-browsers-as-knowledge-integration-platforms" id="toc-genome-browsers-as-knowledge-integration-platforms" class="nav-link" data-scroll-target="#genome-browsers-as-knowledge-integration-platforms"><span class="header-section-number">2.7</span> Genome Browsers as Knowledge Integration Platforms</a></li>
-  <li><a href="#the-ucsc-genome-browser" id="toc-the-ucsc-genome-browser" class="nav-link" data-scroll-target="#the-ucsc-genome-browser"><span class="header-section-number">2.8</span> The UCSC Genome Browser</a>
-  <ul class="collapse">
-  <li><a href="#genes-and-gene-prediction" id="toc-genes-and-gene-prediction" class="nav-link" data-scroll-target="#genes-and-gene-prediction"><span class="header-section-number">2.8.1</span> Genes and Gene Prediction</a></li>
-  <li><a href="#variation" id="toc-variation" class="nav-link" data-scroll-target="#variation"><span class="header-section-number">2.8.2</span> Variation</a></li>
-  <li><a href="#regulation" id="toc-regulation" class="nav-link" data-scroll-target="#regulation"><span class="header-section-number">2.8.3</span> Regulation</a></li>
-  <li><a href="#comparative-genomics" id="toc-comparative-genomics" class="nav-link" data-scroll-target="#comparative-genomics"><span class="header-section-number">2.8.4</span> Comparative Genomics</a></li>
-  <li><a href="#phenotype-and-disease" id="toc-phenotype-and-disease" class="nav-link" data-scroll-target="#phenotype-and-disease"><span class="header-section-number">2.8.5</span> Phenotype and Disease</a></li>
-  </ul></li>
-  <li><a href="#interpreting-genomic-context" id="toc-interpreting-genomic-context" class="nav-link" data-scroll-target="#interpreting-genomic-context"><span class="header-section-number">2.9</span> Interpreting Genomic Context</a></li>
-  <li><a href="#sequence-based-discovery-with-blat" id="toc-sequence-based-discovery-with-blat" class="nav-link" data-scroll-target="#sequence-based-discovery-with-blat"><span class="header-section-number">2.10</span> Sequence-Based Discovery with BLAT</a></li>
-  <li><a href="#case-studies-in-genome-exploration" id="toc-case-studies-in-genome-exploration" class="nav-link" data-scroll-target="#case-studies-in-genome-exploration"><span class="header-section-number">2.11</span> Case Studies in Genome Exploration</a>
-  <ul class="collapse">
-  <li><a href="#case-study-1-pten" id="toc-case-study-1-pten" class="nav-link" data-scroll-target="#case-study-1-pten"><span class="header-section-number">2.11.1</span> Case Study 1: PTEN</a></li>
-  <li><a href="#case-study-2-akt1" id="toc-case-study-2-akt1" class="nav-link" data-scroll-target="#case-study-2-akt1"><span class="header-section-number">2.11.2</span> Case Study 2: AKT1</a></li>
-  <li><a href="#case-study-3-kras" id="toc-case-study-3-kras" class="nav-link" data-scroll-target="#case-study-3-kras"><span class="header-section-number">2.11.3</span> Case Study 3: KRAS</a></li>
-  </ul></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">2.12</span> Chapter Summary</a></li>
-  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">2.13</span> Key Terms</a></li>
+  <li><a href="#interpreting-genomic-context" id="toc-interpreting-genomic-context" class="nav-link" data-scroll-target="#interpreting-genomic-context"><span class="header-section-number">2.8</span> Interpreting Genomic Context</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">2.9</span> Chapter Summary</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">2.10</span> Key Terms</a></li>
   </ul>
 </nav>
     </div>
@@ -190,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></h1>
 </div>
 
 
@@ -222,373 +226,201 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-challenge-of-modern-biology" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="the-challenge-of-modern-biology"><span class="header-section-number">2.2</span> The Challenge of Modern Biology</h2>
-<p>Imagine you have just completed an RNA-seq experiment.</p>
-<p>After weeks of sample preparation, sequencing, quality control, and statistical analysis, you obtain a list of several hundred differentially expressed genes. Alternatively, perhaps you have performed whole genome sequencing and identified thousands of genetic variants.</p>
-<p>Congratulations.</p>
+<p>Imagine you have just completed an RNA sequencing experiment. After weeks of sample preparation, sequencing, quality control, and statistical analysis, you obtain a list of several hundred differentially expressed genes. Alternatively, perhaps you have performed whole-genome sequencing and identified thousands of genetic variants.</p>
 <p>Now what?</p>
-<p>The challenge facing modern biology is no longer simply generating data. Advances in sequencing, proteomics, imaging, and other high-throughput technologies have enabled researchers to measure biological systems at unprecedented scale. However, understanding what those measurements mean remains difficult.</p>
-<p>A list of genes is not a biological explanation.</p>
-<p>Researchers must determine:</p>
-<ul>
-<li>What these genes do.</li>
-<li>How they interact.</li>
-<li>Whether they are associated with disease.</li>
-<li>Which pathways they influence.</li>
-<li>How they contribute to biological function.</li>
-</ul>
-<p>Transforming data into knowledge requires access to existing biological information and tools capable of integrating diverse sources of evidence.</p>
+<p>The challenge facing modern biology is no longer simply generating data. Advances in sequencing, proteomics, and imaging technologies have enabled researchers to measure biological systems at an unprecedented scale. However, understanding what those measurements mean remains exceptionally difficult. A list of genes is not a biological explanation. Researchers must determine what these genes do, how they interact, whether they are associated with disease, which pathways they influence, and how they contribute to overall biological function. Transforming raw data into knowledge requires access to existing biological information and computational tools capable of integrating diverse sources of evidence.</p>
 </section>
 <section id="why-biological-databases-matter" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="why-biological-databases-matter"><span class="header-section-number">2.3</span> Why Biological Databases Matter</h2>
-<p>Biological systems are inherently multidimensional.</p>
-<p>A single disease may involve:</p>
-<ul>
-<li>Genetic mutations</li>
-<li>Changes in RNA expression</li>
-<li>Altered protein abundance</li>
-<li>Epigenetic modifications</li>
-<li>Environmental influences</li>
-</ul>
-<p>Different experimental technologies measure different aspects of these systems. As a result, modern biology depends heavily on biological databases that organize and store knowledge generated over decades of research.</p>
-<p>Examples of biological information stored in databases include:</p>
-<ul>
-<li>Gene locations</li>
-<li>Gene functions</li>
-<li>Protein sequences</li>
-<li>Regulatory elements</li>
-<li>Disease associations</li>
-<li>Pathways</li>
-<li>Molecular interactions</li>
-<li>Genetic variants</li>
-</ul>
-<p>Biological databases serve as the collective memory of the scientific community.</p>
-<p>Without these resources, every investigator would need to rediscover what is already known.</p>
+<p>Biological systems are inherently multidimensional. A single disease may involve genetic mutations, changes in RNA expression, altered protein abundance, epigenetic modifications, and environmental influences. Different experimental technologies measure different aspects of these systems. As a result, modern biology depends heavily on biological databases that organize and store knowledge generated over decades of research.</p>
+<p>Biological information stored in databases includes gene locations, functional annotations, protein sequences, regulatory elements, disease associations, pathways, molecular interactions, and genetic variants. These databases serve as the collective memory of the scientific community. Without these resources, every investigator would need to rediscover what is already known.</p>
 </section>
 <section id="two-paradigms-for-understanding-biological-systems" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="two-paradigms-for-understanding-biological-systems"><span class="header-section-number">2.4</span> Two Paradigms for Understanding Biological Systems</h2>
 <p>When researchers attempt to understand disease and biological function, they generally adopt one of two complementary perspectives.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-paradigms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-paradigms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-paradigms">flowchart TB
+    Root("Understanding Biological Systems") --&gt; P["Paradigm 1: &lt;br&gt;Disease Gene Prioritization"]
+    Root --&gt; S["Paradigm 2: &lt;br&gt;Systems Description"]
+
+    subgraph Prioritization ["Goal: 'Identify the Players'"]
+        direction TB
+        P1["🧬 Thousands of Candidate Genes"] --&gt; P2{"📉 Ranking &amp; Filtering &lt;br&gt;(GWAS, Interactions, Conservation)"}
+        P2 --&gt; P3(["🎯 Top Target Disease Genes"])
+    end
+
+    subgraph Systems ["Goal: 'Explain the Game'"]
+        direction TB
+        S1["🧩 Isolated Components &lt;br&gt;(Genes, Proteins, Metabolites)"] --&gt; S2{"🕸️ Network Integration &lt;br&gt;(Pathways, Regulatory Circuits)"}
+        S2 --&gt; S3(["⚙️ Emergent Biological Behavior"])
+    end
+
+    P --&gt; Prioritization
+    S --&gt; Systems
+
+    classDef main fill:#e1f5fe,stroke:#31708f,stroke-width:2px,color:#01579b,font-weight:bold;
+    classDef sub fill:#fff,stroke:#ccc,stroke-width:1px;
+    class Root,P,S main;
+    class P1,P2,P3,S1,S2,S3 sub;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paradigms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Two Complementary Paradigms for Understanding Biological Systems
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <section id="disease-gene-prioritization" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="disease-gene-prioritization"><span class="header-section-number">2.4.1</span> Disease Gene Prioritization</h3>
-<p>The first paradigm asks:</p>
-<blockquote class="blockquote">
-<p>Which genes are most likely to contribute to a disease?</p>
-</blockquote>
-<p>In many studies, researchers begin with hundreds or thousands of candidate genes. Only a small subset are likely to have true biological relevance.</p>
-<p>Disease Gene Prioritization seeks to rank these candidates according to their likelihood of involvement in a phenotype or disease.</p>
-<p>Evidence used for prioritization may include:</p>
-<ul>
-<li>Genetic association studies</li>
-<li>Functional annotation</li>
-<li>Protein interactions</li>
-<li>Pathway membership</li>
-<li>Evolutionary conservation</li>
-<li>Literature evidence</li>
-<li>Computational prediction</li>
-</ul>
-<p>The goal is to focus experimental effort on the most promising candidates.</p>
-<section id="applications" class="level4" data-number="2.4.1.1">
-<h4 data-number="2.4.1.1" class="anchored" data-anchor-id="applications"><span class="header-section-number">2.4.1.1</span> Applications</h4>
-<ul>
-<li>Disease gene discovery</li>
-<li>Biomarker identification</li>
-<li>Drug target development</li>
-<li>Precision medicine</li>
-</ul>
-<p>In essence, Disease Gene Prioritization helps identify the most important players.</p>
-</section>
+<p>The first paradigm asks which genes are most likely to contribute to a specific disease. In many genomic studies, researchers begin with hundreds or thousands of candidate genes, but only a small subset will have true biological relevance. Disease gene prioritization seeks to rank these candidates according to their likelihood of involvement in a phenotype or disease <span class="citation" data-cites="Gill2014">(<a href="01-introduction.html#ref-Gill2014" role="doc-biblioref">Gill et al. 2014</a>)</span>.</p>
+<p>Evidence used for prioritization includes genetic association studies, functional annotations, protein interactions, pathway membership, evolutionary conservation, and computational predictions. The goal is to focus experimental effort on the most promising candidates. This approach is widely applied in disease gene discovery, biomarker identification, drug target development, and precision medicine. In essence, disease gene prioritization helps identify the most important molecular players.</p>
 </section>
 <section id="systems-description" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="systems-description"><span class="header-section-number">2.4.2</span> Systems Description</h3>
-<p>The second paradigm asks:</p>
-<blockquote class="blockquote">
-<p>How does the biological system function?</p>
-</blockquote>
-<p>Knowing which genes are important is only part of the story.</p>
-<p>Biological functions emerge from interactions among genes, proteins, metabolites, and cellular processes.</p>
-<p>Systems Description focuses on:</p>
-<ul>
-<li>Networks</li>
-<li>Pathways</li>
-<li>Regulatory circuits</li>
-<li>Molecular interactions</li>
-<li>Emergent biological behavior</li>
-</ul>
-<p>Rather than studying isolated components, systems biology seeks to understand how components operate together as a coordinated system.</p>
-<section id="applications-1" class="level4" data-number="2.4.2.1">
-<h4 data-number="2.4.2.1" class="anchored" data-anchor-id="applications-1"><span class="header-section-number">2.4.2.1</span> Applications</h4>
-<ul>
-<li>Disease mechanism discovery</li>
-<li>Network medicine</li>
-<li>Multi-omics integration</li>
-<li>Therapeutic target identification</li>
-</ul>
-<p>While Disease Gene Prioritization identifies the players, Systems Description explains the game.</p>
-</section>
+<p>The second paradigm asks how the biological system functions as a whole. Knowing which genes are important is only part of the story, as biological functions emerge from interactions among genes, proteins, metabolites, and cellular processes.</p>
+<p>Systems description focuses on networks, pathways, regulatory circuits, molecular interactions, and emergent biological behavior. Rather than studying isolated components, systems biology seeks to understand how components operate together as a coordinated system to drive disease mechanisms and discover novel therapeutic targets. While disease gene prioritization identifies the players, systems description explains the rules of the game.</p>
 </section>
 </section>
 <section id="a-data-centric-view-of-biology" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="a-data-centric-view-of-biology"><span class="header-section-number">2.5</span> A Data-Centric View of Biology</h2>
-<p>Traditional biology is often described through the central dogma:</p>
-<pre class="text"><code>DNA → RNA → Protein</code></pre>
-<p>While useful, this representation is incomplete.</p>
-<p>Modern biology operates through complex layers of interconnected information:</p>
-<pre class="text"><code>DNA
- ↓
-Genes
- ↓
-Transcripts
- ↓
-Proteins
- ↓
-Pathways
- ↓
-Phenotypes
- ↓
-Disease</code></pre>
-<p>Each level generates its own forms of data and its own specialized databases.</p>
-<p>For example:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Biological Entity</th>
-<th>Example Information</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>DNA</td>
-<td>Genetic variants</td>
-</tr>
-<tr class="even">
-<td>Genes</td>
-<td>Gene structure</td>
-</tr>
-<tr class="odd">
-<td>RNA</td>
-<td>Expression levels</td>
-</tr>
-<tr class="even">
-<td>Proteins</td>
-<td>Function, interactions</td>
-</tr>
-<tr class="odd">
-<td>Pathways</td>
-<td>Biological processes</td>
-</tr>
-<tr class="even">
-<td>Diseases</td>
-<td>Clinical associations</td>
-</tr>
-</tbody>
-</table>
-<p>As investigators, our task is to connect observations across these layers.</p>
+<p>Traditional biology is often described through the central dogma where DNA is transcribed into RNA, which is translated into protein. While conceptually useful, this representation is incomplete for modern omics. Modern biology operates through complex layers of interconnected information moving from DNA to genes, transcripts, proteins, pathways, phenotypes, and ultimately disease.</p>
+<p>Each level generates its own forms of data and utilizes specialized databases. For example, DNA studies generate genetic variant data, RNA studies measure expression levels, and pathway analyses outline biological processes. As investigators, our primary task is to connect observations across these distinct biological layers.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-data-centric" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-centric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-data-centric">flowchart LR
+    subgraph Traditional ["Traditional Central Dogma"]
+        direction LR
+        DNA1[DNA] --&gt; RNA1[RNA] --&gt; PROT1[Protein]
+    end
+
+    subgraph Modern ["Modern Systems Hierarchy"]
+        direction TB
+        DNA2[DNA / Genomic Variants] --&gt; GENES[Genes / Gene Structure]
+        GENES --&gt; TRANS[Transcripts / RNA Expression]
+        TRANS --&gt; PROPS[Proteins / Function &amp; Interactions]
+        PROPS --&gt; PATH[Pathways / Biological Processes]
+        PATH --&gt; PHENO[Phenotypes]
+        PHENO --&gt; DIS[Disease / Clinical Associations]
+    end
+    
+    Traditional ~~~ Modern
+    
+    classDef base fill:#f0f0f0,stroke:#666,stroke-width:1px;
+    class Traditional,Modern base;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-centric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Evolution from the linear Central Dogma to the modern, layered systems biology framework.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="genome-annotation-adding-meaning-to-sequence" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="genome-annotation-adding-meaning-to-sequence"><span class="header-section-number">2.6</span> Genome Annotation: Adding Meaning to Sequence</h2>
-<p>A genome sequence by itself is simply a string of nucleotides.</p>
-<p>For example:</p>
-<pre class="text"><code>ATCGGACTAA...</code></pre>
-<p>Without additional information, we cannot determine:</p>
-<ul>
-<li>Where genes are located.</li>
-<li>Which regions are regulatory.</li>
-<li>Which variants affect function.</li>
-<li>Which regions are evolutionarily conserved.</li>
-</ul>
-<p>This additional information is called <em>annotation</em>.</p>
-<p>Genome annotations assign biological meaning to genomic coordinates.</p>
-<section id="gene-annotations" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="gene-annotations"><span class="header-section-number">2.6.1</span> Gene Annotations</h3>
-<p>Identify:</p>
-<ul>
-<li>Gene boundaries</li>
-<li>Exons</li>
-<li>Introns</li>
-<li>Untranslated regions (UTRs)</li>
-</ul>
-</section>
-<section id="regulatory-annotations" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="regulatory-annotations"><span class="header-section-number">2.6.2</span> Regulatory Annotations</h3>
-<p>Identify:</p>
-<ul>
-<li>Promoters</li>
-<li>Enhancers</li>
-<li>Transcription factor binding sites</li>
-</ul>
-</section>
-<section id="variation-annotations" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="variation-annotations"><span class="header-section-number">2.6.3</span> Variation Annotations</h3>
-<p>Identify:</p>
-<ul>
-<li>SNPs</li>
-<li>Insertions</li>
-<li>Deletions</li>
-<li>Structural variants</li>
-</ul>
-</section>
-<section id="comparative-annotations" class="level3" data-number="2.6.4">
-<h3 data-number="2.6.4" class="anchored" data-anchor-id="comparative-annotations"><span class="header-section-number">2.6.4</span> Comparative Annotations</h3>
-<p>Identify:</p>
-<ul>
-<li>Conserved regions</li>
-<li>Orthologous genes</li>
-<li>Evolutionary relationships</li>
-</ul>
-<p>Annotation transforms sequence into knowledge.</p>
-</section>
+<h2 data-number="2.6" class="anchored" data-anchor-id="genome-annotation-adding-meaning-to-sequence"><span class="header-section-number">2.6</span> Genome Annotation Adding Meaning to Sequence</h2>
+<p>A genome sequence by itself is simply a string of nucleotides. Without additional context, we cannot determine where genes are located, which regions are regulatory, which variants affect function, or which regions are evolutionarily conserved. This additional information is called genome annotation, which assigns biological meaning to genomic coordinates <span class="citation" data-cites="Wang2024">(<a href="01-introduction.html#ref-Wang2024" role="doc-biblioref"><span class="nocase">Wang</span> 2024</a>)</span>.</p>
+<p>Gene annotations identify structural features like gene boundaries, exons, introns, and untranslated regions. Regulatory annotations map promoters, enhancers, and transcription factor binding sites. Variation annotations identify single nucleotide polymorphisms, insertions, deletions, and broader structural variants. Finally, comparative annotations identify conserved regions and orthologous genes across species to establish evolutionary relationships. Through these processes, annotation transforms raw sequence into biological knowledge <span class="citation" data-cites="Prosdocimi2020">(<a href="01-introduction.html#ref-Prosdocimi2020" role="doc-biblioref"><span class="nocase">Prosdocimi et al.</span> 2020</a>)</span>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-annotation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-annotation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-annotation">flowchart TD
+    RAW["Raw DNA Sequence &lt;br/&gt;(e.g., ATCGGACTAA...)"] --&gt; ANN{"Genome Annotation &lt;br/&gt;(Assigning Meaning)"}
+    
+    ANN --&gt; G["🧬 Gene Annotations &lt;br/&gt;(Boundaries, Exons, Introns, UTRs)"]
+    ANN --&gt; R["⚙️ Regulatory Annotations &lt;br/&gt;(Promoters, Enhancers, TF Binding)"]
+    ANN --&gt; V["⚠️ Variation Annotations &lt;br/&gt;(SNPs, Insertions, Deletions, SVs)"]
+    ANN --&gt; C["🐒 Comparative Annotations &lt;br/&gt;(Conservation, Orthologous Genes)"]
+
+    classDef raw fill:#ffebee,stroke:#c62828,stroke-width:2px;
+    classDef process fill:#fff3e0,stroke:#b71c1c;
+    classDef output fill:#e8f5e9,stroke:#2e7d32;
+    
+    class RAW raw;
+    class ANN process;
+    class G,R,V,C output;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-annotation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Transforming raw DNA sequence into biological knowledge through various types of genome annotation.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="genome-browsers-as-knowledge-integration-platforms" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="genome-browsers-as-knowledge-integration-platforms"><span class="header-section-number">2.7</span> Genome Browsers as Knowledge Integration Platforms</h2>
-<p>A common misconception is that genome browsers are databases.</p>
-<p>They are not.</p>
-<p>A genome browser is better viewed as a visualization and integration platform.</p>
-<p>Genome browsers combine information from many databases and display it within a shared genomic coordinate system.</p>
-<p>Think of a genome browser as Google Maps for the genome.</p>
-<p>The reference genome serves as the map.</p>
-<p>Individual annotation tracks represent different layers of information.</p>
-<p>Examples include:</p>
-<ul>
-<li>Genes</li>
-<li>SNPs</li>
-<li>Disease associations</li>
-<li>Regulatory elements</li>
-<li>Expression data</li>
-<li>Conservation scores</li>
-<li>Scientific literature</li>
-</ul>
-<p>Researchers can view all these layers simultaneously and understand how different pieces of biological information relate to one another.</p>
-</section>
-<section id="the-ucsc-genome-browser" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="the-ucsc-genome-browser"><span class="header-section-number">2.8</span> The UCSC Genome Browser</h2>
-<p>One of the most widely used genome browsers is the UCSC Genome Browser.</p>
-<p>It provides access to thousands of annotation tracks organized into categories such as:</p>
-<section id="genes-and-gene-prediction" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="genes-and-gene-prediction"><span class="header-section-number">2.8.1</span> Genes and Gene Prediction</h3>
-<ul>
-<li>RefSeq genes</li>
-<li>UCSC genes</li>
-<li>Transcript evidence</li>
-</ul>
-</section>
-<section id="variation" class="level3" data-number="2.8.2">
-<h3 data-number="2.8.2" class="anchored" data-anchor-id="variation"><span class="header-section-number">2.8.2</span> Variation</h3>
-<ul>
-<li>SNPs</li>
-<li>Structural variants</li>
-<li>Population variation</li>
-</ul>
-</section>
-<section id="regulation" class="level3" data-number="2.8.3">
-<h3 data-number="2.8.3" class="anchored" data-anchor-id="regulation"><span class="header-section-number">2.8.3</span> Regulation</h3>
-<ul>
-<li>Promoters</li>
-<li>Enhancers</li>
-<li>Transcription factor binding sites</li>
-</ul>
-</section>
-<section id="comparative-genomics" class="level3" data-number="2.8.4">
-<h3 data-number="2.8.4" class="anchored" data-anchor-id="comparative-genomics"><span class="header-section-number">2.8.4</span> Comparative Genomics</h3>
-<ul>
-<li>Cross-species alignments</li>
-<li>Conservation scores</li>
-</ul>
-</section>
-<section id="phenotype-and-disease" class="level3" data-number="2.8.5">
-<h3 data-number="2.8.5" class="anchored" data-anchor-id="phenotype-and-disease"><span class="header-section-number">2.8.5</span> Phenotype and Disease</h3>
-<ul>
-<li>Disease associations</li>
-<li>Clinical variants</li>
-</ul>
-<p>Because these annotations share common genomic coordinates, relationships between different data types become immediately visible.</p>
+<p>A common misconception is that genome browsers are themselves databases. A genome browser is actually better viewed as a visualization and integration platform. Genome browsers combine information from many disparate databases and display it within a shared genomic coordinate system (<a href="#fig-genome-browser" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>).</p>
+<p>Think of a genome browser as a map for the genome. The reference genome serves as the underlying geography, while individual annotation tracks represent different layers of information. Researchers can simultaneously view genes, variants, disease associations, regulatory elements, expression data, and conservation scores to understand how different pieces of biological information relate to one another in physical space.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-genome-browser" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-genome-browser-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-genome-browser">flowchart BT
+    subgraph Browser ["Genome Browser View"]
+        direction BT
+        REF["📏 Reference Genome Coordinate System (The 'Map')"]
+        
+        T1["Gene &amp; Transcript Tracks (e.g., RefSeq)"]
+        T2["Variation Tracks (e.g., dbSNP, dbVar)"]
+        T3["Regulation Tracks (e.g., Promoters, Enhancers)"]
+        T4["Phenotype &amp; Disease Tracks (e.g., ClinVar)"]
+        T5["Comparative Genomics (e.g., Conservation Scores)"]
+
+        REF --- T1
+        T1 --- T2
+        T2 --- T3
+        T3 --- T4
+        T4 --- T5
+    end
+
+    classDef map fill:#e1bee7,stroke:#c2185b,stroke-width:2px,font-weight:bold;
+    classDef track fill:#fafafa,stroke:#9e9e9e,stroke-dasharray: 5 5;
+    
+    class REF map;
+    class T1,T2,T3,T4,T5 track;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genome-browser-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Genome browsers act as integration platforms, layering distinct annotation tracks over a shared genomic coordinate system.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>`</p>
+<section id="the-ucsc-genome-browser" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="the-ucsc-genome-browser"><span class="header-section-number">2.7.1</span> The UCSC Genome Browser</h3>
+<p>One of the most widely used platforms is the UCSC Genome Browser <span class="citation" data-cites="Nassar2022">(<a href="01-introduction.html#ref-Nassar2022" role="doc-biblioref"><span class="nocase">Nassar et al.</span> 2022</a>)</span>. It provides access to thousands of annotation tracks organized into logical categories. The genes and gene prediction tracks display RefSeq genes, UCSC curated genes, and transcript evidence. Variation tracks visualize single nucleotide polymorphisms, structural variants, and population frequencies. Regulation tracks highlight promoters, enhancers, and transcription factor binding sites. Comparative genomics tracks allow researchers to view cross-species alignments and conservation scores, while phenotype and disease tracks map known clinical variants. Because these annotations share common genomic coordinates, relationships between different data types become immediately visible to the researcher.</p>
 </section>
 </section>
-<section id="interpreting-genomic-context" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="interpreting-genomic-context"><span class="header-section-number">2.9</span> Interpreting Genomic Context</h2>
-<p>One of the most important skills in genomics is interpreting biological context.</p>
-<p>Consider a variant.</p>
-<blockquote class="blockquote">
-<p>Is it important?</p>
-</blockquote>
-<p>The answer depends on context.</p>
-<p>Questions might include:</p>
-<ul>
-<li>Does it occur inside a gene?</li>
-<li>Does it alter a protein sequence?</li>
-<li>Does it occur in a promoter?</li>
-<li>Is it evolutionarily conserved?</li>
-<li>Has it been linked to disease?</li>
-</ul>
-<p>Genome browsers enable researchers to gather evidence from multiple sources simultaneously.</p>
-<p>Biological interpretation emerges from integration.</p>
+<section id="interpreting-genomic-context" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="interpreting-genomic-context"><span class="header-section-number">2.8</span> Interpreting Genomic Context</h2>
+<p>One of the most important skills in genomics is interpreting biological context. When a researcher discovers a genetic variant, they must determine if it is biologically important. The answer depends heavily on its context.</p>
+<p>Critical questions include whether the variant occurs inside a coding gene, if it alters a protein sequence, if it falls within a regulatory promoter, whether the region is evolutionarily conserved, and whether it has been previously linked to disease. Genome browsers enable researchers to gather evidence from multiple sources simultaneously, demonstrating that true biological interpretation emerges from data integration.</p>
 </section>
-<section id="sequence-based-discovery-with-blat" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="sequence-based-discovery-with-blat"><span class="header-section-number">2.10</span> Sequence-Based Discovery with BLAT</h2>
-<p>Researchers often need to determine where a sequence originates within the genome.</p>
-<p>The UCSC Genome Browser provides a tool called <strong>BLAT (BLAST-Like Alignment Tool)</strong>.</p>
-<p>BLAT allows investigators to:</p>
-<ul>
-<li>Align DNA sequences</li>
-<li>Align RNA sequences</li>
-<li>Map protein sequences</li>
-<li>Identify homologous regions</li>
-</ul>
-<p>Because BLAT indexes the genome, it performs rapid searches when sequence similarity is high.</p>
-<p>Applications include:</p>
-<ul>
-<li>Gene identification</li>
-<li>Homolog discovery</li>
-<li>Verification of transcript sequences</li>
-<li>Comparative genomics</li>
-</ul>
-</section>
-<section id="case-studies-in-genome-exploration" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="case-studies-in-genome-exploration"><span class="header-section-number">2.11</span> Case Studies in Genome Exploration</h2>
-<section id="case-study-1-pten" class="level3" data-number="2.11.1">
-<h3 data-number="2.11.1" class="anchored" data-anchor-id="case-study-1-pten"><span class="header-section-number">2.11.1</span> Case Study 1: PTEN</h3>
-<p><strong>Question:</strong></p>
-<blockquote class="blockquote">
-<p>Does the mouse <em>PTEN</em> gene contain nonsynonymous SNPs?</p>
-</blockquote>
-<p>This investigation requires:</p>
-<ul>
-<li>Locating the gene</li>
-<li>Examining variation tracks</li>
-<li>Identifying coding variants</li>
-<li>Evaluating external functional evidence</li>
-</ul>
-</section>
-<section id="case-study-2-akt1" class="level3" data-number="2.11.2">
-<h3 data-number="2.11.2" class="anchored" data-anchor-id="case-study-2-akt1"><span class="header-section-number">2.11.2</span> Case Study 2: AKT1</h3>
-<p><strong>Question:</strong></p>
-<blockquote class="blockquote">
-<p>What is the human homolog of rat <em>AKT1</em>?</p>
-</blockquote>
-<p>This investigation demonstrates:</p>
-<ul>
-<li>Comparative genomics</li>
-<li>BLAT searches</li>
-<li>Sequence alignment</li>
-<li>Variant exploration</li>
-</ul>
-</section>
-<section id="case-study-3-kras" class="level3" data-number="2.11.3">
-<h3 data-number="2.11.3" class="anchored" data-anchor-id="case-study-3-kras"><span class="header-section-number">2.11.3</span> Case Study 3: KRAS</h3>
-<p><strong>Question:</strong></p>
-<blockquote class="blockquote">
-<p>What regulatory features exist near <em>KRAS</em>?</p>
-</blockquote>
-<p>This exercise examines:</p>
-<ul>
-<li>Promoters</li>
-<li>Transcription factor binding sites</li>
-<li>Structural variation</li>
-<li>Regulatory architecture</li>
-</ul>
-<p>These examples illustrate how genome browsers support real biological inquiry rather than simple data visualization.</p>
-</section>
-</section>
-<section id="chapter-summary" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">2.12</span> Chapter Summary</h2>
+<section id="chapter-summary" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">2.9</span> Chapter Summary</h2>
 <p>Modern biological research depends on our ability to transform large-scale data into meaningful knowledge.</p>
 <p>Two complementary paradigms guide this process:</p>
 <ol type="1">
@@ -598,8 +430,8 @@ Disease</code></pre>
 <p>Genome annotation adds meaning to raw DNA sequence by identifying genes, variants, regulatory elements, and evolutionary features. Genome browsers then integrate these diverse annotations into a unified visual framework, enabling researchers to investigate biological questions and generate new hypotheses.</p>
 <p>Ultimately, modern genomics is not simply about collecting data. It is about connecting information across multiple levels of biology to gain insight into how living systems function.</p>
 </section>
-<section id="key-terms" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">2.13</span> Key Terms</h2>
+<section id="key-terms" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">2.10</span> Key Terms</h2>
 <ul>
 <li>Genome</li>
 <li>Genomics</li>
@@ -621,6 +453,20 @@ Disease</code></pre>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Gill2014" class="csl-entry" role="listitem">
+Gill, Nivit, Shailendra Singh, and Trilok C Aseri. 2014. <span>“Computational Disease Gene Prioritization: An Appraisal.”</span> <em>Journal of Computational Biology</em> 21 (6): 456–65. <a href="https://doi.org/10.1089/cmb.2013.0158">https://doi.org/10.1089/cmb.2013.0158</a>.
+</div>
+<div id="ref-Nassar2022" class="csl-entry" role="listitem">
+<span class="nocase">Nassar, Luis R, Galt P Barber, Anna Benet-Pagès, et al.</span> 2022. <span>“The UCSC Genome Browser Database: 2022 Update.”</span> <em>Nucleic Acids Research</em> 50 (D1): D1115–22. <a href="https://doi.org/10.1093/nar/gkab959">https://doi.org/10.1093/nar/gkab959</a>.
+</div>
+<div id="ref-Prosdocimi2020" class="csl-entry" role="listitem">
+<span class="nocase">Prosdocimi, Francisco et al.</span> 2020. <span>“Review on the Computational Genome Annotation of Sequences Obtained by Next-Generation Sequencing.”</span> <em>Biology (Basel)</em> 9 (9): 295. <a href="https://doi.org/10.3390/biology9090295">https://doi.org/10.3390/biology9090295</a>.
+</div>
+<div id="ref-Wang2024" class="csl-entry" role="listitem">
+<span class="nocase">Wang, et al.</span> 2024. <span>“From Tradition to Innovation: Conventional and Deep Learning Frameworks in Genome Annotation.”</span> <em>Briefings in Bioinformatics</em> 25 (3): bbae138. <a href="https://doi.org/10.1093/bib/bbae138">https://doi.org/10.1093/bib/bbae138</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1031,8 +877,8 @@ Disease</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/04-sequencing.html" class="pagination-link" aria-label="&quot;High-Throughput Sequencing: Technologies and Applications in Modern Biology&quot;">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">“High-Throughput Sequencing: Technologies and Applications in Modern Biology”</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/04-sequencing.html" class="pagination-link" aria-label="The Sequencing Revolution">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

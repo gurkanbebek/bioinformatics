@@ -26,7 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,36 +94,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -157,13 +150,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-databases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">“High-Throughput Sequencing: Technologies and Applications in Modern Biology”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
   </div>
 </li>
     </ul>
@@ -178,31 +171,25 @@ window.Quarto = {
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</a></li>
   <li><a href="#why-study-systems" id="toc-why-study-systems" class="nav-link" data-scroll-target="#why-study-systems"><span class="header-section-number">1.2</span> Why Study Systems?</a></li>
-  <li><a href="#what-is-a-system" id="toc-what-is-a-system" class="nav-link" data-scroll-target="#what-is-a-system"><span class="header-section-number">1.3</span> What Is a System?</a>
-  <ul class="collapse">
-  <li><a href="#parts" id="toc-parts" class="nav-link" data-scroll-target="#parts"><span class="header-section-number">1.3.1</span> Parts</a></li>
-  <li><a href="#connections" id="toc-connections" class="nav-link" data-scroll-target="#connections"><span class="header-section-number">1.3.2</span> Connections</a></li>
-  <li><a href="#dynamics" id="toc-dynamics" class="nav-link" data-scroll-target="#dynamics"><span class="header-section-number">1.3.3</span> Dynamics</a></li>
-  </ul></li>
+  <li><a href="#what-is-a-system" id="toc-what-is-a-system" class="nav-link" data-scroll-target="#what-is-a-system"><span class="header-section-number">1.3</span> What Is a System?</a></li>
   <li><a href="#from-reductionism-to-systems-thinking" id="toc-from-reductionism-to-systems-thinking" class="nav-link" data-scroll-target="#from-reductionism-to-systems-thinking"><span class="header-section-number">1.4</span> From Reductionism to Systems Thinking</a></li>
-  <li><a href="#what-is-systems-biology" id="toc-what-is-systems-biology" class="nav-link" data-scroll-target="#what-is-systems-biology"><span class="header-section-number">1.5</span> What Is Systems Biology?</a></li>
-  <li><a href="#bioinformatics-and-big-data" id="toc-bioinformatics-and-big-data" class="nav-link" data-scroll-target="#bioinformatics-and-big-data"><span class="header-section-number">1.6</span> Bioinformatics and Big Data</a></li>
-  <li><a href="#a-data-centric-view-of-biology" id="toc-a-data-centric-view-of-biology" class="nav-link" data-scroll-target="#a-data-centric-view-of-biology"><span class="header-section-number">1.7</span> A Data-Centric View of Biology</a>
+  <li><a href="#bioinformatics-and-big-data" id="toc-bioinformatics-and-big-data" class="nav-link" data-scroll-target="#bioinformatics-and-big-data"><span class="header-section-number">1.5</span> Bioinformatics and Big Data</a></li>
+  <li><a href="#a-data-centric-view-of-biology" id="toc-a-data-centric-view-of-biology" class="nav-link" data-scroll-target="#a-data-centric-view-of-biology"><span class="header-section-number">1.6</span> A Data-Centric View of Biology</a>
   <ul class="collapse">
-  <li><a href="#biological-information-exists-in-layers" id="toc-biological-information-exists-in-layers" class="nav-link" data-scroll-target="#biological-information-exists-in-layers"><span class="header-section-number">1.7.1</span> Biological Information Exists in Layers</a></li>
-  <li><a href="#biological-data-as-an-information-network" id="toc-biological-data-as-an-information-network" class="nav-link" data-scroll-target="#biological-data-as-an-information-network"><span class="header-section-number">1.7.2</span> Biological Data as an Information Network</a></li>
-  <li><a href="#why-integration-matters" id="toc-why-integration-matters" class="nav-link" data-scroll-target="#why-integration-matters"><span class="header-section-number">1.7.3</span> Why Integration Matters</a></li>
-  <li><a href="#the-emergence-of-multi-omics-biology" id="toc-the-emergence-of-multi-omics-biology" class="nav-link" data-scroll-target="#the-emergence-of-multi-omics-biology"><span class="header-section-number">1.7.4</span> The Emergence of Multi-Omics Biology</a></li>
-  <li><a href="#from-data-to-knowledge" id="toc-from-data-to-knowledge" class="nav-link" data-scroll-target="#from-data-to-knowledge"><span class="header-section-number">1.7.5</span> From Data to Knowledge</a></li>
+  <li><a href="#biological-information-exists-in-layers" id="toc-biological-information-exists-in-layers" class="nav-link" data-scroll-target="#biological-information-exists-in-layers"><span class="header-section-number">1.6.1</span> Biological Information Exists in Layers</a></li>
+  <li><a href="#biological-data-as-an-information-network" id="toc-biological-data-as-an-information-network" class="nav-link" data-scroll-target="#biological-data-as-an-information-network"><span class="header-section-number">1.6.2</span> Biological Data as an Information Network</a></li>
+  <li><a href="#why-integration-matters" id="toc-why-integration-matters" class="nav-link" data-scroll-target="#why-integration-matters"><span class="header-section-number">1.6.3</span> Why Integration Matters</a></li>
+  <li><a href="#the-emergence-of-multi-omics-biology" id="toc-the-emergence-of-multi-omics-biology" class="nav-link" data-scroll-target="#the-emergence-of-multi-omics-biology"><span class="header-section-number">1.6.4</span> The Emergence of Multi-Omics Biology</a></li>
+  <li><a href="#from-data-to-knowledge" id="toc-from-data-to-knowledge" class="nav-link" data-scroll-target="#from-data-to-knowledge"><span class="header-section-number">1.6.5</span> From Data to Knowledge</a></li>
   </ul></li>
-  <li><a href="#the-central-dogma-and-biological-information" id="toc-the-central-dogma-and-biological-information" class="nav-link" data-scroll-target="#the-central-dogma-and-biological-information"><span class="header-section-number">1.8</span> The Central Dogma and Biological Information</a></li>
-  <li><a href="#why-models-matter" id="toc-why-models-matter" class="nav-link" data-scroll-target="#why-models-matter"><span class="header-section-number">1.9</span> Why Models Matter</a></li>
-  <li><a href="#network-models" id="toc-network-models" class="nav-link" data-scroll-target="#network-models"><span class="header-section-number">1.10</span> Network Models</a></li>
-  <li><a href="#systems-medicine" id="toc-systems-medicine" class="nav-link" data-scroll-target="#systems-medicine"><span class="header-section-number">1.11</span> Systems Medicine</a></li>
-  <li><a href="#toward-p4-medicine" id="toc-toward-p4-medicine" class="nav-link" data-scroll-target="#toward-p4-medicine"><span class="header-section-number">1.12</span> Toward P4 Medicine</a></li>
-  <li><a href="#case-study-diabetes-as-a-system" id="toc-case-study-diabetes-as-a-system" class="nav-link" data-scroll-target="#case-study-diabetes-as-a-system"><span class="header-section-number">1.13</span> Case Study: Diabetes as a System</a></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">1.14</span> Chapter Summary</a></li>
-  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">1.15</span> Key Terms</a></li>
+  <li><a href="#the-central-dogma-and-biological-information" id="toc-the-central-dogma-and-biological-information" class="nav-link" data-scroll-target="#the-central-dogma-and-biological-information"><span class="header-section-number">1.7</span> The Central Dogma and Biological Information</a></li>
+  <li><a href="#why-models-matter" id="toc-why-models-matter" class="nav-link" data-scroll-target="#why-models-matter"><span class="header-section-number">1.8</span> Why Models Matter</a></li>
+  <li><a href="#network-models" id="toc-network-models" class="nav-link" data-scroll-target="#network-models"><span class="header-section-number">1.9</span> Network Models</a></li>
+  <li><a href="#systems-medicine" id="toc-systems-medicine" class="nav-link" data-scroll-target="#systems-medicine"><span class="header-section-number">1.10</span> Systems Medicine</a></li>
+  <li><a href="#case-study-diabetes-as-a-system" id="toc-case-study-diabetes-as-a-system" class="nav-link" data-scroll-target="#case-study-diabetes-as-a-system"><span class="header-section-number">1.11</span> Case Study Diabetes as a System</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">1.12</span> Chapter Summary</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">1.13</span> Key Terms</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.14</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -239,308 +226,214 @@ window.Quarto = {
 <li>Explain the role of models in scientific discovery.</li>
 <li>Connect systems biology to modern medicine and biomedical research.</li>
 </ul>
-<hr>
 </section>
 <section id="why-study-systems" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="why-study-systems"><span class="header-section-number">1.2</span> Why Study Systems?</h2>
-<p>Every day we encounter complex biological and global challenges:</p>
-<ul>
-<li>Cancer</li>
-<li>Diabetes</li>
-<li>Obesity</li>
-<li>Climate change</li>
-<li>Food insecurity</li>
-<li>Emerging infectious diseases</li>
-</ul>
-<p>These problems cannot be understood by studying a single component in isolation.</p>
-<p>For example, diabetes involves complex interactions among:</p>
-<ul>
-<li>Genetics</li>
-<li>Diet</li>
-<li>Physical activity</li>
-<li>Hormones</li>
-<li>Organ systems</li>
-<li>Environmental influences</li>
-</ul>
-<p>Understanding such problems requires a broader perspective known as <strong>systems thinking</strong>.</p>
-<hr>
+<p>Every day we encounter complex biological and global challenges ranging from cancer, diabetes, and obesity to climate change, food insecurity, and emerging infectious diseases. These problems cannot be understood by studying a single component in isolation. Diabetes, for example, involves complex interactions among genetics, diet, physical activity, hormones, organ systems, and environmental influences. Understanding such deeply intertwined problems requires a broader perspective known as systems thinking.</p>
 </section>
 <section id="what-is-a-system" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="what-is-a-system"><span class="header-section-number">1.3</span> What Is a System?</h2>
-<p>A system is a collection of interacting components that work together to produce collective behavior. Systems can be found at every scale:</p>
-<ul>
-<li>Ecosystems</li>
-<li>Food webs</li>
-<li>Electrical circuits</li>
-<li>Hurricanes</li>
-<li>Human bodies</li>
-<li>Cells</li>
-<li>Biological pathways</li>
-</ul>
-<p>A useful way to recognize a system is to ask:</p>
-<blockquote class="blockquote">
-<p><em>Do the parts interact to create behavior that cannot be understood from the parts alone?</em></p>
-</blockquote>
-<p>Three primary characteristics define any system:</p>
-<section id="parts" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="parts"><span class="header-section-number">1.3.1</span> Parts</h3>
-<p>The physical components that make up the system.</p>
-<ul>
-<li><strong>Examples:</strong> Genes, proteins, cells, organs</li>
-</ul>
-</section>
-<section id="connections" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="connections"><span class="header-section-number">1.3.2</span> Connections</h3>
-<p>The functional and structural relationships between components.</p>
-<ul>
-<li><strong>Examples:</strong> Protein interactions, regulatory relationships, metabolic reactions</li>
-</ul>
-</section>
-<section id="dynamics" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="dynamics"><span class="header-section-number">1.3.3</span> Dynamics</h3>
-<p>How the system and its state change over time.</p>
-<ul>
-<li><strong>Examples:</strong> Disease progression, cell differentiation, drug responses</li>
-</ul>
-<pre class="text"><code>System = Parts + Connections + Dynamics
-</code></pre>
-<hr>
-</section>
+<p>A system is a collection of interacting components that work together to produce collective behavior. Systems can be found at every scale, including ecosystems, food webs, electrical circuits, hurricanes, human bodies, cells, and biological pathways. A useful way to recognize a system is to ask whether the parts interact to create behavior that cannot be understood from looking at the parts alone.</p>
+<p>Three primary characteristics define any system. First are the parts, which are the physical components that make up the system, such as genes, proteins, cells, or organs (<a href="#fig-system-definition" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>). Second are the connections, representing the functional and structural relationships between these components, such as protein interactions, regulatory relationships, or metabolic reactions. Third is dynamics, describing how the system and its state change over time during processes like disease progression, cell differentiation, or drug responses. Ultimately, a system is the sum of its parts, connections, and dynamics.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-system-definition" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-system-definition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-system-definition">flowchart TD
+    P["🧩 Parts &lt;br&gt;(Genes, Proteins, Cells)"]
+    C["🔗 Connections &lt;br&gt;(Interactions, Pathways)"]
+    D["⏱️ Dynamics &lt;br&gt;(Changes over time)"]
+    
+    P --&gt; SYS
+    C --&gt; SYS
+    D --&gt; SYS
+    
+    SYS(("✨ Biological System &lt;br&gt;(Emergent Behavior)"))
+
+    classDef primary fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef result fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px,font-weight:bold;
+    
+    class P,C,D primary;
+    class SYS result;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-definition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: The three defining characteristics of a biological system.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="from-reductionism-to-systems-thinking" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="from-reductionism-to-systems-thinking"><span class="header-section-number">1.4</span> From Reductionism to Systems Thinking</h2>
-<p>For much of modern biology, researchers focused on individual components using a <strong>reductionist approach</strong>. Traditional research questions included:</p>
-<ul>
-<li><em>What does this gene do?</em></li>
-<li><em>What is the function of this protein?</em></li>
-<li><em>Which single mutation causes this disease?</em></li>
-</ul>
-<p>While reductionism has generated enormous biological knowledge, many critical biological properties emerge only from interactions among thousands of components.</p>
-<p>Systems biology asks a fundamental question:</p>
-<blockquote class="blockquote">
-<p><em>How do interacting biological components collectively generate function and disease?</em></p>
-</blockquote>
-<p>Rather than studying isolated pieces, systems biology investigates entire networks of interaction.</p>
-<hr>
+<p>For much of modern biology, researchers focused on individual components using a reductionist approach. Traditional research questions typically asked what a specific gene does, what function a single protein serves, or which single mutation causes a disease. While reductionism has generated enormous biological knowledge, many critical biological properties emerge only from interactions among thousands of components.</p>
+<p>Systems biology asks a fundamental question regarding how interacting biological components collectively generate function and disease. Rather than studying isolated pieces, systems biology investigates entire networks of interaction. One of the most widely cited definitions describes systems biology as the study of the mechanisms underlying complex biological processes as integrated systems of many interacting components. “Systems biology generally involves an iterative cycle of four core activities (<a href="#fig-systems-cycle" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>). It begins with collecting large-scale biological data, moves to developing mathematical or computational models, simulates system behavior under various conditions, and concludes by comparing predictions against experimental observations <span class="citation" data-cites="Hood2004">(<a href="01-introduction.html#ref-Hood2004" role="doc-biblioref">Hood et al. 2004</a>)</span>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-systems-cycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-systems-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-systems-cycle">flowchart LR
+    A["1. Collect Data &lt;br&gt;(High-throughput omics)"] --&gt; B["2. Develop Models &lt;br&gt;(Computational/Mathematical)"]
+    B --&gt; C["3. Simulate Behavior &lt;br&gt;(Test conditions)"]
+    C --&gt; D["4. Compare Predictions &lt;br&gt;(Validate with experiments)"]
+    
+    %% Create the iterative loop back
+    D -.-&gt;|Refine Models &amp; Guide New Experiments| A
+
+    classDef step fill:#fff3e0,stroke:#e65100,stroke-width:2px;
+    class A,B,C,D step;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-systems-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: The iterative, four-step cycle of systems biology.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="what-is-systems-biology" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="what-is-systems-biology"><span class="header-section-number">1.5</span> What Is Systems Biology?</h2>
-<p>One of the most widely cited definitions was provided by Leroy Hood:</p>
-<blockquote class="blockquote">
-<p><em>“Systems biology is the study of the mechanisms underlying complex biological processes as integrated systems of many interacting components.”</em></p>
-</blockquote>
-<p>Systems biology generally involves an iterative cycle of four core activities:</p>
-<ol type="1">
-<li><strong>Collecting</strong> large-scale biological data.</li>
-<li><strong>Developing</strong> mathematical or computational models.</li>
-<li><strong>Simulating</strong> system behavior under various conditions.</li>
-<li><strong>Comparing</strong> predictions against experimental observations.</li>
-</ol>
-<hr>
+<section id="bioinformatics-and-big-data" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="bioinformatics-and-big-data"><span class="header-section-number">1.5</span> Bioinformatics and Big Data</h2>
+<p>Modern biology has transformed into a quantitative, data-intensive science. High-throughput technologies generate vast datasets across DNA sequencing, RNA sequencing, proteomics, metabolomics, and single-cell analysis. This technological surge creates a fundamental challenge regarding how we transform raw biological data into biological knowledge. The discipline that develops computational tools to address this challenge is bioinformatics, an interdisciplinary field combining biology, statistics, computer science, and mathematics.</p>
 </section>
-<section id="bioinformatics-and-big-data" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="bioinformatics-and-big-data"><span class="header-section-number">1.6</span> Bioinformatics and Big Data</h2>
-<p>Modern biology has transformed into a quantitative, data-intensive science. High-throughput technologies generate vast datasets:</p>
-<ul>
-<li>DNA sequencing</li>
-<li>RNA sequencing (Transcriptomics)</li>
-<li>Proteomics</li>
-<li>Metabolomics</li>
-<li>Single-cell analysis</li>
-</ul>
-<p>This technological surge creates a fundamental challenge: <strong>How do we transform raw biological data into biological knowledge?</strong></p>
-<p>The discipline that develops computational tools to address this challenge is <strong>bioinformatics</strong>, an interdisciplinary field combining:</p>
-<ul>
-<li>Biology</li>
-<li>Statistics</li>
-<li>Computer science</li>
-<li>Mathematics</li>
-</ul>
-<hr>
-</section>
-<section id="a-data-centric-view-of-biology" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="a-data-centric-view-of-biology"><span class="header-section-number">1.7</span> A Data-Centric View of Biology</h2>
+<section id="a-data-centric-view-of-biology" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="a-data-centric-view-of-biology"><span class="header-section-number">1.6</span> A Data-Centric View of Biology</h2>
 <p>For much of the twentieth century, biology was largely hypothesis-driven and reductionist. Researchers typically focused on one gene, one protein, or one pathway at a time. Experiments were designed to isolate variables and determine causal relationships between biological components.</p>
-<p>While this approach remains essential, modern biology increasingly operates within a fundamentally different paradigm: a data-centric view of biological discovery.</p>
-<p>A data-centric view of biology focuses on organizing, integrating, analyzing, and interpreting large-scale biological datasets. Rather than beginning with a single molecule or pathway, researchers frequently begin with millions of measurements generated from high-throughput technologies.</p>
-<p>Examples include:</p>
+<p>While this approach remains essential, modern biology increasingly operates within a data-centric view of biological discovery. This view focuses on organizing, integrating, analyzing, and interpreting large-scale biological datasets. Rather than beginning with a single molecule or pathway, researchers frequently begin with millions of measurements generated from high-throughput technologies, such as whole genome sequencing, clinical health records, and proteomics. These technologies generate enormous quantities of information that capture different aspects of biological systems.</p>
+<p>Researchers increasingly ask what patterns emerge when we examine thousands of genes simultaneously, or how multiple layers of biological information can be integrated to explain disease. This shift has transformed biology from an information-poor science into an information-rich science.</p>
+<section id="biological-information-exists-in-layers" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="biological-information-exists-in-layers"><span class="header-section-number">1.6.1</span> Biological Information Exists in Layers</h3>
+<p>Modern biological systems generate information at multiple interconnected levels (<a href="#fig-omics-layers" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). The flow of information typically moves from the genome to the transcriptome, to the proteome, down to the metabolome, which then dictates the phenotype and ultimately the clinical outcome. Each layer provides a unique view of the system. The genome describes what is possible. The transcriptome describes what is being expressed. The proteome describes what biological machinery is present. The metabolome reflects ongoing cellular activity. Clinical phenotypes represent the observable consequences of these molecular processes. No single layer provides a complete picture; biological understanding emerges through the integration of multiple layers of information.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-omics-layers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-omics-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-omics-layers">flowchart TD
+    G["Genome &lt;br&gt;(What is possible)"] --&gt; T["Transcriptome &lt;br&gt;(What is being expressed)"]
+    T --&gt; P["Proteome &lt;br&gt;(Biological machinery present)"]
+    P --&gt; M["Metabolome &lt;br&gt;(Ongoing cellular activity)"]
+    M --&gt; PH["Phenotype &lt;br&gt;(Observable consequences)"]
+    PH --&gt; C["Clinical Outcome / Disease"]
+
+    classDef layer fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
+    class G,T,P,M,PH,C layer;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-omics-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: The hierarchy of biological information, from genome to clinical outcome.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="biological-data-as-an-information-network" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="biological-data-as-an-information-network"><span class="header-section-number">1.6.2</span> Biological Data as an Information Network</h3>
+<p>An important consequence of this perspective is that biology increasingly resembles an information science. Genes connect to transcripts, which connect to proteins. Proteins participate in pathways, pathways influence phenotypes, and phenotypes contribute to disease. As a result, biological knowledge can be represented as interconnected networks of information. The challenge facing modern biologists is no longer generating information, but rather connecting these pieces into coherent biological explanations.</p>
+</section>
+<section id="why-integration-matters" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="why-integration-matters"><span class="header-section-number">1.6.3</span> Why Integration Matters</h3>
+<p>Consider cancer. A genomic analysis may identify mutations, while a transcriptomic analysis may reveal changes in gene expression. A proteomic experiment might highlight dysregulated signaling pathways, and clinical data may indicate poor patient survival. Each dataset provides only a partial explanation. Only when these different data types are integrated can researchers begin to understand disease mechanisms and identify potential therapeutic targets <span class="citation" data-cites="Misra2025">(<a href="01-introduction.html#ref-Misra2025" role="doc-biblioref"><span class="nocase">Misra et al.</span> 2025</a>)</span>. This concept of integrating multiple sources of evidence is a recurring theme throughout systems biology and bioinformatics. Modern biological discovery depends not only on collecting data but also on connecting data.</p>
+</section>
+<section id="the-emergence-of-multi-omics-biology" class="level3" data-number="1.6.4">
+<h3 data-number="1.6.4" class="anchored" data-anchor-id="the-emergence-of-multi-omics-biology"><span class="header-section-number">1.6.4</span> The Emergence of Multi-Omics Biology</h3>
+<p>The term omics refers to comprehensive measurements within a biological layer, such as genomics, transcriptomics, proteomics, and metabolomics. Historically these fields developed independently. Today, researchers increasingly combine these measurements into integrated analyses known as multi-omics studies <span class="citation" data-cites="Kim2020">(<a href="01-introduction.html#ref-Kim2020" role="doc-biblioref"><span class="nocase">Kim et al.</span> 2020</a>)</span>. The goal is not simply to generate more data, but to construct a more complete model of living systems. This transition from isolated measurements to integrated biological knowledge represents one of the defining features of modern systems biology.</p>
+</section>
+<section id="from-data-to-knowledge" class="level3" data-number="1.6.5">
+<h3 data-number="1.6.5" class="anchored" data-anchor-id="from-data-to-knowledge"><span class="header-section-number">1.6.5</span> From Data to Knowledge</h3>
+<p>A common misconception is that more data automatically leads to greater understanding. In reality, raw measurements are merely data. When data are organized and interpreted, they become information. When information is connected to biological mechanisms, it becomes knowledge. When that knowledge explains a disease process or identifies an intervention, it becomes insight. The central mission is to facilitate this transformation from raw data to actionable insight, as illustrated in <a href="#fig-data-insight" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-data-insight" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-insight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-data-insight">flowchart LR
+    D["📊 Data &lt;br&gt;(Raw measurements)"] --&gt; I["📋 Information &lt;br&gt;(Organized &amp; interpreted)"]
+    I --&gt; K["🧠 Knowledge &lt;br&gt;(Connected to mechanisms)"]
+    K --&gt; IN["💡 Insight &lt;br&gt;(Explains disease/intervention)"]
+
+    classDef flow fill:#e8eaf6,stroke:#4a148c,stroke-width:1px;
+    classDef final fill:#fff9c4,stroke:#f57f17,stroke-width:3px,font-weight:bold;
+    
+    class D,I,K flow;
+    class IN final;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-insight-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: The transformation hierarchy from raw measurements to biological insight.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-central-dogma-and-biological-information" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="the-central-dogma-and-biological-information"><span class="header-section-number">1.7</span> The Central Dogma and Biological Information</h2>
+<p>Biological systems process information across multiple molecular layers. The traditional framework is represented by the central dogma where DNA becomes RNA, which becomes Protein. Modern systems biology extends this linear framework into an integrated biological hierarchy spanning from the genome to the transcriptome, proteome, metabolome, and finally the phenotype. Each layer contributes unique and complementary information regarding the physiological state of an organism.</p>
+</section>
+<section id="why-models-matter" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="why-models-matter"><span class="header-section-number">1.8</span> Why Models Matter</h2>
+<p>To understand complex systems, scientists build models. These are simplified representations of reality designed to make complex phenomena tractable. Models allow us to organize complex knowledge, visualize system relationships, generate testable hypotheses, and predict unobserved outcomes. As statistician George Box famously noted, all models are wrong, but some are useful <span class="citation" data-cites="Box1979">(<a href="01-introduction.html#ref-Box1979" role="doc-biblioref">Box 1979</a>)</span>. Models are not meant to be perfect replicas of reality; they are operational tools that help us make better decisions and understand underlying mechanisms.</p>
+</section>
+<section id="network-models" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="network-models"><span class="header-section-number">1.9</span> Network Models</h2>
+<p>Many biological systems are naturally represented as networks or graphs. These models consist of nodes, which are the individual components of the system such as genes, proteins, or metabolites. They also consist of edges, which represent the interactions or connections between components, like transcriptional regulation or physical binding. Networks provide a visual and mathematical framework for studying biological complexity by prioritizing connections over isolated parts.</p>
+</section>
+<section id="systems-medicine" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="systems-medicine"><span class="header-section-number">1.10</span> Systems Medicine</h2>
+<p>The systems perspective extends directly into modern clinical practice. Disease can be viewed as a perturbation of normal biological networks. Pathologies arise when system interactions are disrupted by genetic variations, environmental stressors, or pathogens. Network perturbations are central to cancer, neurodegenerative diseases, autoimmune disorders, and metabolic syndromes.</p>
+<p>Systems medicine integrates genomic, transcriptomic, proteomic, metabolomic, and clinical data to pinpoint network disruptions and identify novel therapeutic targets. Systems medicine serves as the foundation for a proactive healthcare paradigm known as P4 Medicine (<a href="#fig-p4-medicine" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>) <span class="citation" data-cites="Hood2012">(<a href="01-introduction.html#ref-Hood2012" role="doc-biblioref">Hood and Flores 2012</a>)</span>. The four pillars of P4 Medicine are:</p>
 <ul>
-<li>Whole genome sequencing</li>
-<li>RNA sequencing</li>
-<li>Proteomics</li>
-<li>Metabolomics</li>
-<li>Single-cell sequencing</li>
-<li>Clinical and electronic health record data</li>
+<li>Predictive: Forecast disease risk before clinical symptoms appear.</li>
+<li>Preventive: Intervene early in disease development to lessen impact.</li>
+<li>Personalized: Tailor therapeutic strategies to an individual’s distinct biological profile.</li>
+<li>Participatory: Empower patients to take an active role in managing their own health data.</li>
 </ul>
-<p>These technologies generate enormous quantities of information that capture different aspects of biological systems.</p>
-<p>Rather than asking:</p>
-<blockquote class="blockquote">
-<p>What does this particular gene do?</p>
-</blockquote>
-<p>Researchers increasingly ask:</p>
-<blockquote class="blockquote">
-<p>What patterns emerge when we examine thousands of genes simultaneously?</p>
-</blockquote>
-<p>or</p>
-<blockquote class="blockquote">
-<p>How can multiple layers of biological information be integrated to explain disease?</p>
-</blockquote>
-<p>This shift has transformed biology from an information-poor science into an information-rich science.</p>
-<section id="biological-information-exists-in-layers" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="biological-information-exists-in-layers"><span class="header-section-number">1.7.1</span> Biological Information Exists in Layers</h3>
-<p>Modern biological systems generate information at multiple levels.</p>
-<pre class="text"><code>Genome
-↓
-Transcriptome
-↓
-Proteome
-↓
-Metabolome
-↓
-Phenotype
-↓
-Clinical Outcome</code></pre>
-<p>Each layer provides a unique view of the system.</p>
-<p>The genome describes what is possible.</p>
-<p>The transcriptome describes what is being expressed.</p>
-<p>The proteome describes what biological machinery is present.</p>
-<p>The metabolome reflects ongoing cellular activity.</p>
-<p>Clinical phenotypes represent the observable consequences of these molecular processes.</p>
-<p>No single layer provides a complete picture.</p>
-<p>Instead, biological understanding emerges through integration of multiple layers of information.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-p4-medicine" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p4-medicine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-p4-medicine">flowchart TD
+    SM("Systems Medicine &lt;br&gt;(Network Disruptions)") --&gt; P4{"P4 Medicine Paradigm"}
+    
+    P4 --&gt; P1["🔮 Predictive &lt;br&gt;Forecast disease risk"]
+    P4 --&gt; P2["🛡️ Preventive &lt;br&gt;Intervene early"]
+    P4 --&gt; P3["🎯 Personalized &lt;br&gt;Tailor strategies to biology"]
+    P4 --&gt; P4B["🤝 Participatory &lt;br&gt;Empower patients"]
+
+    classDef core fill:#e0f7fa,stroke:#006064,stroke-width:2px,font-weight:bold;
+    classDef pillar fill:#ffffff,stroke:#00acc1,stroke-width:1px;
+    
+    class SM,P4 core;
+    class P1,P2,P3,P4B pillar;
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p4-medicine-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: The four pillars of P4 Medicine.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="biological-data-as-an-information-network" class="level3" data-number="1.7.2">
-<h3 data-number="1.7.2" class="anchored" data-anchor-id="biological-data-as-an-information-network"><span class="header-section-number">1.7.2</span> Biological Data as an Information Network</h3>
-<p>An important consequence of this perspective is that biology increasingly resembles an information science.</p>
-<p>Genes are connected to transcripts.</p>
-<p>Transcripts are connected to proteins.</p>
-<p>Proteins participate in pathways.</p>
-<p>Pathways influence phenotypes.</p>
-<p>Phenotypes contribute to disease.</p>
-<p>As a result, biological knowledge can be represented as interconnected networks of information.</p>
-<pre class="text"><code>Gene
-  ↓
-Transcript
-  ↓
-Protein
-  ↓
-Pathway
-  ↓
-Phenotype
-  ↓
-Disease</code></pre>
-<p>The challenge facing modern biologists is no longer generating information. The challenge is connecting these pieces into coherent biological explanations.</p>
-</section>
-<section id="why-integration-matters" class="level3" data-number="1.7.3">
-<h3 data-number="1.7.3" class="anchored" data-anchor-id="why-integration-matters"><span class="header-section-number">1.7.3</span> Why Integration Matters</h3>
-<p>Consider cancer.</p>
-<p>A genomic analysis may identify mutations.</p>
-<p>A transcriptomic analysis may reveal changes in gene expression.</p>
-<p>A proteomic experiment might highlight dysregulated signaling pathways.</p>
-<p>Clinical data may indicate poor patient survival.</p>
-<p>Each dataset provides only a partial explanation.</p>
-<p>Only when these different data types are integrated can researchers begin to understand disease mechanisms and identify potential therapeutic targets.</p>
-<p>This concept of integrating multiple sources of evidence is a recurring theme throughout systems biology and bioinformatics.</p>
-<p>Modern biological discovery depends not only on collecting data but also on connecting data.</p>
-</section>
-<section id="the-emergence-of-multi-omics-biology" class="level3" data-number="1.7.4">
-<h3 data-number="1.7.4" class="anchored" data-anchor-id="the-emergence-of-multi-omics-biology"><span class="header-section-number">1.7.4</span> The Emergence of Multi-Omics Biology</h3>
-<p>The term “omics” refers to comprehensive measurements within a biological layer.</p>
-<p>Examples include:</p>
-<ul>
-<li>Genomics</li>
-<li>Transcriptomics</li>
-<li>Proteomics</li>
-<li>Metabolomics</li>
-</ul>
-<p>Historically these fields developed independently.</p>
-<p>Today, researchers increasingly combine these measurements into integrated analyses known as multi-omics studies.</p>
-<p>The goal is not simply to generate more data.</p>
-<p>The goal is to construct a more complete model of living systems.</p>
-<p>This transition from isolated measurements to integrated biological knowledge represents one of the defining features of modern systems biology.</p>
-</section>
-<section id="from-data-to-knowledge" class="level3" data-number="1.7.5">
-<h3 data-number="1.7.5" class="anchored" data-anchor-id="from-data-to-knowledge"><span class="header-section-number">1.7.5</span> From Data to Knowledge</h3>
-<p>A common misconception is that more data automatically leads to greater understanding.</p>
-<p>In reality:</p>
-<pre class="text"><code>Data
-↓
-Information
-↓
-Knowledge
-↓
-Insight</code></pre>
-<p>Raw measurements are merely data.</p>
-<p>When data are organized and interpreted, they become information.</p>
-<p>When information is connected to biological mechanisms, it becomes knowledge.</p>
-<p>When that knowledge explains a disease process or identifies an intervention, it becomes insight.</p>
-<p>The central mission of bioinformatics and systems biology is to facilitate this transformation from data to insight.</p>
-<hr>
-</section>
-</section>
-<section id="the-central-dogma-and-biological-information" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="the-central-dogma-and-biological-information"><span class="header-section-number">1.8</span> The Central Dogma and Biological Information</h2>
-<p>Biological systems process information across multiple molecular layers. The traditional framework is represented by the central dogma:</p>
-<p><span class="math display">\[\text{DNA} \longrightarrow \text{RNA} \longrightarrow \text{Protein}\]</span></p>
-<p>Modern systems biology extends this linear framework into a integrated biological hierarchy:</p>
-<p><span class="math display">\[\text{Genome} \longrightarrow \text{Transcriptome} \longrightarrow \text{Proteome} \longrightarrow \text{Metabolome} \longrightarrow \text{Phenotype}\]</span></p>
-<p>Each layer contributes unique, complementary information regarding the physiological state of an organism.</p>
-<hr>
-</section>
-<section id="why-models-matter" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="why-models-matter"><span class="header-section-number">1.9</span> Why Models Matter</h2>
-<p>To understand complex systems, scientists build <strong>models</strong>—simplified representations of reality designed to make complex phenomena tractable. Models allow us to:</p>
-<ul>
-<li>Organize complex knowledge</li>
-<li>Visualize system relationships</li>
-<li>Generate testable hypotheses</li>
-<li>Predict unobserved outcomes</li>
-</ul>
-<p>As statistician George Box famously noted:</p>
-<blockquote class="blockquote">
-<p><em>“All models are wrong, but some are useful.”</em></p>
-</blockquote>
-<p>Models are not meant to be perfect replicas of reality; they are operational tools that help us make better decisions and understand underlying mechanisms.</p>
-<hr>
-</section>
-<section id="network-models" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="network-models"><span class="header-section-number">1.10</span> Network Models</h2>
-<p>Many biological systems are naturally represented as <strong>networks</strong> (or graphs):</p>
-<ul>
-<li><p><strong>Nodes:</strong> The individual components of the system.</p></li>
-<li><p><em>Examples:</em> Genes, proteins, metabolites, cell types</p></li>
-<li><p><strong>Edges:</strong> The interactions or connections between components.</p></li>
-<li><p><em>Examples:</em> Transcriptional regulation, enzymatic activation, physical binding, inhibition</p></li>
-</ul>
-<p>Networks provide a visual and mathematical framework for studying biological complexity by prioritizing connections over isolated parts.</p>
-<hr>
-</section>
-<section id="systems-medicine" class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" data-anchor-id="systems-medicine"><span class="header-section-number">1.11</span> Systems Medicine</h2>
-<p>The systems perspective extends directly into modern clinical practice. Disease can be viewed as a perturbation of normal biological networks. Pathologies arise when system interactions are disrupted by genetic variations, environmental stressors, or pathogens.</p>
-<p>Network perturbations are central to:</p>
-<ul>
-<li>Cancer</li>
-<li>Neurodegenerative diseases</li>
-<li>Autoimmune disorders</li>
-<li>Metabolic syndromes</li>
-</ul>
-<p><strong>Systems Medicine</strong> integrates genomic, transcriptomic, proteomic, metabolomic, and clinical data to pinpoint network disruptions and identify novel therapeutic targets.</p>
-<hr>
-</section>
-<section id="toward-p4-medicine" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="toward-p4-medicine"><span class="header-section-number">1.12</span> Toward P4 Medicine</h2>
-<p>Systems medicine serves as the foundation for a proactive healthcare paradigm known as <strong>P4 Medicine</strong>:</p>
-<ul>
-<li><strong>Predictive:</strong> Forecast disease risk before clinical symptoms appear.</li>
-<li><strong>Preventive:</strong> Intervene early in disease development to lessen impact.</li>
-<li><strong>Personalized:</strong> Tailor therapeutic strategies to an individual’s distinct biological profile.</li>
-<li><strong>Participatory:</strong> Empower patients to take an active role in managing their own health data.</li>
-</ul>
-<hr>
-</section>
-<section id="case-study-diabetes-as-a-system" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="case-study-diabetes-as-a-system"><span class="header-section-number">1.13</span> Case Study: Diabetes as a System</h2>
+<section id="case-study-diabetes-as-a-system" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="case-study-diabetes-as-a-system"><span class="header-section-number">1.11</span> Case Study Diabetes as a System</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -556,45 +449,164 @@ Insight</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Focus</strong></td>
-<td>Isolated mechanisms (e.g., insulin production alone)</td>
+<td>Focus</td>
+<td>Isolated mechanisms like insulin production alone</td>
 <td>Interconnected network behavior</td>
 </tr>
 <tr class="even">
-<td><strong>Key Variables</strong></td>
-<td>Blood glucose, individual hormones</td>
+<td>Key Variables</td>
+<td>Blood glucose and individual hormones</td>
 <td>Interactions among insulin, diet, exercise, genetics, vascular health, and kidney function</td>
 </tr>
 <tr class="odd">
-<td><strong>View of Pathology</strong></td>
+<td>View of Pathology</td>
 <td>Single organ or molecular failure</td>
 <td>Multi-system perturbation emerging from multi-component dynamics</td>
 </tr>
 </tbody>
 </table>
-<hr>
 </section>
-<section id="chapter-summary" class="level2" data-number="1.14">
-<h2 data-number="1.14" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">1.14</span> Chapter Summary</h2>
+<section id="chapter-summary" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">1.12</span> Chapter Summary</h2>
+<pre class="text"><code>System = Parts + Connections + Dynamics
+</code></pre>
 <p>Biological systems consist of interacting parts, connections, and dynamics that give rise to emergent behaviors. Understanding these systems requires moving beyond reductionist methods toward integrated systems thinking. Systems biology combines high-throughput data collection with computational models to explain how systemic interactions drive health and disease. Modern bioinformatics supplies the analytical toolkit required to interpret these vast datasets, while systems medicine translates these insights into proactive, personalized healthcare.</p>
-<hr>
 </section>
-<section id="key-terms" class="level2" data-number="1.15">
-<h2 data-number="1.15" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">1.15</span> Key Terms</h2>
+<section id="key-terms" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">1.13</span> Key Terms</h2>
 <ul>
-<li><strong>System:</strong> A set of connected items or devices operating together.</li>
-<li><strong>Systems Thinking:</strong> An approach to integration that views components as part of an overall system.</li>
-<li><strong>Systems Biology:</strong> Computational and mathematical analysis of complex biological systems.</li>
-<li><strong>Bioinformatics:</strong> The application of computer science and statistics to biological data.</li>
-<li><strong>Big Data:</strong> Large, complex datasets requiring computational analysis.</li>
-<li><strong>Model:</strong> A mathematical or conceptual representation of a real-world system.</li>
-<li><strong>Network:</strong> A structural model composed of interconnected nodes and edges.</li>
-<li><strong>Node:</strong> An individual entity or variable within a network model.</li>
-<li><strong>Edge:</strong> A link or interaction between two nodes in a network.</li>
-<li><strong>Genomics / Transcriptomics / Proteomics / Metabolomics:</strong> Comprehensive studies of DNA, RNA, proteins, and metabolites, respectively.</li>
-<li><strong>Systems Medicine:</strong> Application of systems biology to understanding and treating human disease.</li>
-<li><strong>P4 Medicine:</strong> Healthcare that is Predictive, Preventive, Personalized, and Participatory.</li>
+<li>System: A set of connected items or devices operating together.</li>
+<li>Systems Thinking: An approach to integration that views components as part of an overall system.</li>
+<li>Systems Biology: Computational and mathematical analysis of complex biological systems.</li>
+<li>Bioinformatics: The application of computer science and statistics to biological data.</li>
+<li>Big Data: Large, complex datasets requiring computational analysis.</li>
+<li>Model: A mathematical or conceptual representation of a real-world system.</li>
+<li>Network: A structural model composed of interconnected nodes and edges.</li>
+<li>Node: An individual entity or variable within a network model.</li>
+<li>Edge: A link or interaction between two nodes in a network.</li>
+<li>Genomics, Transcriptomics, Proteomics, Metabolomics: Comprehensive studies of DNA, RNA, proteins, and metabolites respectively.</li>
+<li>Systems Medicine: Application of systems biology to understanding and treating human disease.</li>
+<li>P4 Medicine: Healthcare that is Predictive, Preventive, Personalized, and Participatory.</li>
 </ul>
+</section>
+<section id="references" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="references"><span class="header-section-number">1.14</span> References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Bentley2008" class="csl-entry" role="listitem">
+<span class="nocase">Bentley, David R., Shankar Balasubramanian, Harold
+P. Swerdlow, et al.</span> 2008. <span>“Accurate Whole Human Genome
+Sequencing Using Reversible Terminator Chemistry.”</span>
+<em>Nature</em> 456 (7218): 53–59. <a href="https://doi.org/10.1038/nature07517">https://doi.org/10.1038/nature07517</a>.
+</div>
+<div id="ref-Box1979" class="csl-entry" role="listitem">
+Box, George E. P. 1979. <span>“Robustness in the Strategy of Scientific
+Model Building.”</span> In <em>Robustness in Statistics</em>. Academic
+Press.
+</div>
+<div id="ref-Eid2009" class="csl-entry" role="listitem">
+<span class="nocase">Eid, John, Adrian Fehr, Jeremy Gray, et al.</span>
+2009. <span>“Real-Time DNA Sequencing from Single Polymerase
+Molecules.”</span> <em>Science</em> 323 (5910): 133–38. <a href="https://doi.org/10.1126/science.1162986">https://doi.org/10.1126/science.1162986</a>.
+</div>
+<div id="ref-Gill2014" class="csl-entry" role="listitem">
+Gill, Nivit, Shailendra Singh, and Trilok C Aseri. 2014.
+<span>“Computational Disease Gene Prioritization: An Appraisal.”</span>
+<em>Journal of Computational Biology</em> 21 (6): 456–65. <a href="https://doi.org/10.1089/cmb.2013.0158">https://doi.org/10.1089/cmb.2013.0158</a>.
+</div>
+<div id="ref-Hood2012" class="csl-entry" role="listitem">
+Hood, Leroy, and Mauricio Flores. 2012. <span>“A Personal View on
+Systems Medicine and the Emergence of Proactive P4 Medicine: Predictive,
+Preventive, Personalized and Participatory.”</span> <em>New
+Biotechnology</em> 29 (6): 613–24. <a href="https://doi.org/10.1016/j.nbt.2012.03.004">https://doi.org/10.1016/j.nbt.2012.03.004</a>.
+</div>
+<div id="ref-Hood2004" class="csl-entry" role="listitem">
+Hood, Leroy, James R Heath, Michael E Phelps, and Biaoyang Lin. 2004.
+<span>“Systems Biology and New Technologies Enable Predictive and
+Preventative Medicine.”</span> <em>Science</em> 306 (5696): 640–43. <a href="https://doi.org/10.1126/science.1104635">https://doi.org/10.1126/science.1104635</a>.
+</div>
+<div id="ref-Hwang2018" class="csl-entry" role="listitem">
+Hwang, Byungjin, Ji Hyun Lee, and Duhee Bang. 2018. <span>“Single-Cell
+RNA Sequencing Technologies and Bioinformatics Pipelines.”</span>
+<em>Experimental &amp; Molecular Medicine</em> 50 (8): 1–14. <a href="https://doi.org/10.1038/s12276-018-0071-8">https://doi.org/10.1038/s12276-018-0071-8</a>.
+</div>
+<div id="ref-Jain2018" class="csl-entry" role="listitem">
+<span class="nocase">Jain, Miten, Sergey Koren, Karen H. Miga, et
+al.</span> 2018. <span>“Nanopore Sequencing and Assembly of a Human
+Genome with Ultra-Long Reads.”</span> <em>Nature Biotechnology</em> 36
+(4): 338–45. <a href="https://doi.org/10.1038/nbt.4060">https://doi.org/10.1038/nbt.4060</a>.
+</div>
+<div id="ref-Kim2020" class="csl-entry" role="listitem">
+<span class="nocase">Kim, M et al.</span> 2020. <span>“Systems Biology:
+A Multi-Omics Integration Approach to Metabolism and the
+Microbiome.”</span> <em>Endocrinology and Metabolism</em> 35 (3):
+475–84. <a href="https://doi.org/10.3803/EnM.2020.303">https://doi.org/10.3803/EnM.2020.303</a>.
+</div>
+<div id="ref-Lightbody2019" class="csl-entry" role="listitem">
+Lightbody, Gaye, Valeriia Haberland, Fiona Browne, et al. 2019.
+<span>“Review of Applications of High-Throughput Sequencing in
+Personalized Medicine: Barriers and Facilitators of Future Progress in
+Research and Clinical Application.”</span> <em>Briefings in
+Bioinformatics</em> 20 (5): 1795–811. <a href="https://doi.org/10.1093/bib/bby051">https://doi.org/10.1093/bib/bby051</a>.
+</div>
+<div id="ref-Margulies2005" class="csl-entry" role="listitem">
+Margulies, Marcel, Michael Egholm, William E. Altman, et al. 2005.
+<span>“Genome Sequencing in Microfabricated High-Density Picolitre
+Reactors.”</span> <em>Nature</em> 437 (7057): 376–80. <a href="https://doi.org/10.1038/nature03959">https://doi.org/10.1038/nature03959</a>.
+</div>
+<div id="ref-Misra2025" class="csl-entry" role="listitem">
+<span class="nocase">Misra, P et al.</span> 2025. <span>“Integrative
+Multi-Omics and Artificial Intelligence: A New Paradigm for Systems
+Biology.”</span> <em>Biomedical Engineering and Computational
+Biology</em> 16: 15578100251392371. <a href="https://doi.org/10.1177/15578100251392371">https://doi.org/10.1177/15578100251392371</a>.
+</div>
+<div id="ref-Nassar2022" class="csl-entry" role="listitem">
+<span class="nocase">Nassar, Luis R, Galt P Barber, Anna Benet-Pagès, et
+al.</span> 2022. <span>“The UCSC Genome Browser Database: 2022
+Update.”</span> <em>Nucleic Acids Research</em> 50 (D1): D1115–22. <a href="https://doi.org/10.1093/nar/gkab959">https://doi.org/10.1093/nar/gkab959</a>.
+</div>
+<div id="ref-Prosdocimi2020" class="csl-entry" role="listitem">
+<span class="nocase">Prosdocimi, Francisco et al.</span> 2020.
+<span>“Review on the Computational Genome Annotation of Sequences
+Obtained by Next-Generation Sequencing.”</span> <em>Biology (Basel)</em>
+9 (9): 295. <a href="https://doi.org/10.3390/biology9090295">https://doi.org/10.3390/biology9090295</a>.
+</div>
+<div id="ref-Reuter2015" class="csl-entry" role="listitem">
+Reuter, Jason A., Damek V. Spacek, and Michael P. Snyder. 2015.
+<span>“High-Throughput Sequencing Technologies.”</span> <em>Molecular
+Cell</em> 58 (4): 586–97. <a href="https://doi.org/10.1016/j.molcel.2015.05.004">https://doi.org/10.1016/j.molcel.2015.05.004</a>.
+</div>
+<div id="ref-Rothberg2011" class="csl-entry" role="listitem">
+<span class="nocase">Rothberg, Jonathan M., Wolfgang Hinz, Todd M.
+Rearick, et al.</span> 2011. <span>“An Integrated Semiconductor Device
+Enabling Non-Optical Genome Sequencing.”</span> <em>Nature</em> 475
+(7356): 348–52. <a href="https://doi.org/10.1038/nature10242">https://doi.org/10.1038/nature10242</a>.
+</div>
+<div id="ref-Sanger1977" class="csl-entry" role="listitem">
+Sanger, Frederick, Steven Nicklen, and Alan R. Coulson. 1977. <span>“DNA
+Sequencing with Chain-Terminating Inhibitors.”</span> <em>Proceedings of
+the National Academy of Sciences</em> 74 (12): 5463–67. <a href="https://doi.org/10.1073/pnas.74.12.5463">https://doi.org/10.1073/pnas.74.12.5463</a>.
+</div>
+<div id="ref-Soon2013" class="csl-entry" role="listitem">
+Soon, Wendy Weijia, Manoj Hariharan, and Michael P. Snyder. 2013.
+<span>“High-Throughput Sequencing for Biology and Medicine.”</span>
+<em>Molecular Systems Biology</em> 9 (1): 640. <a href="https://doi.org/10.1038/msb.2012.61">https://doi.org/10.1038/msb.2012.61</a>.
+</div>
+<div id="ref-Stoeckius2017" class="csl-entry" role="listitem">
+Stoeckius, Marlon, Christoph Hafemeister, William Stephenson, et al.
+2017. <span>“Simultaneous Epitope and Transcriptome Measurement in
+Single Cells.”</span> <em>Nature Methods</em> 14 (9): 865–68. <a href="https://doi.org/10.1038/nmeth.4380">https://doi.org/10.1038/nmeth.4380</a>.
+</div>
+<div id="ref-Stuart2019" class="csl-entry" role="listitem">
+Stuart, Tim, and Rahul Satija. 2019. <span>“Integrative Single-Cell
+Analysis.”</span> <em>Nature Reviews Genetics</em> 20 (5): 257–72. <a href="https://doi.org/10.1038/s41576-019-0093-7">https://doi.org/10.1038/s41576-019-0093-7</a>.
+</div>
+<div id="ref-Wang2024" class="csl-entry" role="listitem">
+<span class="nocase">Wang, et al.</span> 2024. <span>“From Tradition to
+Innovation: Conventional and Deep Learning Frameworks in Genome
+Annotation.”</span> <em>Briefings in Bioinformatics</em> 25 (3):
+bbae138. <a href="https://doi.org/10.1093/bib/bbae138">https://doi.org/10.1093/bib/bbae138</a>.
+</div>
+</div>
 
 
 </section>
@@ -1007,8 +1019,8 @@ Insight</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/03-databases.html" class="pagination-link" aria-label="From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge: Databases, Genomic Annotation, and Genome Browsers</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/03-databases.html" class="pagination-link" aria-label="From Biological Data to Biological Knowledge">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
