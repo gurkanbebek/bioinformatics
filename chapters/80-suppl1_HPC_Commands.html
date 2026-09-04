@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gurkan Bebek">
 
-<title>Systems Biology and Translational Bioinformatics</title>
+<title>5&nbsp; HPC Quick Reference Guide – Systems Biology and Translational Bioinformatics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,27 +26,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./chapters/01-introduction.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7d8ad657b878717df1156ab40fed854c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/05-rna_workflow.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7d8ad657b878717df1156ab40fed854c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/80-suppl1_HPC_Commands.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -103,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Systems Biology and Translational Bioinformatics</a> 
+      <a href="../">Systems Biology and Translational Bioinformatics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -115,37 +149,37 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Systems Biology</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/03-databases.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/03-databases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/05-rna_workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/05-rna_workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
   </div>
 </li>
@@ -159,7 +193,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#logging-in-to-markov" id="toc-logging-in-to-markov" class="nav-link active" data-scroll-target="#logging-in-to-markov"><span class="header-section-number">5.1</span> 🔑 Logging In to Markov</a>
+  <ul class="collapse">
+  <li><a href="#option-a-using-the-terminal-ssh" id="toc-option-a-using-the-terminal-ssh" class="nav-link" data-scroll-target="#option-a-using-the-terminal-ssh"><span class="header-section-number">5.1.1</span> Option A: Using the Terminal (SSH)</a></li>
+  <li><a href="#option-b-using-a-web-browser" id="toc-option-b-using-a-web-browser" class="nav-link" data-scroll-target="#option-b-using-a-web-browser"><span class="header-section-number">5.1.2</span> Option B: Using a Web Browser</a></li>
+  </ul></li>
+  <li><a href="#requesting-a-compute-node" id="toc-requesting-a-compute-node" class="nav-link" data-scroll-target="#requesting-a-compute-node"><span class="header-section-number">5.2</span> 🚀 Requesting a Compute Node</a></li>
+  <li><a href="#managing-environment-modules" id="toc-managing-environment-modules" class="nav-link" data-scroll-target="#managing-environment-modules"><span class="header-section-number">5.3</span> 🛠️ . Managing Environment Modules</a></li>
+  <li><a href="#checking-system-status" id="toc-checking-system-status" class="nav-link" data-scroll-target="#checking-system-status"><span class="header-section-number">5.4</span> 📊 Checking System Status</a></li>
+  <li><a href="#submitting-and-running-jobs" id="toc-submitting-and-running-jobs" class="nav-link" data-scroll-target="#submitting-and-running-jobs"><span class="header-section-number">5.5</span> 🚀 Submitting and Running Jobs</a></li>
+  <li><a href="#monitoring-active-jobs" id="toc-monitoring-active-jobs" class="nav-link" data-scroll-target="#monitoring-active-jobs"><span class="header-section-number">5.6</span> 🔍 Monitoring Active Jobs</a></li>
+  <li><a href="#managing-and-canceling-jobs" id="toc-managing-and-canceling-jobs" class="nav-link" data-scroll-target="#managing-and-canceling-jobs"><span class="header-section-number">5.7</span> 🛠️ Managing and Canceling Jobs</a></li>
+  <li><a href="#analyzing-finished-jobs" id="toc-analyzing-finished-jobs" class="nav-link" data-scroll-target="#analyzing-finished-jobs"><span class="header-section-number">5.8</span> 📜 Analyzing Finished Jobs</a></li>
   </ul>
 </nav>
     </div>
@@ -168,19 +213,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Systems Biology and Translational Bioinformatics</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gurkan Bebek </p>
-          </div>
-  </div>
     
   
     
@@ -191,41 +230,183 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>We are living in an extraordinary era of biological discovery.</p>
-<p>Advances in genomics, transcriptomics, proteomics, metabolomics, imaging, and computational science now allow us to measure biological systems at an unprecedented scale. A single experiment can generate millions of data points. Entire genomes can be sequenced in days. Diseases can be characterized through molecular profiles rather than symptoms alone. Yet despite these remarkable advances, one challenge remains unchanged:</p>
-<blockquote class="blockquote">
-<p>How do we transform biological data into biological understanding?</p>
-</blockquote>
-<p>This book was written to help answer that question.</p>
-<p>For many students, bioinformatics is introduced as a collection of tools, databases, algorithms, and acronyms. While these technologies are powerful, learning individual tools does not necessarily explain how they fit together to solve real biological problems. Students often learn <em>what</em> a technique does without fully understanding <em>why</em> it is used or how it contributes to scientific discovery.</p>
-<p>The goal of this book is different.</p>
-<p>Rather than presenting bioinformatics as a series of disconnected technologies, this text follows a single narrative:</p>
-<blockquote class="blockquote">
-<p><strong>From Biological Question to Clinical Insight</strong></p>
-</blockquote>
-<p>Every chapter represents a stage in the modern translational research process. We begin by learning how to think about biological systems and formulate meaningful questions. We then explore how biological data are generated, how they are analyzed and interpreted, and ultimately how discoveries can be translated into improvements in human health.</p>
-<p>Throughout the book, we emphasize several key principles:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Student Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always replace <code>abc123</code> with your personal <strong>CWRU ID</strong> when typing commands.</p>
+</div>
+</div>
+<section id="logging-in-to-markov" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="logging-in-to-markov"><span class="header-section-number">5.1</span> 🔑 Logging In to Markov</h2>
+<p>You must connect to Case Western Reserve University’s <strong>Markov cluster</strong> using one of the methods below.</p>
+<section id="option-a-using-the-terminal-ssh" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="option-a-using-the-terminal-ssh"><span class="header-section-number">5.1.1</span> Option A: Using the Terminal (SSH)</h3>
 <ul>
-<li>Biology is fundamentally a systems problem.</li>
-<li>Data alone do not produce knowledge.</li>
-<li>Computational methods are tools for answering biological questions.</li>
-<li>Understanding emerges through integration of multiple sources of information.</li>
-<li>The ultimate goal of bioinformatics is not data analysis, but biological and clinical insight.</li>
+<li><p><strong>Windows:</strong> Open <strong>PuTTY</strong>, type <code>markov.case.edu</code> into the Host Name box, and log in.</p></li>
+<li><p><strong>Mac / Linux:</strong> Open your <strong>Terminal</strong> and run:</p>
+<pre><code>ssh abc123@markov.case.edu</code></pre></li>
 </ul>
-<p>This text is intended for students, researchers, and practitioners entering the fields of systems biology, bioinformatics, and translational medicine. The emphasis is on concepts rather than programming, interpretation rather than software operation, and scientific reasoning rather than memorization.</p>
-<p>Many examples throughout the book are drawn from contemporary biomedical challenges, including cancer, complex disease, pharmacogenomics, immunology, and multi-omics research. These examples illustrate how modern biological questions require integration across diverse data types and disciplines.</p>
-<p>The material presented here reflects a systems perspective inspired by the pioneering work of researchers who have advocated for understanding biology as an interconnected network of information rather than a collection of isolated components. Modern medicine is increasingly becoming predictive, preventive, personalized, and participatory, and bioinformatics serves as one of the critical bridges connecting biological discovery to clinical application. 【1-0ea452】</p>
-<p>This book is not meant to be read passively. Readers are encouraged to explore databases, investigate case studies, evaluate scientific literature, and continually ask questions. The most important skill in bioinformatics is not mastery of a particular tool but the ability to think critically about biological systems and the evidence used to understand them.</p>
-<p>If this book succeeds, readers will finish not simply knowing more about genomics, databases, or computational methods. They will view biological problems differently. They will recognize connections where others see isolated observations. They will understand how diverse sources of biological information can be integrated into coherent explanations. And they will appreciate how modern biology increasingly depends on a systems-level view of life.</p>
-<p>The journey begins with a simple idea:</p>
-<blockquote class="blockquote">
-<p>Complex biological questions require systems thinking.</p>
-</blockquote>
-<p>Everything that follows builds on that foundation.</p>
-<p><strong>Gürkan Bebek, Ph.D., M.S.</strong><br>
-Case Western Reserve University</p>
+</section>
+<section id="option-b-using-a-web-browser" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="option-b-using-a-web-browser"><span class="header-section-number">5.1.2</span> Option B: Using a Web Browser</h3>
+<ol type="1">
+<li>Go to <a href="https://ondemand-markov.case.edu">https://ondemand-markov.case.edu/</a> and sign in.</li>
+<li>Click <strong>Clusters</strong> in the top menu bar.</li>
+<li>Select <strong>Markov Shell Access</strong> to open a terminal interface.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="requesting-a-compute-node" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="requesting-a-compute-node"><span class="header-section-number">5.2</span> 🚀 Requesting a Compute Node</h2>
+<p>Do not run computational scripts or applications on the login node. Request an interactive compute node session immediately after logging in.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Request 1 node, 4 CPU cores, for a duration of 12 hours</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-N</span> 1 <span class="at">-n</span> 4 <span class="at">--time</span><span class="op">=</span>12:00:00 <span class="at">--pty</span> /bin/bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="managing-environment-modules" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="managing-environment-modules"><span class="header-section-number">5.3</span> 🛠️ . Managing Environment Modules</h2>
+<p>HPC applications require you to explicitly load their environments using the <code>module</code> tool.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all software packages available on Markov</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for a specific software package (e.g., Java)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider Java</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a specific software environment into your current session</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load Java</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Check which software packages are currently active in your session</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> list</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove a specific package from your active session</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> unload Java</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Clear all currently loaded modules</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="checking-system-status" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="checking-system-status"><span class="header-section-number">5.4</span> 📊 Checking System Status</h2>
+<p>Use these commands to check cluster health, node availability, and your fair-share priority.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>sinfo</code></td>
+<td style="text-align: left;">View available cluster partitions and node states.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>sinfo -s</code></td>
+<td style="text-align: left;">Show a quick summary of node counts by state.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>sinfo --pcpus</code></td>
+<td style="text-align: left;">Check available vs.&nbsp;allocated CPU allocations.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>sshare -U $USER</code></td>
+<td style="text-align: left;">View your account share and fair-share priority status.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="submitting-and-running-jobs" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="submitting-and-running-jobs"><span class="header-section-number">5.5</span> 🚀 Submitting and Running Jobs</h2>
+<p>Commands for executing your computations on the compute nodes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always run resource-intensive processes via these commands rather than directly on the login node.</p>
+</div>
+</div>
+<ul>
+<li><code>sbatch script.sh</code>
+<ul>
+<li><em>Description:</em> Submit a batch script to the background queue.</li>
+</ul></li>
+<li><code>srun --pty bash</code>
+<ul>
+<li><em>Description:</em> Launch an interactive terminal session on a compute node.</li>
+</ul></li>
+<li><code>salloc -n 4 -t 01:00:00</code>
+<ul>
+<li><em>Description:</em> Allocate resources immediately without running a script yet.</li>
+</ul></li>
+</ul>
+</section>
+<section id="monitoring-active-jobs" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="monitoring-active-jobs"><span class="header-section-number">5.6</span> 🔍 Monitoring Active Jobs</h2>
+<p>Keep track of your jobs currently waiting or running in the scheduler.</p>
+<ul>
+<li><code>squeue</code> — List all currently running and waiting jobs on the cluster.</li>
+<li><code>squeue -u $USER</code> — Filter the queue to show only your own jobs.</li>
+<li><code>squeue -i 5</code> — Refresh and display the queue every 5 seconds.</li>
+<li><code>scontrol show job &lt;JobID&gt;</code> — View highly detailed runtime information for a live job.</li>
+</ul>
+</section>
+<section id="managing-and-canceling-jobs" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="managing-and-canceling-jobs"><span class="header-section-number">5.7</span> 🛠️ Managing and Canceling Jobs</h2>
+<p>Modify or kill active and pending jobs.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminate a specific running or pending job</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="op">&lt;</span>JobID<span class="op">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Kill every single one of your jobs at once</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="at">-u</span> <span class="dt">\$</span>USER</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cancel only your jobs that are waiting in queue</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="at">-t</span> PENDING</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Pause a pending job so it will not start</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> hold <span class="op">&lt;</span>JobID<span class="op">&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Resume a paused job to let it run again</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> release <span class="op">&lt;</span>JobID<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="analyzing-finished-jobs" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="analyzing-finished-jobs"><span class="header-section-number">5.8</span> 📜 Analyzing Finished Jobs</h2>
+<p>Review history and performance data after your jobs complete.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Performance Optimization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always run <code>seff</code> on completed jobs to ensure you aren’t requesting way more memory or CPUs than your application actually uses.</p>
+</div>
+</div>
+<ul>
+<li><code>sacct</code>: List your jobs from today with their exit states.</li>
+<li><code>sacct -S 2026-01-01</code>: Search your job history starting from a specific date.</li>
+<li><code>seff &lt;JobID&gt;</code>: Check CPU and memory efficiency metrics for a completed job.</li>
+</ul>
 
 
 </section>
@@ -633,11 +814,11 @@ Case Western Reserve University</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../chapters/05-rna_workflow.html" class="pagination-link" aria-label="RNA-Seq Analysis Pipeline">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapters/01-introduction.html" class="pagination-link" aria-label="Introduction to Systems Biology">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Systems Biology</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

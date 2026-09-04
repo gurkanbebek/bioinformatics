@@ -154,7 +154,7 @@
     "href": "chapters/01-introduction.html#references",
     "title": "1  Introduction to Systems Biology",
     "section": "1.14 References",
-    "text": "1.14 References\n\n\nBentley, David R., Shankar Balasubramanian, Harold\nP. Swerdlow, et al. 2008. “Accurate Whole Human Genome\nSequencing Using Reversible Terminator Chemistry.”\nNature 456 (7218): 53–59. https://doi.org/10.1038/nature07517.\n\n\nBox, George E. P. 1979. “Robustness in the Strategy of Scientific\nModel Building.” In Robustness in Statistics. Academic\nPress.\n\n\nEid, John, Adrian Fehr, Jeremy Gray, et al.\n2009. “Real-Time DNA Sequencing from Single Polymerase\nMolecules.” Science 323 (5910): 133–38. https://doi.org/10.1126/science.1162986.\n\n\nGill, Nivit, Shailendra Singh, and Trilok C Aseri. 2014.\n“Computational Disease Gene Prioritization: An Appraisal.”\nJournal of Computational Biology 21 (6): 456–65. https://doi.org/10.1089/cmb.2013.0158.\n\n\nHood, Leroy, and Mauricio Flores. 2012. “A Personal View on\nSystems Medicine and the Emergence of Proactive P4 Medicine: Predictive,\nPreventive, Personalized and Participatory.” New\nBiotechnology 29 (6): 613–24. https://doi.org/10.1016/j.nbt.2012.03.004.\n\n\nHood, Leroy, James R Heath, Michael E Phelps, and Biaoyang Lin. 2004.\n“Systems Biology and New Technologies Enable Predictive and\nPreventative Medicine.” Science 306 (5696): 640–43. https://doi.org/10.1126/science.1104635.\n\n\nHwang, Byungjin, Ji Hyun Lee, and Duhee Bang. 2018. “Single-Cell\nRNA Sequencing Technologies and Bioinformatics Pipelines.”\nExperimental & Molecular Medicine 50 (8): 1–14. https://doi.org/10.1038/s12276-018-0071-8.\n\n\nJain, Miten, Sergey Koren, Karen H. Miga, et\nal. 2018. “Nanopore Sequencing and Assembly of a Human\nGenome with Ultra-Long Reads.” Nature Biotechnology 36\n(4): 338–45. https://doi.org/10.1038/nbt.4060.\n\n\nKim, M et al. 2020. “Systems Biology:\nA Multi-Omics Integration Approach to Metabolism and the\nMicrobiome.” Endocrinology and Metabolism 35 (3):\n475–84. https://doi.org/10.3803/EnM.2020.303.\n\n\nLightbody, Gaye, Valeriia Haberland, Fiona Browne, et al. 2019.\n“Review of Applications of High-Throughput Sequencing in\nPersonalized Medicine: Barriers and Facilitators of Future Progress in\nResearch and Clinical Application.” Briefings in\nBioinformatics 20 (5): 1795–811. https://doi.org/10.1093/bib/bby051.\n\n\nMargulies, Marcel, Michael Egholm, William E. Altman, et al. 2005.\n“Genome Sequencing in Microfabricated High-Density Picolitre\nReactors.” Nature 437 (7057): 376–80. https://doi.org/10.1038/nature03959.\n\n\nMisra, P et al. 2025. “Integrative\nMulti-Omics and Artificial Intelligence: A New Paradigm for Systems\nBiology.” Biomedical Engineering and Computational\nBiology 16: 15578100251392371. https://doi.org/10.1177/15578100251392371.\n\n\nNassar, Luis R, Galt P Barber, Anna Benet-Pagès, et\nal. 2022. “The UCSC Genome Browser Database: 2022\nUpdate.” Nucleic Acids Research 50 (D1): D1115–22. https://doi.org/10.1093/nar/gkab959.\n\n\nProsdocimi, Francisco et al. 2020.\n“Review on the Computational Genome Annotation of Sequences\nObtained by Next-Generation Sequencing.” Biology (Basel)\n9 (9): 295. https://doi.org/10.3390/biology9090295.\n\n\nReuter, Jason A., Damek V. Spacek, and Michael P. Snyder. 2015.\n“High-Throughput Sequencing Technologies.” Molecular\nCell 58 (4): 586–97. https://doi.org/10.1016/j.molcel.2015.05.004.\n\n\nRothberg, Jonathan M., Wolfgang Hinz, Todd M.\nRearick, et al. 2011. “An Integrated Semiconductor Device\nEnabling Non-Optical Genome Sequencing.” Nature 475\n(7356): 348–52. https://doi.org/10.1038/nature10242.\n\n\nSanger, Frederick, Steven Nicklen, and Alan R. Coulson. 1977. “DNA\nSequencing with Chain-Terminating Inhibitors.” Proceedings of\nthe National Academy of Sciences 74 (12): 5463–67. https://doi.org/10.1073/pnas.74.12.5463.\n\n\nSoon, Wendy Weijia, Manoj Hariharan, and Michael P. Snyder. 2013.\n“High-Throughput Sequencing for Biology and Medicine.”\nMolecular Systems Biology 9 (1): 640. https://doi.org/10.1038/msb.2012.61.\n\n\nStoeckius, Marlon, Christoph Hafemeister, William Stephenson, et al.\n2017. “Simultaneous Epitope and Transcriptome Measurement in\nSingle Cells.” Nature Methods 14 (9): 865–68. https://doi.org/10.1038/nmeth.4380.\n\n\nStuart, Tim, and Rahul Satija. 2019. “Integrative Single-Cell\nAnalysis.” Nature Reviews Genetics 20 (5): 257–72. https://doi.org/10.1038/s41576-019-0093-7.\n\n\nWang, et al. 2024. “From Tradition to\nInnovation: Conventional and Deep Learning Frameworks in Genome\nAnnotation.” Briefings in Bioinformatics 25 (3):\nbbae138. https://doi.org/10.1093/bib/bbae138.",
+    "text": "1.14 References\n\n\nBentley, David R., Shankar Balasubramanian, Harold\nP. Swerdlow, et al. 2008. “Accurate Whole Human Genome\nSequencing Using Reversible Terminator Chemistry.”\nNature 456 (7218): 53–59. https://doi.org/10.1038/nature07517.\n\n\nBox, George E. P. 1979. “Robustness in the Strategy of Scientific\nModel Building.” In Robustness in Statistics. Academic\nPress.\n\n\nConesa, Ana, Pedro Madrigal, Sonia Tarazona, et\nal. 2016. “A Survey of Best Practices for RNA-Seq Data\nAnalysis.” Genome Biology 17 (1): 1–19.\n\n\nEid, John, Adrian Fehr, Jeremy Gray, et al.\n2009. “Real-Time DNA Sequencing from Single Polymerase\nMolecules.” Science 323 (5910): 133–38. https://doi.org/10.1126/science.1162986.\n\n\nGertz, Jason, Katherine E Varley, Nichole S Davis, et al. 2012.\n“Transposase Mediated Construction of RNA-Seq Libraries.”\nGenome Research 22 (1): 134–41.\n\n\nGill, Nivit, Shailendra Singh, and Trilok C Aseri. 2014.\n“Computational Disease Gene Prioritization: An Appraisal.”\nJournal of Computational Biology 21 (6): 456–65. https://doi.org/10.1089/cmb.2013.0158.\n\n\nHansen, Kasper D, Steven E Brenner, and Sandrine Dudoit. 2010.\n“Biases in Illumina Transcriptome Sequencing Caused by Random\nHexamer Priming.” Nucleic Acids Research 38 (12):\ne131–31.\n\n\nHood, Leroy, and Mauricio Flores. 2012. “A Personal View on\nSystems Medicine and the Emergence of Proactive P4 Medicine: Predictive,\nPreventive, Personalized and Participatory.” New\nBiotechnology 29 (6): 613–24. https://doi.org/10.1016/j.nbt.2012.03.004.\n\n\nHood, Leroy, James R Heath, Michael E Phelps, and Biaoyang Lin. 2004.\n“Systems Biology and New Technologies Enable Predictive and\nPreventative Medicine.” Science 306 (5696): 640–43. https://doi.org/10.1126/science.1104635.\n\n\nHwang, Byungjin, Ji Hyun Lee, and Duhee Bang. 2018. “Single-Cell\nRNA Sequencing Technologies and Bioinformatics Pipelines.”\nExperimental & Molecular Medicine 50 (8): 1–14. https://doi.org/10.1038/s12276-018-0071-8.\n\n\nJain, Miten, Sergey Koren, Karen H. Miga, et\nal. 2018. “Nanopore Sequencing and Assembly of a Human\nGenome with Ultra-Long Reads.” Nature Biotechnology 36\n(4): 338–45. https://doi.org/10.1038/nbt.4060.\n\n\nKim, Daehwan, Ben Langmead, and Steven L Salzberg. 2015. “HISAT: A\nFast Spliced Aligner with Low Memory Requirements.” Nature\nMethods 12 (4): 357–60.\n\n\nKim, M et al. 2020. “Systems Biology:\nA Multi-Omics Integration Approach to Metabolism and the\nMicrobiome.” Endocrinology and Metabolism 35 (3):\n475–84. https://doi.org/10.3803/EnM.2020.303.\n\n\nLightbody, Gaye, Valeriia Haberland, Fiona Browne, et al. 2019.\n“Review of Applications of High-Throughput Sequencing in\nPersonalized Medicine: Barriers and Facilitators of Future Progress in\nResearch and Clinical Application.” Briefings in\nBioinformatics 20 (5): 1795–811. https://doi.org/10.1093/bib/bby051.\n\n\nLove, Michael I, Wolfgang Huber, and Simon Anders. 2014.\n“Moderated Estimation of Fold Change and Dispersion for RNA-Seq\nData with DESeq2.” Genome Biology 15 (12): 1–21.\n\n\nMargulies, Marcel, Michael Egholm, William E. Altman, et al. 2005.\n“Genome Sequencing in Microfabricated High-Density Picolitre\nReactors.” Nature 437 (7057): 376–80. https://doi.org/10.1038/nature03959.\n\n\nMisra, P et al. 2025. “Integrative\nMulti-Omics and Artificial Intelligence: A New Paradigm for Systems\nBiology.” Biomedical Engineering and Computational\nBiology 16: 15578100251392371. https://doi.org/10.1177/15578100251392371.\n\n\nNassar, Luis R, Galt P Barber, Anna Benet-Pagès, et\nal. 2022. “The UCSC Genome Browser Database: 2022\nUpdate.” Nucleic Acids Research 50 (D1): D1115–22. https://doi.org/10.1093/nar/gkab959.\n\n\nProsdocimi, Francisco et al. 2020.\n“Review on the Computational Genome Annotation of Sequences\nObtained by Next-Generation Sequencing.” Biology (Basel)\n9 (9): 295. https://doi.org/10.3390/biology9090295.\n\n\nReuter, Jason A., Damek V. Spacek, and Michael P. Snyder. 2015.\n“High-Throughput Sequencing Technologies.” Molecular\nCell 58 (4): 586–97. https://doi.org/10.1016/j.molcel.2015.05.004.\n\n\nRothberg, Jonathan M., Wolfgang Hinz, Todd M.\nRearick, et al. 2011. “An Integrated Semiconductor Device\nEnabling Non-Optical Genome Sequencing.” Nature 475\n(7356): 348–52. https://doi.org/10.1038/nature10242.\n\n\nSanger, Frederick, Steven Nicklen, and Alan R. Coulson. 1977. “DNA\nSequencing with Chain-Terminating Inhibitors.” Proceedings of\nthe National Academy of Sciences 74 (12): 5463–67. https://doi.org/10.1073/pnas.74.12.5463.\n\n\nSoon, Wendy Weijia, Manoj Hariharan, and Michael P. Snyder. 2013.\n“High-Throughput Sequencing for Biology and Medicine.”\nMolecular Systems Biology 9 (1): 640. https://doi.org/10.1038/msb.2012.61.\n\n\nStoeckius, Marlon, Christoph Hafemeister, William Stephenson, et al.\n2017. “Simultaneous Epitope and Transcriptome Measurement in\nSingle Cells.” Nature Methods 14 (9): 865–68. https://doi.org/10.1038/nmeth.4380.\n\n\nStuart, Tim, and Rahul Satija. 2019. “Integrative Single-Cell\nAnalysis.” Nature Reviews Genetics 20 (5): 257–72. https://doi.org/10.1038/s41576-019-0093-7.\n\n\nWang, et al. 2024. “From Tradition to\nInnovation: Conventional and Deep Learning Frameworks in Genome\nAnnotation.” Briefings in Bioinformatics 25 (3):\nbbae138. https://doi.org/10.1093/bib/bbae138.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Systems Biology</span>"
     ]
@@ -264,7 +264,17 @@
     "href": "chapters/03-databases.html#key-terms",
     "title": "2  From Biological Data to Biological Knowledge",
     "section": "2.10 Key Terms",
-    "text": "2.10 Key Terms\n\nGenome\nGenomics\nGenotype\nAnnotation\nMetadata\nDisease Gene Prioritization\nSystems Description\nSNP\nStructural Variant\nRegulatory Element\nGenome Browser\nUCSC Genome Browser\nBLAT\nComparative Genomics\nBiological Network\nPathway Analysis\nSystems Biology\n\n\n\n\n\nGill, Nivit, Shailendra Singh, and Trilok C Aseri. 2014. “Computational Disease Gene Prioritization: An Appraisal.” Journal of Computational Biology 21 (6): 456–65. https://doi.org/10.1089/cmb.2013.0158.\n\n\nNassar, Luis R, Galt P Barber, Anna Benet-Pagès, et al. 2022. “The UCSC Genome Browser Database: 2022 Update.” Nucleic Acids Research 50 (D1): D1115–22. https://doi.org/10.1093/nar/gkab959.\n\n\nProsdocimi, Francisco et al. 2020. “Review on the Computational Genome Annotation of Sequences Obtained by Next-Generation Sequencing.” Biology (Basel) 9 (9): 295. https://doi.org/10.3390/biology9090295.\n\n\nWang, et al. 2024. “From Tradition to Innovation: Conventional and Deep Learning Frameworks in Genome Annotation.” Briefings in Bioinformatics 25 (3): bbae138. https://doi.org/10.1093/bib/bbae138.",
+    "text": "2.10 Key Terms\n\nGenome\nGenomics\nGenotype\nAnnotation\nMetadata\nDisease Gene Prioritization\nSystems Description\nSNP\nStructural Variant\nRegulatory Element\nGenome Browser\nUCSC Genome Browser\nBLAT\nComparative Genomics\nBiological Network\nPathway Analysis\nSystems Biology",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>From Biological Data to Biological Knowledge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03-databases.html#references",
+    "href": "chapters/03-databases.html#references",
+    "title": "2  From Biological Data to Biological Knowledge",
+    "section": "2.11 References",
+    "text": "2.11 References\n\n\nGill, Nivit, Shailendra Singh, and Trilok C Aseri. 2014. “Computational Disease Gene Prioritization: An Appraisal.” Journal of Computational Biology 21 (6): 456–65. https://doi.org/10.1089/cmb.2013.0158.\n\n\nNassar, Luis R, Galt P Barber, Anna Benet-Pagès, et al. 2022. “The UCSC Genome Browser Database: 2022 Update.” Nucleic Acids Research 50 (D1): D1115–22. https://doi.org/10.1093/nar/gkab959.\n\n\nProsdocimi, Francisco et al. 2020. “Review on the Computational Genome Annotation of Sequences Obtained by Next-Generation Sequencing.” Biology (Basel) 9 (9): 295. https://doi.org/10.3390/biology9090295.\n\n\nWang, et al. 2024. “From Tradition to Innovation: Conventional and Deep Learning Frameworks in Genome Annotation.” Briefings in Bioinformatics 25 (3): bbae138. https://doi.org/10.1093/bib/bbae138.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>From Biological Data to Biological Knowledge</span>"
     ]
@@ -367,6 +377,206 @@
     "text": "3.9 References\n\n\nBentley, David R., Shankar Balasubramanian, Harold P. Swerdlow, et al. 2008. “Accurate Whole Human Genome Sequencing Using Reversible Terminator Chemistry.” Nature 456 (7218): 53–59. https://doi.org/10.1038/nature07517.\n\n\nEid, John, Adrian Fehr, Jeremy Gray, et al. 2009. “Real-Time DNA Sequencing from Single Polymerase Molecules.” Science 323 (5910): 133–38. https://doi.org/10.1126/science.1162986.\n\n\nHwang, Byungjin, Ji Hyun Lee, and Duhee Bang. 2018. “Single-Cell RNA Sequencing Technologies and Bioinformatics Pipelines.” Experimental & Molecular Medicine 50 (8): 1–14. https://doi.org/10.1038/s12276-018-0071-8.\n\n\nJain, Miten, Sergey Koren, Karen H. Miga, et al. 2018. “Nanopore Sequencing and Assembly of a Human Genome with Ultra-Long Reads.” Nature Biotechnology 36 (4): 338–45. https://doi.org/10.1038/nbt.4060.\n\n\nLightbody, Gaye, Valeriia Haberland, Fiona Browne, et al. 2019. “Review of Applications of High-Throughput Sequencing in Personalized Medicine: Barriers and Facilitators of Future Progress in Research and Clinical Application.” Briefings in Bioinformatics 20 (5): 1795–811. https://doi.org/10.1093/bib/bby051.\n\n\nMargulies, Marcel, Michael Egholm, William E. Altman, et al. 2005. “Genome Sequencing in Microfabricated High-Density Picolitre Reactors.” Nature 437 (7057): 376–80. https://doi.org/10.1038/nature03959.\n\n\nReuter, Jason A., Damek V. Spacek, and Michael P. Snyder. 2015. “High-Throughput Sequencing Technologies.” Molecular Cell 58 (4): 586–97. https://doi.org/10.1016/j.molcel.2015.05.004.\n\n\nRothberg, Jonathan M., Wolfgang Hinz, Todd M. Rearick, et al. 2011. “An Integrated Semiconductor Device Enabling Non-Optical Genome Sequencing.” Nature 475 (7356): 348–52. https://doi.org/10.1038/nature10242.\n\n\nSanger, Frederick, Steven Nicklen, and Alan R. Coulson. 1977. “DNA Sequencing with Chain-Terminating Inhibitors.” Proceedings of the National Academy of Sciences 74 (12): 5463–67. https://doi.org/10.1073/pnas.74.12.5463.\n\n\nSoon, Wendy Weijia, Manoj Hariharan, and Michael P. Snyder. 2013. “High-Throughput Sequencing for Biology and Medicine.” Molecular Systems Biology 9 (1): 640. https://doi.org/10.1038/msb.2012.61.\n\n\nStoeckius, Marlon, Christoph Hafemeister, William Stephenson, et al. 2017. “Simultaneous Epitope and Transcriptome Measurement in Single Cells.” Nature Methods 14 (9): 865–68. https://doi.org/10.1038/nmeth.4380.\n\n\nStuart, Tim, and Rahul Satija. 2019. “Integrative Single-Cell Analysis.” Nature Reviews Genetics 20 (5): 257–72. https://doi.org/10.1038/s41576-019-0093-7.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>The Sequencing Revolution</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html",
+    "href": "chapters/05-rna_workflow.html",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "",
+    "text": "4.1 Introduction\nRNA Sequencing (RNA-Seq) has revolutionized our ability to study the transcriptome. By taking advantage of high-throughput sequencing technologies, we can quantify gene expression, discover novel splice variants, and identify differential expression between biological conditions (Conesa et al. 2016). This chapter covers the fundamental technical details of a standard reference-based RNA-Seq pipeline, guiding you through raw data handling, quality control, read mapping, and downstream statistical analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#the-fastq-format",
+    "href": "chapters/05-rna_workflow.html#the-fastq-format",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.2 The FASTQ Format",
+    "text": "4.2 The FASTQ Format\nWhen RNA-Seq libraries are sequenced, the raw data is returned in a standard text-based format known as FASTQ. A FASTQ file stores both the biological sequence and its corresponding quality scores. The following is sample FASTQ entry:\n@HWUSI-EAS611:34:6669YAAXX:1:1:5069:1159 1:N:0:\nTCGATAATACCGTTTTTTTCCGTTTGATGTTGATACCATT\n+\nIIHIIHIIIIIIIIIIIIIIIIIIIIIIIHIIIIHIIIII\nEach sequence read in a FASTQ file is represented by four lines:\n\nSequence Identifier: Begins with an @ symbol and contains information about the sequencing run and cluster location.\nRaw Sequence: The actual nucleotide sequence (A, C, G, T, and N for unknown bases).\nSeparator: A + sign, sometimes followed by a repetition of the sequence identifier.\nQuality Scores: Characters encoding the quality of each base call in the sequence (must contain the exact same number of characters as line 2).\n\n\n4.2.1 Q-Values and Quality Scores\nThe characters in the fourth line of a FASTQ file represent the Phred Quality Score (\\(Q\\)-score) for each base. The \\(Q\\)-score is logarithmically related to the probability of an incorrect base call (\\(P\\)).\nThe formula to calculate the \\(Q\\)-value is:\n\\[Q = -10 \\log_{10}(P)\\]\nFor example, if the probability of an incorrect base call is 1 in 100 (\\(P = 0.01\\)), the \\(Q\\)-score is:\n\\[Q = -10 \\log_{10}(0.01) = 20\\]\nA \\(Q\\)-score of 30 (\\(P = 0.001\\)) means a base call accuracy of 99.9%, which is generally considered the benchmark for high-quality sequencing data.\n\n\n4.2.2 ASCII Conversion of Quality Scores\nTo save space, \\(Q\\)-scores are not written as two-digit numbers in the FASTQ file. Instead, they are mapped to standard ASCII characters. Because early ASCII characters (0–32) include non-printable control characters (like space or tab), a constant is added to the \\(Q\\)-score to shift it into the printable character range.\nIn modern Illumina sequencing, the Phred+33 encoding is used. The formula for conversion is:\n\\[\\text{ASCII} = Q + 33\\]\nFor a \\(Q\\)-score of 30, the ASCII value is \\(30 + 33 = 63\\). Looking at an ASCII table, the value 63 corresponds to the ? character.\n\n\n4.2.3 Sequencing Coverage Calculation\nWhen assessing RNA-Seq output, it is crucial to understand your coverage (or read depth). Coverage refers to the average number of times a given base in the transcriptome has been sequenced.\nThe theoretical coverage (\\(C\\)) can be calculated using the Lander-Waterman equation:\n\\[C = \\frac{N \\times L}{G}\\]\nWhere:\n\n\\(N\\): Total number of reads generated.\n\\(L\\): Average read length (in base pairs).\n\\(G\\): Size of the target genome or transcriptome (in base pairs).\n\n\n\n\n\n\n\nNoteExample\n\n\n\nSuppose you sequenced a human RNA-seq sample and obtained \\(34\\) million raw reads with an average read length of \\(100\\) bp. If your alignment success rate is \\(90\\%\\), the number of successfully mapped, usable reads (\\(N\\)) is \\(34,000,000 \\times .90 = 30,600,000\\) .\nFor human RNA-seq, we typically estimate the size of the target expressed transcriptome (\\(G\\)) to be roughly 100 Megabases (100,000,000 bp).\nUsing the Lander-Waterman equation:\n\\[C = \\frac{30,600,000 \\times 100}{100,000,000} = 30.6\\]\nThis means that, on average, each base in the expressed human transcriptome is covered by approximately \\(30\\) reads.\n\n\n\n\n\n\n\n\nNote💡 Key Concept: Exome vs. Transcriptome\n\n\n\nThe exome is a static blueprint of DNA coding regions, whereas the transcriptome is the dynamic, cell-specific readout of RNA molecules. They overlap heavily in content, but they are not the same thing.\n\n4.3 Direct Comparison\n\n\n\n\n\n\n\n\nFeature\nThe Human Exome\nThe Human Transcriptome\n\n\n\n\nPrimary Molecule\nDNA (Genomic DNA)\nRNA (Transcripts, often sequenced as cDNA)\n\n\nPhysical Footprint\n~30 to 60 Megabases (Mb) (~1% to 2% of the total genome)\n~100 to 140 Mb (Total annotated non-redundant transcript space)\n\n\nTemporal Nature\nStatic. It remains identical across almost every cell type in an organism.\nDynamic. It constantly shifts based on cell type, developmental stage, and environmental stimuli.\n\n\nInclusions\nStrictly exons from the ~20,000–23,000 protein-coding genes.\nExons from expressed genes plus non-coding RNAs (e.g., lncRNA, miRNA, tRNA, rRNA).\n\n\nAnalytical Scope\nTells you what protein variations an organism could potentially make.\nTells you what genes an organism is actively using at a specific moment.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#direct-comparison",
+    "href": "chapters/05-rna_workflow.html#direct-comparison",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.3 Direct Comparison",
+    "text": "4.3 Direct Comparison\n\n\n\n\n\n\n\n\nFeature\nThe Human Exome\nThe Human Transcriptome\n\n\n\n\nPrimary Molecule\nDNA (Genomic DNA)\nRNA (Transcripts, often sequenced as cDNA)\n\n\nPhysical Footprint\n~30 to 60 Megabases (Mb) (~1% to 2% of the total genome)\n~100 to 140 Mb (Total annotated non-redundant transcript space)\n\n\nTemporal Nature\nStatic. It remains identical across almost every cell type in an organism.\nDynamic. It constantly shifts based on cell type, developmental stage, and environmental stimuli.\n\n\nInclusions\nStrictly exons from the ~20,000–23,000 protein-coding genes.\nExons from expressed genes plus non-coding RNAs (e.g., lncRNA, miRNA, tRNA, rRNA).\n\n\nAnalytical Scope\nTells you what protein variations an organism could potentially make.\nTells you what genes an organism is actively using at a specific moment.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#the-reference-based-rna-seq-pipeline",
+    "href": "chapters/05-rna_workflow.html#the-reference-based-rna-seq-pipeline",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.4 The Reference-Based RNA-Seq Pipeline",
+    "text": "4.4 The Reference-Based RNA-Seq Pipeline\nA standard reference-based RNA-Seq analysis involves several sequential steps, transitioning from raw data to downstream statistical interpretation.\n\n\n\n\n\nflowchart LR\n    subgraph Step1[\"1. Preprocessing & QC\"]\n        A[\"Raw FASTQ Reads\"] --&gt; B[\"Initial QC\\n(FastQC, MultiQC)\"]\n        B --&gt; C[\"Adapter & Quality Trimming\\n(fastp, Cutadapt)\"]\n    end\n\n    subgraph Step2[\"2. Quantification Paths\"]\n        direction TB\n        C --&gt; D1[\"Splice-Aware Alignment\\n(STAR, HISAT2)\"]\n        D1 --&gt; E1[\"Read Counting\\n(featureCounts)\"]\n        \n        C --&gt; D2[\"Pseudo-alignment\\n(Salmon, Kallisto)\"]\n    end\n\n    subgraph Step3[\"3. Downstream Analysis\"]\n        E1 --&gt; F[\"Differential Expression\\n(DESeq2, edgeR)\"]\n        D2 --&gt; F\n        F --&gt; G[\"Functional & Pathway Analysis\\n(clusterProfiler, GSEA)\"]\n    end\n\n    style Step1 fill:#f8f9fa,stroke:#d0d7de\n    style Step2 fill:#f8f9fa,stroke:#d0d7de\n    style Step3 fill:#f8f9fa,stroke:#d0d7de",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#raw-sequence-quality-control-process",
+    "href": "chapters/05-rna_workflow.html#raw-sequence-quality-control-process",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.5 Raw Sequence Quality Control Process",
+    "text": "4.5 Raw Sequence Quality Control Process\nBefore aligning the data, the raw sequences must be computationally assessed to ensure high quality. This process involves scanning the FASTQ files to calculate aggregate statistics.\nDuring this step, the pipeline evaluates:\n\nPer-base sequence quality: Ensuring the average \\(Q\\)-score remains high across the entire length of the reads.\nSequence bias and GC content: Checking for deviations from expected distributions. Significant biases in sequence content at the beginning of reads are often artifacts of random hexamer priming during cDNA synthesis (Hansen et al. 2010).\nDuplication levels: High duplication rates can indicate PCR amplification artifacts or optical duplicates.\nAdapter Content: Identifying if sequencing proceeded past the biological insert and read into the synthetic adapter sequences.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#adapter-and-quality-trimming-process",
+    "href": "chapters/05-rna_workflow.html#adapter-and-quality-trimming-process",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.6 Adapter and Quality Trimming Process",
+    "text": "4.6 Adapter and Quality Trimming Process\nIf the quality control step identifies adapter contamination or poor-quality base calls (often at the 3’ end of the reads), the sequences must be trimmed.\nThe trimming process algorithmically searches for known adapter sequences and removes them. Additionally, a sliding window approaches the ends of the reads, dropping bases that fall below a designated \\(Q\\)-score threshold (e.g., \\(Q &lt; 20\\)). Reads that become too short after trimming are entirely discarded to prevent them from mapping ambiguously to the genome.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#read-mapping-alignment",
+    "href": "chapters/05-rna_workflow.html#read-mapping-alignment",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.7 Read Mapping (Alignment)",
+    "text": "4.7 Read Mapping (Alignment)\nBecause eukaryotic RNA is spliced (introns are removed before mature mRNA is formed), mapping RNA-Seq reads back to a reference genome requires a splice-aware aligner. Standard DNA aligners drop reads that span across two exons because they appear to contain massive gaps relative to the genomic reference.\nSplice-aware aligners utilize a graph FM index and require a set of known splice sites to accurately map reads across these exon-exon junctions (Kim et al. 2015).\n\n\n\n\n\ngraph TD\n    A[\"Reference FastA\"] --&gt; B[\"Indexed Genome\"]\n    C[\"Reference GTF\"] --&gt; D[\"Known Splice Junctions\"]\n    E[\"Trimmed FASTQ\"] --&gt; F{\"Maps to known junctions?\"}\n    B --&gt; F\n    D --&gt; F\n    F --&gt;|Yes| G[\"Report Alignment\"]\n    F --&gt;|No| H{\"Maps with novel junction?\"}\n    H --&gt;|Yes| I[\"Report Alignment\"]\n    H --&gt;|No| J[\"Discard Read\"]\n\n\n\n\n\n\nIn a standard Linux environment, the alignment process typically looks like this:\n# 1. Generate the genome index from reference FastA and GTF annotation\nSTAR --runMode genomeGenerate \\\n     --genomeDir yeast_star_index \\\n     --genomeFastaFiles yeast_genome.fa \\\n     --sjdbGTFfile yeast_gene_models.gtf \\\n     --runThreadN 8\n\n# 2. Map reads and directly generate a coordinate-sorted BAM file\nSTAR --runThreadN 8 \\\n     --genomeDir yeast_star_index \\\n     --readFilesIn sample.fq.gz \\\n     --readFilesCommand zcat \\\n     --outSAMtype BAM SortedByCoordinate \\\n     --outFileNamePrefix yeast_sample\nWe first generate an index of the genome. This is done once, and you can use the same index for multiple times. In this process gene locations are provided for splice aware alignment. This is followed by alignment of the sequences we have to the exome.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#downstream-analysis",
+    "href": "chapters/05-rna_workflow.html#downstream-analysis",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.8 Downstream Analysis",
+    "text": "4.8 Downstream Analysis\nOnce the data is mapped and stored as a BAM file, we proceed to downstream analysis, which transitions raw alignments into biological insights.\n\n4.8.1 Visualization and Custom Tracks\nVisualizing quantitative read coverage over genomic regions (often done via “wiggle plots”) helps identify features such as local read depth variations or unexpected antisense transcription (Gertz et al. 2012).\nAt this stage, researchers often create custom annotation tracks to focus their analysis. For instance, filtering the annotation to include only protein_coding genes or excluding mitochondrial (MT) chromosomes ensures that the subsequent statistical tests are focused strictly on regions of interest.\n\n\n4.8.2 Pairwise Comparison and Differential Expression\nTo find statistically significant changes between biological groups (e.g., untreated control vs. treated samples), we generate uncorrected raw read counts for each genomic feature.\nTools designed for differential expression analyze these counts using specialized statistical models (such as the negative binomial distribution) to find outliers from the general distribution (Love et al. 2014). This process accounts for intensity-dependent noise—where highly expressed genes naturally show higher variance—and applies normalization factors to correct for differences in sequencing depth across samples. The output is a robust list of transcripts showing a statistically significant fold-change (e.g., \\(p\\text{-value} &lt; 0.05\\)).\n\n\n4.8.3 Multi-Comparison and Clustering\nOnce a list of significantly differentially expressed genes is generated, the next step is discovering shared patterns of expression across multiple conditions or time points.\n\nHierarchical Clustering: This visual method rearranges genes so that transcripts with similar quantitative profiles are placed adjacent to one another, forming distinct blocks or “heatmaps” of co-regulated genes.\nManual Correlation Filtering: In time-course experiments, researchers can manually define specific expression profiles (e.g., identifying genes whose expression steadily increases over time). The clustering tool then searches the dataset for any transcripts that heavily correlate (e.g., \\(R &gt; 0.9\\)) with that specific pattern, facilitating the discovery of biologically relevant gene networks.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#chapter-summary",
+    "href": "chapters/05-rna_workflow.html#chapter-summary",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.9 Chapter Summary",
+    "text": "4.9 Chapter Summary\nThis chapter outlines the complete technical workflow for a standard reference-based RNA-Seq analysis, bridging the gap between raw sequencing files and biological discovery:\n\nData Standards & Metrics: Details raw FASTQ file structures, the logarithmic math behind Phred \\(Q\\)-scores (\\(Q = -10 \\log_{10}(P)\\)), ASCII Phred+33 offset conversions, and Lander-Waterman coverage calculations (\\(C = \\frac{N \\times L}{G}\\)).\nQuality Control & Trimming: Outlines initial data diagnostics (per-base quality, GC content bias, duplication, and adapter contamination) alongside sliding-window trimming algorithms that discard low-quality tails and short fragments.\nSplice-Aware Alignment: Addresses the challenge of eukaryotic intron splicing and demonstrates how graph-based aligners (e.g., HISAT2) map reads across exon-exon junctions using reference annotations and genome indexing.\nDownstream Statistical Analysis: Covers read coverage visualization, feature filtering, differential expression testing using negative binomial modeling, and multi-condition profile discovery via hierarchical clustering and correlation filtering (\\(R &gt; 0.9\\)).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#key-terms-and-keywords",
+    "href": "chapters/05-rna_workflow.html#key-terms-and-keywords",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.10 Key Terms and Keywords",
+    "text": "4.10 Key Terms and Keywords\n\nRNA-Seq Pipeline: The sequential computational protocol for quality checking, aligning, and quantifying transcriptomic sequencing data.\nFASTQ Format: The standard four-line text format containing sequence identifiers, raw nucleotide bases, separators, and quality scores.\nPhred Quality Score (\\(Q\\)-score): A logarithmic measure of base-calling error probability; \\(Q \\ge 30\\) (99.9% accuracy) serves as the standard benchmark.\nPhred+33 Encoding: The standard ASCII mapping method that adds 33 to a \\(Q\\)-score to represent quality values as printable characters.\nLander-Waterman Equation: The mathematical formula (\\(C = \\frac{N \\times L}{G}\\)) used to calculate theoretical sequence coverage depth.\nSplice-Aware Aligner: An alignment tool (such as HISAT2) capable of splitting reads across introns to map to non-contiguous genomic exons.\nDifferential Expression (DE): Statistical hypothesis testing using negative binomial distributions to detect significant fold-changes in gene expression between conditions.\nHierarchical Clustering: An unsupervised grouping method that arranges co-expressed genes into visual heatmaps based on expression profile similarity.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05-rna_workflow.html#references",
+    "href": "chapters/05-rna_workflow.html#references",
+    "title": "4  RNA-Seq Analysis Pipeline",
+    "section": "4.11 References",
+    "text": "4.11 References\n\n\nConesa, Ana, Pedro Madrigal, Sonia Tarazona, et al. 2016. “A Survey of Best Practices for RNA-Seq Data Analysis.” Genome Biology 17 (1): 1–19.\n\n\nGertz, Jason, Katherine E Varley, Nichole S Davis, et al. 2012. “Transposase Mediated Construction of RNA-Seq Libraries.” Genome Research 22 (1): 134–41.\n\n\nHansen, Kasper D, Steven E Brenner, and Sandrine Dudoit. 2010. “Biases in Illumina Transcriptome Sequencing Caused by Random Hexamer Priming.” Nucleic Acids Research 38 (12): e131–31.\n\n\nKim, Daehwan, Ben Langmead, and Steven L Salzberg. 2015. “HISAT: A Fast Spliced Aligner with Low Memory Requirements.” Nature Methods 12 (4): 357–60.\n\n\nLove, Michael I, Wolfgang Huber, and Simon Anders. 2014. “Moderated Estimation of Fold Change and Dispersion for RNA-Seq Data with DESeq2.” Genome Biology 15 (12): 1–21.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA-Seq Analysis Pipeline</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html",
+    "href": "chapters/80-suppl1_HPC_Commands.html",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "",
+    "text": "5.1 🔑 Logging In to Markov\nYou must connect to Case Western Reserve University’s Markov cluster using one of the methods below.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#logging-in-to-markov",
+    "href": "chapters/80-suppl1_HPC_Commands.html#logging-in-to-markov",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "",
+    "text": "5.1.1 Option A: Using the Terminal (SSH)\n\nWindows: Open PuTTY, type markov.case.edu into the Host Name box, and log in.\nMac / Linux: Open your Terminal and run:\nssh abc123@markov.case.edu\n\n\n\n5.1.2 Option B: Using a Web Browser\n\nGo to https://ondemand-markov.case.edu/ and sign in.\nClick Clusters in the top menu bar.\nSelect Markov Shell Access to open a terminal interface.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#requesting-a-compute-node",
+    "href": "chapters/80-suppl1_HPC_Commands.html#requesting-a-compute-node",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.2 🚀 Requesting a Compute Node",
+    "text": "5.2 🚀 Requesting a Compute Node\nDo not run computational scripts or applications on the login node. Request an interactive compute node session immediately after logging in.\n# Request 1 node, 4 CPU cores, for a duration of 12 hours\nsrun -N 1 -n 4 --time=12:00:00 --pty /bin/bash",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#managing-environment-modules",
+    "href": "chapters/80-suppl1_HPC_Commands.html#managing-environment-modules",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.3 🛠️ . Managing Environment Modules",
+    "text": "5.3 🛠️ . Managing Environment Modules\nHPC applications require you to explicitly load their environments using the module tool.\n# List all software packages available on Markov\nmodule avail\n\n# Search for a specific software package (e.g., Java)\nmodule spider Java\n\n# Load a specific software environment into your current session\nmodule load Java\n\n# Check which software packages are currently active in your session\nmodule list\n\n# Remove a specific package from your active session\nmodule unload Java\n\n# Clear all currently loaded modules\nmodule purge",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#checking-system-status",
+    "href": "chapters/80-suppl1_HPC_Commands.html#checking-system-status",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.4 📊 Checking System Status",
+    "text": "5.4 📊 Checking System Status\nUse these commands to check cluster health, node availability, and your fair-share priority.\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\nsinfo\nView available cluster partitions and node states.\n\n\nsinfo -s\nShow a quick summary of node counts by state.\n\n\nsinfo --pcpus\nCheck available vs. allocated CPU allocations.\n\n\nsshare -U $USER\nView your account share and fair-share priority status.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#submitting-and-running-jobs",
+    "href": "chapters/80-suppl1_HPC_Commands.html#submitting-and-running-jobs",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.5 🚀 Submitting and Running Jobs",
+    "text": "5.5 🚀 Submitting and Running Jobs\nCommands for executing your computations on the compute nodes.\n\n\n\n\n\n\nNote\n\n\n\nAlways run resource-intensive processes via these commands rather than directly on the login node.\n\n\n\nsbatch script.sh\n\nDescription: Submit a batch script to the background queue.\n\nsrun --pty bash\n\nDescription: Launch an interactive terminal session on a compute node.\n\nsalloc -n 4 -t 01:00:00\n\nDescription: Allocate resources immediately without running a script yet.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#monitoring-active-jobs",
+    "href": "chapters/80-suppl1_HPC_Commands.html#monitoring-active-jobs",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.6 🔍 Monitoring Active Jobs",
+    "text": "5.6 🔍 Monitoring Active Jobs\nKeep track of your jobs currently waiting or running in the scheduler.\n\nsqueue — List all currently running and waiting jobs on the cluster.\nsqueue -u $USER — Filter the queue to show only your own jobs.\nsqueue -i 5 — Refresh and display the queue every 5 seconds.\nscontrol show job &lt;JobID&gt; — View highly detailed runtime information for a live job.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#managing-and-canceling-jobs",
+    "href": "chapters/80-suppl1_HPC_Commands.html#managing-and-canceling-jobs",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.7 🛠️ Managing and Canceling Jobs",
+    "text": "5.7 🛠️ Managing and Canceling Jobs\nModify or kill active and pending jobs.\n# Terminate a specific running or pending job\nscancel &lt;JobID&gt;\n\n# Kill every single one of your jobs at once\nscancel -u \\$USER\n\n# Cancel only your jobs that are waiting in queue\nscancel -t PENDING\n\n# Pause a pending job so it will not start\nscontrol hold &lt;JobID&gt;\n\n# Resume a paused job to let it run again\nscontrol release &lt;JobID&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/80-suppl1_HPC_Commands.html#analyzing-finished-jobs",
+    "href": "chapters/80-suppl1_HPC_Commands.html#analyzing-finished-jobs",
+    "title": "5  HPC Quick Reference Guide",
+    "section": "5.8 📜 Analyzing Finished Jobs",
+    "text": "5.8 📜 Analyzing Finished Jobs\nReview history and performance data after your jobs complete.\n\n\n\n\n\n\nTipPerformance Optimization\n\n\n\nAlways run seff on completed jobs to ensure you aren’t requesting way more memory or CPUs than your application actually uses.\n\n\n\nsacct: List your jobs from today with their exit states.\nsacct -S 2026-01-01: Search your job history starting from a specific date.\nseff &lt;JobID&gt;: Check CPU and memory efficiency metrics for a completed job.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HPC Quick Reference Guide</span>"
     ]
   }
 ]
