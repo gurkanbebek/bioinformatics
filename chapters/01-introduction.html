@@ -193,14 +193,18 @@ div.csl-indent {
   <li><a href="#the-emergence-of-multi-omics-biology" id="toc-the-emergence-of-multi-omics-biology" class="nav-link" data-scroll-target="#the-emergence-of-multi-omics-biology"><span class="header-section-number">1.5.4</span> The Emergence of Multi-Omics Biology</a></li>
   <li><a href="#from-data-to-knowledge" id="toc-from-data-to-knowledge" class="nav-link" data-scroll-target="#from-data-to-knowledge"><span class="header-section-number">1.5.5</span> From Data to Knowledge</a></li>
   </ul></li>
-  <li><a href="#the-central-dogma-and-biological-information" id="toc-the-central-dogma-and-biological-information" class="nav-link" data-scroll-target="#the-central-dogma-and-biological-information"><span class="header-section-number">1.6</span> The Central Dogma and Biological Information</a></li>
-  <li><a href="#why-models-matter" id="toc-why-models-matter" class="nav-link" data-scroll-target="#why-models-matter"><span class="header-section-number">1.7</span> Why Models Matter</a></li>
-  <li><a href="#network-models" id="toc-network-models" class="nav-link" data-scroll-target="#network-models"><span class="header-section-number">1.8</span> Network Models</a></li>
-  <li><a href="#systems-medicine" id="toc-systems-medicine" class="nav-link" data-scroll-target="#systems-medicine"><span class="header-section-number">1.9</span> Systems Medicine</a></li>
-  <li><a href="#case-study-diabetes-as-a-system" id="toc-case-study-diabetes-as-a-system" class="nav-link" data-scroll-target="#case-study-diabetes-as-a-system"><span class="header-section-number">1.10</span> Case Study Diabetes as a System</a></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">1.11</span> Chapter Summary</a></li>
-  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">1.12</span> Key Terms</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.13</span> References</a></li>
+  <li><a href="#the-central-dogma-and-biological-information" id="toc-the-central-dogma-and-biological-information" class="nav-link" data-scroll-target="#the-central-dogma-and-biological-information"><span class="header-section-number">1.6</span> The Central Dogma and Biological Information</a>
+  <ul class="collapse">
+  <li><a href="#why-models-matter" id="toc-why-models-matter" class="nav-link" data-scroll-target="#why-models-matter"><span class="header-section-number">1.6.1</span> Why Models Matter</a></li>
+  <li><a href="#network-models" id="toc-network-models" class="nav-link" data-scroll-target="#network-models"><span class="header-section-number">1.6.2</span> Network Models</a></li>
+  </ul></li>
+  <li><a href="#systems-medicine" id="toc-systems-medicine" class="nav-link" data-scroll-target="#systems-medicine"><span class="header-section-number">1.7</span> Systems Medicine</a>
+  <ul class="collapse">
+  <li><a href="#case-study-diabetes-as-a-system" id="toc-case-study-diabetes-as-a-system" class="nav-link" data-scroll-target="#case-study-diabetes-as-a-system"><span class="header-section-number">1.7.1</span> Case Study Diabetes as a System</a></li>
+  </ul></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">1.8</span> Chapter Summary</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">1.9</span> Key Terms</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.10</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -408,8 +412,6 @@ Important
 <p>A data-centric view of biology conceptualizes living organisms as complex, information-processing systems, using high-throughput data generation and computational modeling as the primary engine for discovery. Rather than testing isolated hypotheses one molecule at a time, this paradigm leverages multi-omic datasets, network analysis, and machine learning to uncover system-wide patterns, generate novel hypotheses, and predict biological behavior.</p>
 </div>
 </div>
-<p>Systems biology generally involves an iterative cycle of four core activities (<a href="#fig-systems-cycle" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>). It begins with collecting large-scale biological data, moves to developing mathematical or computational models, simulates system behavior under various conditions, and concludes by comparing predictions against experimental observations <span class="citation" data-cites="Hood2004">(<a href="01-introduction.html#ref-Hood2004" role="doc-biblioref">Hood et al. 2004</a>)</span>.</p>
-<p>Only when these different data types are integrated can researchers begin to understand disease mechanisms and identify potential therapeutic targets <span class="citation" data-cites="Misra2025">(<a href="01-introduction.html#ref-Misra2025" role="doc-biblioref"><span class="nocase">Misra et al.</span> 2025</a>)</span>. This concept of integrating multiple sources of evidence is a recurring theme throughout systems biology and bioinformatics.</p>
 <section id="biological-information-exists-in-layers" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="biological-information-exists-in-layers"><span class="header-section-number">1.5.1</span> Biological Information Exists in Layers</h3>
 <p>Modern biological systems generate information at multiple interconnected levels (<a href="#fig-omics-layers" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). The flow of information typically moves from the genome to the transcriptome, to the proteome, down to the metabolome, which then dictates the phenotype and ultimately the clinical outcome. Each layer provides a unique view of the system. The genome describes what is possible. The transcriptome describes what is being expressed. The proteome describes what biological machinery is present. The metabolome reflects ongoing cellular activity. Clinical phenotypes represent the observable consequences of these molecular processes. No single layer provides a complete picture; biological understanding emerges through the integration of multiple layers of information.</p>
@@ -485,17 +487,17 @@ Figure&nbsp;1.4: The transformation hierarchy from raw measurements to biologica
 <section id="the-central-dogma-and-biological-information" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="the-central-dogma-and-biological-information"><span class="header-section-number">1.6</span> The Central Dogma and Biological Information</h2>
 <p>Biological systems process information across multiple molecular layers. The traditional framework is represented by the central dogma where DNA becomes RNA, which becomes Protein. Modern systems biology extends this linear framework into an integrated biological hierarchy spanning from the genome to the transcriptome, proteome, metabolome, and finally the phenotype. Each layer contributes unique and complementary information regarding the physiological state of an organism.</p>
-</section>
-<section id="why-models-matter" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="why-models-matter"><span class="header-section-number">1.7</span> Why Models Matter</h2>
+<section id="why-models-matter" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="why-models-matter"><span class="header-section-number">1.6.1</span> Why Models Matter</h3>
 <p>To understand complex systems, scientists build models. These are simplified representations of reality designed to make complex phenomena tractable. Models allow us to organize complex knowledge, visualize system relationships, generate testable hypotheses, and predict unobserved outcomes. As statistician George Box famously noted, all models are wrong, but some are useful <span class="citation" data-cites="Box1979">(<a href="01-introduction.html#ref-Box1979" role="doc-biblioref">Box 1979</a>)</span>. Models are not meant to be perfect replicas of reality; they are operational tools that help us make better decisions and understand underlying mechanisms.</p>
 </section>
-<section id="network-models" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="network-models"><span class="header-section-number">1.8</span> Network Models</h2>
+<section id="network-models" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="network-models"><span class="header-section-number">1.6.2</span> Network Models</h3>
 <p>Many biological systems are naturally represented as networks or graphs. These models consist of nodes, which are the individual components of the system such as genes, proteins, or metabolites. They also consist of edges, which represent the interactions or connections between components, like transcriptional regulation or physical binding. Networks provide a visual and mathematical framework for studying biological complexity by prioritizing connections over isolated parts.</p>
 </section>
-<section id="systems-medicine" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="systems-medicine"><span class="header-section-number">1.9</span> Systems Medicine</h2>
+</section>
+<section id="systems-medicine" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="systems-medicine"><span class="header-section-number">1.7</span> Systems Medicine</h2>
 <p>The systems perspective extends directly into modern clinical practice. Disease can be viewed as a perturbation of normal biological networks. Pathologies arise when system interactions are disrupted by genetic variations, environmental stressors, or pathogens. Network perturbations are central to cancer, neurodegenerative diseases, autoimmune disorders, and metabolic syndromes.</p>
 <p>Systems medicine integrates genomic, transcriptomic, proteomic, metabolomic, and clinical data to pinpoint network disruptions and identify novel therapeutic targets. Systems medicine serves as the foundation for a proactive healthcare paradigm known as P4 Medicine (<a href="#fig-p4-medicine" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>) <span class="citation" data-cites="Hood2012">(<a href="01-introduction.html#ref-Hood2012" role="doc-biblioref">Hood and Flores 2012</a>)</span>. The four pillars of P4 Medicine are:</p>
 <ul>
@@ -533,9 +535,8 @@ Figure&nbsp;1.5: The four pillars of P4 Medicine.
 </div>
 </div>
 </div>
-</section>
-<section id="case-study-diabetes-as-a-system" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="case-study-diabetes-as-a-system"><span class="header-section-number">1.10</span> Case Study Diabetes as a System</h2>
+<section id="case-study-diabetes-as-a-system" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="case-study-diabetes-as-a-system"><span class="header-section-number">1.7.1</span> Case Study Diabetes as a System</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -568,14 +569,15 @@ Figure&nbsp;1.5: The four pillars of P4 Medicine.
 </tbody>
 </table>
 </section>
-<section id="chapter-summary" class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">1.11</span> Chapter Summary</h2>
+</section>
+<section id="chapter-summary" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">1.8</span> Chapter Summary</h2>
 <pre class="text"><code>System = Parts + Connections + Dynamics
 </code></pre>
 <p>Biological systems consist of interacting parts, connections, and dynamics that give rise to emergent behaviors. Understanding these systems requires moving beyond reductionist methods toward integrated systems thinking. Systems biology combines high-throughput data collection with computational models to explain how systemic interactions drive health and disease. Modern bioinformatics supplies the analytical toolkit required to interpret these vast datasets, while systems medicine translates these insights into proactive, personalized healthcare.</p>
 </section>
-<section id="key-terms" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">1.12</span> Key Terms</h2>
+<section id="key-terms" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">1.9</span> Key Terms</h2>
 <ul>
 <li>System: A set of connected items or devices operating together.</li>
 <li>Systems Thinking: An approach to integration that views components as part of an overall system.</li>
@@ -591,8 +593,8 @@ Figure&nbsp;1.5: The four pillars of P4 Medicine.
 <li>P4 Medicine: Healthcare that is Predictive, Preventive, Personalized, and Participatory.</li>
 </ul>
 </section>
-<section id="references" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="references"><span class="header-section-number">1.13</span> References</h2>
+<section id="references" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="references"><span class="header-section-number">1.10</span> References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Bentley2008" class="csl-entry" role="listitem">
 <span class="nocase">Bentley, David R., Shankar Balasubramanian, Harold
