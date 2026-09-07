@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gurkan Bebek, Ph.D., M.S.">
+
+<title>3&nbsp; Ontologies, Databases, and Statistical Foundations – Systems Biology and Translational Bioinformatics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/04-sequencing.html" rel="next">
+<link href="../chapters/03-databases.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7d8ad657b878717df1156ab40fed854c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-ontologies.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ontologies, Databases, and Statistical Foundations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Systems Biology and Translational Bioinformatics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Systems Biology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-databases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-ontologies.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ontologies, Databases, and Statistical Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-rna_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3.1</span> Learning Objectives</a></li>
+  <li><a href="#introduction-organizing-the-biological-universe" id="toc-introduction-organizing-the-biological-universe" class="nav-link" data-scroll-target="#introduction-organizing-the-biological-universe"><span class="header-section-number">3.2</span> Introduction: Organizing the Biological Universe</a></li>
+  <li><a href="#biomedical-ontologies" id="toc-biomedical-ontologies" class="nav-link" data-scroll-target="#biomedical-ontologies"><span class="header-section-number">3.3</span> Biomedical Ontologies</a>
+  <ul class="collapse">
+  <li><a href="#ontology-vs.-annotation" id="toc-ontology-vs.-annotation" class="nav-link" data-scroll-target="#ontology-vs.-annotation"><span class="header-section-number">3.3.1</span> Ontology vs.&nbsp;Annotation</a></li>
+  </ul></li>
+  <li><a href="#why-biological-knowledge-requires-hierarchies" id="toc-why-biological-knowledge-requires-hierarchies" class="nav-link" data-scroll-target="#why-biological-knowledge-requires-hierarchies"><span class="header-section-number">3.4</span> Why Biological Knowledge Requires Hierarchies</a>
+  <ul class="collapse">
+  <li><a href="#directed-acyclic-graphs-dags" id="toc-directed-acyclic-graphs-dags" class="nav-link" data-scroll-target="#directed-acyclic-graphs-dags"><span class="header-section-number">3.4.1</span> Directed Acyclic Graphs (DAGs)</a></li>
+  </ul></li>
+  <li><a href="#the-gene-ontology" id="toc-the-gene-ontology" class="nav-link" data-scroll-target="#the-gene-ontology"><span class="header-section-number">3.5</span> The Gene Ontology</a>
+  <ul class="collapse">
+  <li><a href="#biological-process-bp" id="toc-biological-process-bp" class="nav-link" data-scroll-target="#biological-process-bp"><span class="header-section-number">3.5.1</span> Biological Process (BP)</a></li>
+  <li><a href="#molecular-function-mf" id="toc-molecular-function-mf" class="nav-link" data-scroll-target="#molecular-function-mf"><span class="header-section-number">3.5.2</span> Molecular Function (MF)</a></li>
+  <li><a href="#cellular-component-cc" id="toc-cellular-component-cc" class="nav-link" data-scroll-target="#cellular-component-cc"><span class="header-section-number">3.5.3</span> Cellular Component (CC)</a></li>
+  </ul></li>
+  <li><a href="#relationship-types-and-biological-meaning" id="toc-relationship-types-and-biological-meaning" class="nav-link" data-scroll-target="#relationship-types-and-biological-meaning"><span class="header-section-number">3.6</span> Relationship Types and Biological Meaning</a></li>
+  <li><a href="#the-true-path-rule" id="toc-the-true-path-rule" class="nav-link" data-scroll-target="#the-true-path-rule"><span class="header-section-number">3.7</span> The True Path Rule</a></li>
+  <li><a href="#biological-databases-and-data-standards" id="toc-biological-databases-and-data-standards" class="nav-link" data-scroll-target="#biological-databases-and-data-standards"><span class="header-section-number">3.8</span> Biological Databases and Data Standards</a>
+  <ul class="collapse">
+  <li><a href="#gene-association-files-gaf" id="toc-gene-association-files-gaf" class="nav-link" data-scroll-target="#gene-association-files-gaf"><span class="header-section-number">3.8.1</span> Gene Association Files (GAF)</a></li>
+  <li><a href="#evidence-codes" id="toc-evidence-codes" class="nav-link" data-scroll-target="#evidence-codes"><span class="header-section-number">3.8.2</span> Evidence Codes</a></li>
+  </ul></li>
+  <li><a href="#statistical-foundations-of-functional-enrichment" id="toc-statistical-foundations-of-functional-enrichment" class="nav-link" data-scroll-target="#statistical-foundations-of-functional-enrichment"><span class="header-section-number">3.9</span> Statistical Foundations of Functional Enrichment</a>
+  <ul class="collapse">
+  <li><a href="#why-raw-counts-are-not-enough" id="toc-why-raw-counts-are-not-enough" class="nav-link" data-scroll-target="#why-raw-counts-are-not-enough"><span class="header-section-number">3.9.1</span> Why Raw Counts Are Not Enough</a></li>
+  </ul></li>
+  <li><a href="#over-representation-analysis-ora" id="toc-over-representation-analysis-ora" class="nav-link" data-scroll-target="#over-representation-analysis-ora"><span class="header-section-number">3.10</span> Over-Representation Analysis (ORA)</a></li>
+  <li><a href="#gene-set-enrichment-analysis-gsea" id="toc-gene-set-enrichment-analysis-gsea" class="nav-link" data-scroll-target="#gene-set-enrichment-analysis-gsea"><span class="header-section-number">3.11</span> Gene Set Enrichment Analysis (GSEA)</a>
+  <ul class="collapse">
+  <li><a href="#beyond-independent-go-terms" id="toc-beyond-independent-go-terms" class="nav-link" data-scroll-target="#beyond-independent-go-terms"><span class="header-section-number">3.11.1</span> Beyond Independent GO Terms</a></li>
+  </ul></li>
+  <li><a href="#multiple-hypothesis-testing" id="toc-multiple-hypothesis-testing" class="nav-link" data-scroll-target="#multiple-hypothesis-testing"><span class="header-section-number">3.12</span> Multiple Hypothesis Testing</a>
+  <ul class="collapse">
+  <li><a href="#family-wise-error-rate-and-bonferroni-correction" id="toc-family-wise-error-rate-and-bonferroni-correction" class="nav-link" data-scroll-target="#family-wise-error-rate-and-bonferroni-correction"><span class="header-section-number">3.12.1</span> Family-Wise Error Rate and Bonferroni Correction</a></li>
+  <li><a href="#false-discovery-rate-fdr" id="toc-false-discovery-rate-fdr" class="nav-link" data-scroll-target="#false-discovery-rate-fdr"><span class="header-section-number">3.12.2</span> False Discovery Rate (FDR)</a></li>
+  </ul></li>
+  <li><a href="#common-pitfalls-in-functional-enrichment-analysis" id="toc-common-pitfalls-in-functional-enrichment-analysis" class="nav-link" data-scroll-target="#common-pitfalls-in-functional-enrichment-analysis"><span class="header-section-number">3.13</span> Common Pitfalls in Functional Enrichment Analysis</a>
+  <ul class="collapse">
+  <li><a href="#the-background-universe" id="toc-the-background-universe" class="nav-link" data-scroll-target="#the-background-universe"><span class="header-section-number">3.13.1</span> The Background Universe</a></li>
+  <li><a href="#biological-cross-talk" id="toc-biological-cross-talk" class="nav-link" data-scroll-target="#biological-cross-talk"><span class="header-section-number">3.13.2</span> Biological Cross-Talk</a></li>
+  <li><a href="#ignoring-annotation-quality" id="toc-ignoring-annotation-quality" class="nav-link" data-scroll-target="#ignoring-annotation-quality"><span class="header-section-number">3.13.3</span> Ignoring Annotation Quality</a></li>
+  </ul></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">3.14</span> Chapter Summary</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">3.15</span> Key Terms</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ontologies, Databases, and Statistical Foundations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gurkan Bebek, Ph.D., M.S. </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-objectives" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<p>By the end of this chapter, readers should be able to:</p>
+<ul>
+<li>Differentiate between ontologies and functional annotations.</li>
+<li>Explain how Directed Acyclic Graphs (DAGs) organize biological knowledge.</li>
+<li>Describe the three domains of the Gene Ontology.</li>
+<li>Apply the True Path Rule to interpret biological annotations.</li>
+<li>Navigate major biological databases and understand common identifiers.</li>
+<li>Interpret Gene Ontology evidence codes.</li>
+<li>Explain the rationale behind functional enrichment analysis.</li>
+<li>Understand the foundations of Over-Representation Analysis (ORA) and Gene Set Enrichment Analysis (GSEA).</li>
+<li>Apply principles of multiple-testing correction using FWER and FDR.</li>
+<li>Recognize common pitfalls in enrichment analysis.</li>
+</ul>
+<hr>
+</section>
+<section id="introduction-organizing-the-biological-universe" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="introduction-organizing-the-biological-universe"><span class="header-section-number">3.2</span> Introduction: Organizing the Biological Universe</h2>
+<p>Modern high-throughput technologies generate enormous amounts of biological data. RNA sequencing experiments routinely measure the expression of tens of thousands of genes, while proteomic and metabolomic studies can quantify thousands of molecular features simultaneously. The result is often a long list of statistically significant genes, proteins, or metabolites.</p>
+<p>However, biological discovery does not emerge from the list itself. A list of 500 differentially expressed genes does not immediately explain a disease process, reveal a therapeutic target, or provide mechanistic insight. The central challenge of systems biology is therefore transforming large-scale molecular measurements into meaningful biological interpretations <span class="citation" data-cites="Hood2012">(<a href="01-introduction.html#ref-Hood2012" role="doc-biblioref">Hood and Tian 2012</a>)</span>.</p>
+<p>Three foundational resources make this possible:</p>
+<ol type="1">
+<li><strong>Biomedical ontologies</strong>, which provide standardized vocabularies for describing biological concepts and their relationships.</li>
+<li><strong>Curated biological databases</strong>, which organize and distribute biological knowledge using stable identifiers and standardized formats.</li>
+<li><strong>Statistical frameworks</strong>, which determine whether biological functions or pathways are represented more frequently than expected by chance.</li>
+</ol>
+<p>Together, these resources allow researchers to move from molecular measurements to biological understanding.</p>
+<hr>
+</section>
+<section id="biomedical-ontologies" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="biomedical-ontologies"><span class="header-section-number">3.3</span> Biomedical Ontologies</h2>
+<section id="ontology-vs.-annotation" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="ontology-vs.-annotation"><span class="header-section-number">3.3.1</span> Ontology vs.&nbsp;Annotation</h3>
+<p>One of the most important distinctions in bioinformatics is the difference between an ontology and an annotation.</p>
+<p>An <strong>ontology</strong> defines biological concepts and the relationships among them. It serves as a structured representation of knowledge that remains independent of any specific organism or experiment.</p>
+<p>An <strong>annotation</strong> links a biological entity, such as a gene or protein, to a concept within that ontology.</p>
+<pre class="text"><code>       +-------------------------------------------------------+
+       |                     THE ONTOLOGY                      |
+       |  Controlled Vocabulary + Graph Hierarchy (e.g., DAG)  |
+       |     [Apoptosis] &lt;--(is_a)-- [Programmed Cell Death]   |
+       +-------------------------------------------------------+
+                                   ^
+                                   | Annotation
+                                   |
+       +-------------------------------------------------------+
+       |                    GENE PRODUCTS                      |
+       |             UniProt: P04637 (Human TP53)              |
+       |             Ensembl: ENSG00000141510                  |
+       +-------------------------------------------------------+</code></pre>
+<p>A useful analogy is that an ontology functions like a dictionary and organizational map, whereas annotations are the entries connecting specific biological entities to terms in that dictionary.</p>
+<p>For example, the term <em>apoptotic process</em> exists in the Gene Ontology regardless of any particular gene. When curators determine that TP53 participates in apoptosis, they create an annotation linking TP53 to that term.</p>
+</section>
+</section>
+<section id="why-biological-knowledge-requires-hierarchies" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="why-biological-knowledge-requires-hierarchies"><span class="header-section-number">3.4</span> Why Biological Knowledge Requires Hierarchies</h2>
+<p>Biological concepts are naturally hierarchical. Cell division is a type of cellular process. Mitosis is a type of cell division. Chromosome segregation is a component of mitosis.</p>
+<p>An effective biological knowledge system must therefore capture relationships among concepts while allowing investigators to move between broad and specific descriptions.</p>
+<p>The Gene Ontology achieves this using a graph-based structure known as a <strong>Directed Acyclic Graph (DAG)</strong>.</p>
+<section id="directed-acyclic-graphs-dags" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="directed-acyclic-graphs-dags"><span class="header-section-number">3.4.1</span> Directed Acyclic Graphs (DAGs)</h3>
+<p>A graph consists of:</p>
+<ul>
+<li><strong>Nodes</strong>, representing biological concepts.</li>
+<li><strong>Edges</strong>, representing relationships between concepts.</li>
+</ul>
+<p>Unlike a simple tree, where each node has only one parent, a DAG allows multiple parent terms <span class="citation" data-cites="Ashburner2000">(<a href="01-introduction.html#ref-Ashburner2000" role="doc-biblioref"><span class="nocase">Ashburner et al.</span> 2000</a>)</span>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+subgraph Tree["Tree Structure"]
+A(Root) --&gt; B(Node 1)
+A --&gt; C(Node 2)
+B --&gt; D(Node 3)
+B --&gt; E(Node 4)
+end
+
+subgraph DAG["Directed Acyclic Graph"]
+P1(Parent 1) --&gt; X(Child)
+P2(Parent 2) --&gt; X
+P1 --&gt; P3(Parent 3)
+end
+</pre>
+</div>
+<p></p><figcaption> Comparison of a tree and a Directed Acyclic Graph (DAG). In a DAG, a biological concept may belong to multiple parent categories.</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<p>This design reflects biological reality. A process such as apoptosis may simultaneously belong to multiple higher-level biological categories. A simple tree cannot adequately represent these overlapping relationships.</p>
+<p>The “acyclic” property prevents loops. If a researcher follows parent-child relationships upward through the ontology, they will never return to the same term.</p>
+<hr>
+</section>
+</section>
+<section id="the-gene-ontology" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="the-gene-ontology"><span class="header-section-number">3.5</span> The Gene Ontology</h2>
+<p>Developed by the Gene Ontology Consortium, GO provides a standardized vocabulary for describing gene product properties across organisms <span class="citation" data-cites="Ashburner2000 GeneOntologyConsortium2021">(<a href="01-introduction.html#ref-Ashburner2000" role="doc-biblioref"><span class="nocase">Ashburner et al.</span> 2000</a>; <a href="01-introduction.html#ref-GeneOntologyConsortium2021" role="doc-biblioref">Gene Ontology Consortium 2021</a>)</span>.</p>
+<p>GO is organized into three independent domains.</p>
+<section id="biological-process-bp" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="biological-process-bp"><span class="header-section-number">3.5.1</span> Biological Process (BP)</h3>
+<p>A Biological Process describes a series of coordinated events that accomplish a biological objective.</p>
+<p>Examples include:</p>
+<ul>
+<li>Cell cycle</li>
+<li>Immune response</li>
+<li>Signal transduction</li>
+<li>Apoptosis</li>
+</ul>
+<p>Processes typically involve multiple molecular functions operating together.</p>
+</section>
+<section id="molecular-function-mf" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="molecular-function-mf"><span class="header-section-number">3.5.2</span> Molecular Function (MF)</h3>
+<p>A Molecular Function describes the fundamental biochemical activity of a gene product.</p>
+<p>Examples include:</p>
+<ul>
+<li>ATP binding</li>
+<li>Protein kinase activity</li>
+<li>DNA binding</li>
+</ul>
+<p>Molecular function answers the question:</p>
+<blockquote class="blockquote">
+<p>What does this molecule do?</p>
+</blockquote>
+</section>
+<section id="cellular-component-cc" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="cellular-component-cc"><span class="header-section-number">3.5.3</span> Cellular Component (CC)</h3>
+<p>A Cellular Component describes where a gene product functions.</p>
+<p>Examples include:</p>
+<ul>
+<li>Nucleus</li>
+<li>Plasma membrane</li>
+<li>Ribosome</li>
+<li>Mitochondrial matrix</li>
+</ul>
+<p>Cellular component answers the question:</p>
+<blockquote class="blockquote">
+<p>Where does it act?</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="relationship-types-and-biological-meaning" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="relationship-types-and-biological-meaning"><span class="header-section-number">3.6</span> Relationship Types and Biological Meaning</h2>
+<p>GO terms are connected through well-defined semantic relationships.</p>
+<p>The most important relationships are:</p>
+<ul>
+<li><strong>is_a</strong>: Represents subclass membership.</li>
+<li><strong>part_of</strong>: Represents structural or functional inclusion.</li>
+</ul>
+<p>For example:</p>
+<pre class="text"><code>protein kinase activity
+         is_a
+kinase activity</code></pre>
+<p>and</p>
+<pre class="text"><code>nucleus
+      part_of
+eukaryotic cell</code></pre>
+<p>These relationships allow computational tools to navigate biological knowledge in a consistent and meaningful manner.</p>
+<hr>
+</section>
+<section id="the-true-path-rule" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="the-true-path-rule"><span class="header-section-number">3.7</span> The True Path Rule</h2>
+<p>A central principle of GO is the <strong>True Path Rule</strong> <span class="citation" data-cites="Ashburner2000 Rhee2008">(<a href="01-introduction.html#ref-Ashburner2000" role="doc-biblioref"><span class="nocase">Ashburner et al.</span> 2000</a>; <a href="01-introduction.html#ref-Rhee2008" role="doc-biblioref">Rhee et al. 2008</a>)</span>.</p>
+<pre class="text"><code>If a gene is annotated to a specific term,
+it is automatically annotated to all ancestral terms.</code></pre>
+<p>For example:</p>
+<pre class="text"><code>negative regulation of apoptosis
+                |
+                v
+regulation of apoptosis
+                |
+                v
+cell death
+                |
+                v
+biological process</code></pre>
+<p>If TP53 is annotated to <em>negative regulation of apoptosis</em>, it is implicitly associated with all higher-level categories above it.</p>
+<p>This rule provides consistency throughout the ontology and allows researchers to analyze biological functions at multiple levels of granularity.</p>
+<p>However, it also introduces redundancy during enrichment analysis because parent categories inherit genes from their descendants.</p>
+<hr>
+</section>
+<section id="biological-databases-and-data-standards" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="biological-databases-and-data-standards"><span class="header-section-number">3.8</span> Biological Databases and Data Standards</h2>
+<p>Ontologies define biological concepts, but biological databases provide the information needed to connect genes and proteins to those concepts.</p>
+<p>Several resources play central roles in modern bioinformatics.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Database</th>
+<th>Primary Focus</th>
+<th>Identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UniProtKB</td>
+<td>Protein sequence and function</td>
+<td>UniProt Accession</td>
+</tr>
+<tr class="even">
+<td>IntAct</td>
+<td>Molecular interactions</td>
+<td>IntAct ID</td>
+</tr>
+<tr class="odd">
+<td>PANTHER</td>
+<td>Protein families and pathways</td>
+<td>PANTHER ID</td>
+</tr>
+<tr class="even">
+<td>NCBI Gene</td>
+<td>Gene-centric information</td>
+<td>Entrez Gene ID</td>
+</tr>
+</tbody>
+</table>
+<p>These resources are heavily cross-linked and form an interconnected ecosystem of biological knowledge.</p>
+<section id="gene-association-files-gaf" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="gene-association-files-gaf"><span class="header-section-number">3.8.1</span> Gene Association Files (GAF)</h3>
+<p>Gene Ontology annotations are commonly distributed using the <strong>Gene Association Format (GAF)</strong>.</p>
+<p>Each annotation typically contains:</p>
+<ul>
+<li>Gene identifier</li>
+<li>GO identifier</li>
+<li>Ontology category</li>
+<li>Evidence code</li>
+<li>Reference source</li>
+</ul>
+<p>GAF files serve as the foundation for most enrichment-analysis software.</p>
+</section>
+<section id="evidence-codes" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="evidence-codes"><span class="header-section-number">3.8.2</span> Evidence Codes</h3>
+<p>Not all GO annotations are supported by the same level of evidence.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EXP</td>
+<td>Inferred from experiment</td>
+</tr>
+<tr class="even">
+<td>IDA</td>
+<td>Inferred from direct assay</td>
+</tr>
+<tr class="odd">
+<td>IPI</td>
+<td>Inferred from physical interaction</td>
+</tr>
+<tr class="even">
+<td>ISS</td>
+<td>Inferred from sequence similarity</td>
+</tr>
+<tr class="odd">
+<td>IEA</td>
+<td>Inferred from electronic annotation</td>
+</tr>
+</tbody>
+</table>
+<p>Evidence codes help researchers evaluate annotation reliability.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Interpreting Electronic Annotations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Interpreting Electronic Annotations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many GO annotations carry the <strong>IEA</strong> evidence code and are assigned automatically using computational pipelines. These annotations are extremely valuable for large-scale analyses, but experimentally supported annotations are generally considered more reliable when detailed biological interpretation is required.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="statistical-foundations-of-functional-enrichment" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="statistical-foundations-of-functional-enrichment"><span class="header-section-number">3.9</span> Statistical Foundations of Functional Enrichment</h2>
+<p>After identifying differentially expressed genes (DEGs), researchers often ask:</p>
+<blockquote class="blockquote">
+<p>Which biological functions are associated with these genes?</p>
+</blockquote>
+<p>This question motivates functional enrichment analysis.</p>
+<section id="why-raw-counts-are-not-enough" class="level3" data-number="3.9.1">
+<h3 data-number="3.9.1" class="anchored" data-anchor-id="why-raw-counts-are-not-enough"><span class="header-section-number">3.9.1</span> Why Raw Counts Are Not Enough</h3>
+<p>Large biological categories naturally contain many genes. Consequently, categories with more genes frequently appear near the top of ranked lists even when they are not biologically relevant.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="The Mitosis vs. Glucose Transport Example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>The Mitosis vs.&nbsp;Glucose Transport Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose an experiment measures 2,000 genes and identifies 200 DEGs.</p>
+<p>Among them:</p>
+<ul>
+<li>Mitosis: 160 DEGs</li>
+<li>Glucose Transport: 40 DEGs</li>
+</ul>
+<p>At first glance, mitosis appears more important.</p>
+<p>However, if the experiment includes 1,600 mitotic genes, then observing 160 DEGs is exactly what would be expected by chance.</p>
+<p>If only 100 genes are involved in glucose transport, observing 40 DEGs instead of an expected 10 represents substantial enrichment.</p>
+<p>The key question is therefore not:</p>
+<blockquote class="blockquote">
+<p>How many genes are present?</p>
+</blockquote>
+<p>but rather:</p>
+<blockquote class="blockquote">
+<p>How many genes are present relative to expectation?</p>
+</blockquote>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="over-representation-analysis-ora" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="over-representation-analysis-ora"><span class="header-section-number">3.10</span> Over-Representation Analysis (ORA)</h2>
+<p>ORA evaluates whether a biological category contains more genes than expected by chance.</p>
+<p>For a GO term (T), we construct a contingency table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>In Term T</th>
+<th>Not in Term T</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DEGs</td>
+<td>k</td>
+<td>n-k</td>
+</tr>
+<tr class="even">
+<td>Non-DEGs</td>
+<td>M-k</td>
+<td>Remaining</td>
+</tr>
+</tbody>
+</table>
+<p>where:</p>
+<ul>
+<li>(N) = total background genes</li>
+<li>(M) = genes associated with the term</li>
+<li>(n) = total DEGs</li>
+<li>(k) = DEGs associated with the term</li>
+</ul>
+<p>The significance of this overlap is typically assessed using <strong>Fisher’s Exact Test</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Mathematical Foundation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Mathematical Foundation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ORA is based on the hypergeometric distribution:</p>
+<p><span class="math display">\[
+P(X=k)=
+\frac{\binom{M}{k}\binom{N-M}{n-k}}
+{\binom{N}{n}}
+\]</span></p>
+<p>which models sampling without replacement from a finite population.</p>
+</div>
+</div>
+<p>ORA remains one of the most widely used methods in functional genomics because it is intuitive, computationally efficient, and statistically robust.</p>
+<hr>
+</section>
+<section id="gene-set-enrichment-analysis-gsea" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="gene-set-enrichment-analysis-gsea"><span class="header-section-number">3.11</span> Gene Set Enrichment Analysis (GSEA)</h2>
+<p>ORA requires a threshold that separates significant and non-significant genes.</p>
+<p>This creates an artificial boundary. Genes just above and below the cutoff are often biologically similar.</p>
+<p>To address this issue, Subramanian and colleagues developed <strong>Gene Set Enrichment Analysis (GSEA)</strong> <span class="citation" data-cites="Subramanian2005">(<a href="01-introduction.html#ref-Subramanian2005" role="doc-biblioref">Subramanian et al. 2005</a>)</span>.</p>
+<pre class="text"><code>Rank all genes
+       ↓
+Walk through ranked list
+       ↓
+Calculate enrichment score
+       ↓
+Estimate significance using permutations</code></pre>
+<p>Rather than analyzing only selected DEGs, GSEA evaluates the entire ranked dataset.</p>
+<p>A pathway is considered enriched if its member genes cluster near the top or bottom of the ranked list more often than expected by chance.</p>
+<p>Because GSEA uses all measured genes, it is often better at detecting subtle but coordinated biological changes.</p>
+<section id="beyond-independent-go-terms" class="level3" data-number="3.11.1">
+<h3 data-number="3.11.1" class="anchored" data-anchor-id="beyond-independent-go-terms"><span class="header-section-number">3.11.1</span> Beyond Independent GO Terms</h3>
+<p>GO categories are not independent because of the True Path Rule and hierarchical structure.</p>
+<p>Consequently, many related terms may appear significant simultaneously.</p>
+<p>Specialized topology-aware methods have been developed to reduce redundancy and better account for GO structure <span class="citation" data-cites="Alexa2006">(<a href="01-introduction.html#ref-Alexa2006" role="doc-biblioref">Alexa et al. 2006</a>)</span>. These approaches help distinguish truly specific biological signals from inherited parental effects.</p>
+<hr>
+</section>
+</section>
+<section id="multiple-hypothesis-testing" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="multiple-hypothesis-testing"><span class="header-section-number">3.12</span> Multiple Hypothesis Testing</h2>
+<p>A typical enrichment analysis evaluates hundreds or thousands of GO terms simultaneously.</p>
+<p>If 10,000 tests are performed using a significance threshold of 0.05, approximately 500 false positives are expected by chance alone.</p>
+<section id="family-wise-error-rate-and-bonferroni-correction" class="level3" data-number="3.12.1">
+<h3 data-number="3.12.1" class="anchored" data-anchor-id="family-wise-error-rate-and-bonferroni-correction"><span class="header-section-number">3.12.1</span> Family-Wise Error Rate and Bonferroni Correction</h3>
+<p>The Family-Wise Error Rate (FWER) represents the probability of making at least one false-positive discovery.</p>
+<p>Bonferroni correction controls this error rate by dividing the significance threshold by the number of tests performed:</p>
+<p><span class="math display">\[
+\alpha_{adjusted}=\frac{\alpha}{m}
+\]</span></p>
+<p>While effective, Bonferroni correction can be overly conservative in genomic studies.</p>
+</section>
+<section id="false-discovery-rate-fdr" class="level3" data-number="3.12.2">
+<h3 data-number="3.12.2" class="anchored" data-anchor-id="false-discovery-rate-fdr"><span class="header-section-number">3.12.2</span> False Discovery Rate (FDR)</h3>
+<p>Modern genomics typically relies on the <strong>False Discovery Rate (FDR)</strong> <span class="citation" data-cites="BenjaminiHochberg1995">(<a href="01-introduction.html#ref-BenjaminiHochberg1995" role="doc-biblioref">Benjamini and Hochberg 1995</a>)</span>.</p>
+<p>Rather than eliminating all false positives, FDR controls the expected proportion of false discoveries among reported findings.</p>
+<p>An FDR threshold of 0.05 implies that approximately 5% of significant results are expected to be false positives.</p>
+<p>This balance between sensitivity and reliability makes FDR the preferred correction strategy for most high-throughput analyses.</p>
+<hr>
+</section>
+</section>
+<section id="common-pitfalls-in-functional-enrichment-analysis" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="common-pitfalls-in-functional-enrichment-analysis"><span class="header-section-number">3.13</span> Common Pitfalls in Functional Enrichment Analysis</h2>
+<section id="the-background-universe" class="level3" data-number="3.13.1">
+<h3 data-number="3.13.1" class="anchored" data-anchor-id="the-background-universe"><span class="header-section-number">3.13.1</span> The Background Universe</h3>
+<p>The most common error in enrichment analysis is choosing an inappropriate background.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Use the Correct Background">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Use the Correct Background
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If an experiment measured 1,000 genes, then those 1,000 genes should define the statistical universe.</p>
+<p>Using all genes in the genome as the background can dramatically inflate significance and generate misleading biological conclusions.</p>
+</div>
+</div>
+<p>The background should always reflect the set of genes that could realistically have been detected.</p>
+</section>
+<section id="biological-cross-talk" class="level3" data-number="3.13.2">
+<h3 data-number="3.13.2" class="anchored" data-anchor-id="biological-cross-talk"><span class="header-section-number">3.13.2</span> Biological Cross-Talk</h3>
+<p>Genes frequently participate in multiple pathways.</p>
+<p>Consequently, enrichment results often contain clusters of related biological terms derived from overlapping genes.</p>
+<p>Researchers should interpret these categories collectively rather than viewing every enriched term as an independent biological discovery.</p>
+</section>
+<section id="ignoring-annotation-quality" class="level3" data-number="3.13.3">
+<h3 data-number="3.13.3" class="anchored" data-anchor-id="ignoring-annotation-quality"><span class="header-section-number">3.13.3</span> Ignoring Annotation Quality</h3>
+<p>The quality of a biological interpretation depends on the quality of its underlying annotations.</p>
+<p>Understanding evidence codes and annotation provenance helps researchers distinguish well-supported findings from tentative computational predictions.</p>
+<hr>
+</section>
+</section>
+<section id="chapter-summary" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">3.14</span> Chapter Summary</h2>
+<p>Modern systems biology depends on structured biological knowledge, curated databases, and rigorous statistical methods.</p>
+<ul>
+<li>Ontologies provide standardized representations of biological concepts.</li>
+<li>The Gene Ontology organizes knowledge using Directed Acyclic Graphs.</li>
+<li>The True Path Rule propagates annotations upward through the ontology hierarchy.</li>
+<li>Databases such as UniProt, IntAct, PANTHER, and NCBI Gene provide curated biological information.</li>
+<li>GO annotations are distributed through standardized formats and supported by evidence codes.</li>
+<li>ORA evaluates enrichment relative to expectation using Fisher’s Exact Test and the hypergeometric framework.</li>
+<li>GSEA evaluates ranked gene lists without requiring arbitrary thresholds.</li>
+<li>Multiple-testing correction, particularly FDR, is essential for reliable interpretation.</li>
+<li>Careful selection of background populations and thoughtful interpretation remain critical for meaningful biological conclusions.</li>
+</ul>
+<hr>
+</section>
+<section id="key-terms" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">3.15</span> Key Terms</h2>
+<ul>
+<li>Ontology</li>
+<li>Annotation</li>
+<li>Gene Ontology (GO)</li>
+<li>Directed Acyclic Graph (DAG)</li>
+<li>True Path Rule</li>
+<li>Gene Association File (GAF)</li>
+<li>Evidence Code</li>
+<li>Over-Representation Analysis (ORA)</li>
+<li>Fisher’s Exact Test</li>
+<li>Hypergeometric Distribution</li>
+<li>Gene Set Enrichment Analysis (GSEA)</li>
+<li>Family-Wise Error Rate (FWER)</li>
+<li>False Discovery Rate (FDR)</li>
+<li>Reference Background</li>
+</ul>
+<hr>
+</section>
+<section id="references" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Alexa2006" class="csl-entry" role="listitem">
+Alexa, Adrian, Jörg Rahnenführer, and Thomas Lengauer. 2006. <span>“Improved Scoring of Functional Groups from Gene Expression Data by Decorrelating <span>GO</span> Graph Structure.”</span> <em>Bioinformatics</em> 22 (13): 1600–1607.
+</div>
+<div id="ref-Ashburner2000" class="csl-entry" role="listitem">
+<span class="nocase">Ashburner, Michael, Catherine A Ball, Judith A Blake, et al.</span> 2000. <span>“Gene Ontology: Tool for the Unification of Biology.”</span> <em>Nature Genetics</em> 25 (1): 25–29.
+</div>
+<div id="ref-BenjaminiHochberg1995" class="csl-entry" role="listitem">
+Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.”</span> <em>Journal of the Royal Statistical Society: Series B (Methodological)</em> 57 (1): 289–300.
+</div>
+<div id="ref-GeneOntologyConsortium2021" class="csl-entry" role="listitem">
+Gene Ontology Consortium. 2021. <span>“The Gene Ontology Resource: Enriching a <span>GO</span>ld Mine.”</span> <em>Nucleic Acids Research</em> 49 (D1): D325–34.
+</div>
+<div id="ref-Hood2012" class="csl-entry" role="listitem">
+Hood, Leroy, and Qiang Tian. 2012. <span>“Systems Approaches to Biology and Disease Enable Translational Systems Medicine.”</span> <em>Genomics, Proteomics &amp; Bioinformatics</em> 10 (4): 181–85.
+</div>
+<div id="ref-Rhee2008" class="csl-entry" role="listitem">
+Rhee, Seung Y, Valerie Wood, Kara Dolinski, and Sorin Draghici. 2008. <span>“Use and Misuse of the Gene Ontology Annotations.”</span> <em>Nature Reviews Genetics</em> 9 (7): 509–15.
+</div>
+<div id="ref-Subramanian2005" class="csl-entry" role="listitem">
+Subramanian, Aravind, Pablo Tamayo, Vamsi K Mootha, et al. 2005. <span>“Gene Set Enrichment Analysis: A Knowledge-Based Approach for Interpreting Genome-Wide Expression Profiles.”</span> <em>Proceedings of the National Academy of Sciences</em> 102 (43): 15545–50.
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/03-databases.html" class="pagination-link" aria-label="From Biological Data to Biological Knowledge">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">From Biological Data to Biological Knowledge</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/04-sequencing.html" class="pagination-link" aria-label="The Sequencing Revolution">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

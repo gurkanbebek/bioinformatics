@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; HPC Quick Reference Guide – Systems Biology and Translational Bioinformatics</title>
+<title>6&nbsp; HPC Quick Reference Guide – Systems Biology and Translational Bioinformatics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/80-suppl1_HPC_Commands.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/80-suppl1_HPC_Commands.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,20 +167,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/04-ontologies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ontologies, Databases, and Statistical Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-rna_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
   </div>
 </li>
     </ul>
@@ -193,18 +199,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#logging-in-to-markov" id="toc-logging-in-to-markov" class="nav-link active" data-scroll-target="#logging-in-to-markov"><span class="header-section-number">5.1</span> 🔑 Logging In to Markov</a>
+  <li><a href="#logging-in-to-markov" id="toc-logging-in-to-markov" class="nav-link active" data-scroll-target="#logging-in-to-markov"><span class="header-section-number">6.1</span> 🔑 Logging In to Markov</a>
   <ul class="collapse">
-  <li><a href="#option-a-using-the-terminal-ssh" id="toc-option-a-using-the-terminal-ssh" class="nav-link" data-scroll-target="#option-a-using-the-terminal-ssh"><span class="header-section-number">5.1.1</span> Option A: Using the Terminal (SSH)</a></li>
-  <li><a href="#option-b-using-a-web-browser" id="toc-option-b-using-a-web-browser" class="nav-link" data-scroll-target="#option-b-using-a-web-browser"><span class="header-section-number">5.1.2</span> Option B: Using a Web Browser</a></li>
+  <li><a href="#option-a-using-the-terminal-ssh" id="toc-option-a-using-the-terminal-ssh" class="nav-link" data-scroll-target="#option-a-using-the-terminal-ssh"><span class="header-section-number">6.1.1</span> Option A: Using the Terminal (SSH)</a></li>
+  <li><a href="#option-b-using-a-web-browser" id="toc-option-b-using-a-web-browser" class="nav-link" data-scroll-target="#option-b-using-a-web-browser"><span class="header-section-number">6.1.2</span> Option B: Using a Web Browser</a></li>
   </ul></li>
-  <li><a href="#requesting-a-compute-node" id="toc-requesting-a-compute-node" class="nav-link" data-scroll-target="#requesting-a-compute-node"><span class="header-section-number">5.2</span> 🚀 Requesting a Compute Node</a></li>
-  <li><a href="#managing-environment-modules" id="toc-managing-environment-modules" class="nav-link" data-scroll-target="#managing-environment-modules"><span class="header-section-number">5.3</span> 🛠️ . Managing Environment Modules</a></li>
-  <li><a href="#checking-system-status" id="toc-checking-system-status" class="nav-link" data-scroll-target="#checking-system-status"><span class="header-section-number">5.4</span> 📊 Checking System Status</a></li>
-  <li><a href="#submitting-and-running-jobs" id="toc-submitting-and-running-jobs" class="nav-link" data-scroll-target="#submitting-and-running-jobs"><span class="header-section-number">5.5</span> 🚀 Submitting and Running Jobs</a></li>
-  <li><a href="#monitoring-active-jobs" id="toc-monitoring-active-jobs" class="nav-link" data-scroll-target="#monitoring-active-jobs"><span class="header-section-number">5.6</span> 🔍 Monitoring Active Jobs</a></li>
-  <li><a href="#managing-and-canceling-jobs" id="toc-managing-and-canceling-jobs" class="nav-link" data-scroll-target="#managing-and-canceling-jobs"><span class="header-section-number">5.7</span> 🛠️ Managing and Canceling Jobs</a></li>
-  <li><a href="#analyzing-finished-jobs" id="toc-analyzing-finished-jobs" class="nav-link" data-scroll-target="#analyzing-finished-jobs"><span class="header-section-number">5.8</span> 📜 Analyzing Finished Jobs</a></li>
+  <li><a href="#requesting-a-compute-node" id="toc-requesting-a-compute-node" class="nav-link" data-scroll-target="#requesting-a-compute-node"><span class="header-section-number">6.2</span> 🚀 Requesting a Compute Node</a></li>
+  <li><a href="#managing-environment-modules" id="toc-managing-environment-modules" class="nav-link" data-scroll-target="#managing-environment-modules"><span class="header-section-number">6.3</span> 🛠️ . Managing Environment Modules</a></li>
+  <li><a href="#checking-system-status" id="toc-checking-system-status" class="nav-link" data-scroll-target="#checking-system-status"><span class="header-section-number">6.4</span> 📊 Checking System Status</a></li>
+  <li><a href="#submitting-and-running-jobs" id="toc-submitting-and-running-jobs" class="nav-link" data-scroll-target="#submitting-and-running-jobs"><span class="header-section-number">6.5</span> 🚀 Submitting and Running Jobs</a></li>
+  <li><a href="#monitoring-active-jobs" id="toc-monitoring-active-jobs" class="nav-link" data-scroll-target="#monitoring-active-jobs"><span class="header-section-number">6.6</span> 🔍 Monitoring Active Jobs</a></li>
+  <li><a href="#managing-and-canceling-jobs" id="toc-managing-and-canceling-jobs" class="nav-link" data-scroll-target="#managing-and-canceling-jobs"><span class="header-section-number">6.7</span> 🛠️ Managing and Canceling Jobs</a></li>
+  <li><a href="#analyzing-finished-jobs" id="toc-analyzing-finished-jobs" class="nav-link" data-scroll-target="#analyzing-finished-jobs"><span class="header-section-number">6.8</span> 📜 Analyzing Finished Jobs</a></li>
   </ul>
 </nav>
     </div>
@@ -213,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></h1>
 </div>
 
 
@@ -243,19 +249,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Always replace <code>abc123</code> with your personal <strong>CWRU ID</strong> when typing commands.</p>
 </div>
 </div>
-<section id="logging-in-to-markov" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="logging-in-to-markov"><span class="header-section-number">5.1</span> 🔑 Logging In to Markov</h2>
+<section id="logging-in-to-markov" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="logging-in-to-markov"><span class="header-section-number">6.1</span> 🔑 Logging In to Markov</h2>
 <p>You must connect to Case Western Reserve University’s <strong>Markov cluster</strong> using one of the methods below.</p>
-<section id="option-a-using-the-terminal-ssh" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="option-a-using-the-terminal-ssh"><span class="header-section-number">5.1.1</span> Option A: Using the Terminal (SSH)</h3>
+<section id="option-a-using-the-terminal-ssh" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="option-a-using-the-terminal-ssh"><span class="header-section-number">6.1.1</span> Option A: Using the Terminal (SSH)</h3>
 <ul>
 <li><p><strong>Windows:</strong> Open <strong>PuTTY</strong>, type <code>markov.case.edu</code> into the Host Name box, and log in.</p></li>
 <li><p><strong>Mac / Linux:</strong> Open your <strong>Terminal</strong> and run:</p>
 <pre><code>ssh abc123@markov.case.edu</code></pre></li>
 </ul>
 </section>
-<section id="option-b-using-a-web-browser" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="option-b-using-a-web-browser"><span class="header-section-number">5.1.2</span> Option B: Using a Web Browser</h3>
+<section id="option-b-using-a-web-browser" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="option-b-using-a-web-browser"><span class="header-section-number">6.1.2</span> Option B: Using a Web Browser</h3>
 <ol type="1">
 <li>Go to <a href="https://ondemand-markov.case.edu">https://ondemand-markov.case.edu/</a> and sign in.</li>
 <li>Click <strong>Clusters</strong> in the top menu bar.</li>
@@ -264,15 +270,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="requesting-a-compute-node" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="requesting-a-compute-node"><span class="header-section-number">5.2</span> 🚀 Requesting a Compute Node</h2>
+<section id="requesting-a-compute-node" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="requesting-a-compute-node"><span class="header-section-number">6.2</span> 🚀 Requesting a Compute Node</h2>
 <p>Do not run computational scripts or applications on the login node. Request an interactive compute node session immediately after logging in.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Request 1 node, 4 CPU cores, for a duration of 12 hours</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">srun</span> <span class="at">-N</span> 1 <span class="at">-n</span> 4 <span class="at">--time</span><span class="op">=</span>12:00:00 <span class="at">--pty</span> /bin/bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="managing-environment-modules" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="managing-environment-modules"><span class="header-section-number">5.3</span> 🛠️ . Managing Environment Modules</h2>
+<section id="managing-environment-modules" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="managing-environment-modules"><span class="header-section-number">6.3</span> 🛠️ . Managing Environment Modules</h2>
 <p>HPC applications require you to explicitly load their environments using the <code>module</code> tool.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List all software packages available on Markov</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> avail</span>
@@ -293,8 +299,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> purge</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="checking-system-status" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="checking-system-status"><span class="header-section-number">5.4</span> 📊 Checking System Status</h2>
+<section id="checking-system-status" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="checking-system-status"><span class="header-section-number">6.4</span> 📊 Checking System Status</h2>
 <p>Use these commands to check cluster health, node availability, and your fair-share priority.</p>
 <table class="caption-top table">
 <colgroup>
@@ -327,8 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="submitting-and-running-jobs" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="submitting-and-running-jobs"><span class="header-section-number">5.5</span> 🚀 Submitting and Running Jobs</h2>
+<section id="submitting-and-running-jobs" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="submitting-and-running-jobs"><span class="header-section-number">6.5</span> 🚀 Submitting and Running Jobs</h2>
 <p>Commands for executing your computations on the compute nodes.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -358,8 +364,8 @@ Note
 </ul></li>
 </ul>
 </section>
-<section id="monitoring-active-jobs" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="monitoring-active-jobs"><span class="header-section-number">5.6</span> 🔍 Monitoring Active Jobs</h2>
+<section id="monitoring-active-jobs" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="monitoring-active-jobs"><span class="header-section-number">6.6</span> 🔍 Monitoring Active Jobs</h2>
 <p>Keep track of your jobs currently waiting or running in the scheduler.</p>
 <ul>
 <li><code>squeue</code> — List all currently running and waiting jobs on the cluster.</li>
@@ -368,8 +374,8 @@ Note
 <li><code>scontrol show job &lt;JobID&gt;</code> — View highly detailed runtime information for a live job.</li>
 </ul>
 </section>
-<section id="managing-and-canceling-jobs" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="managing-and-canceling-jobs"><span class="header-section-number">5.7</span> 🛠️ Managing and Canceling Jobs</h2>
+<section id="managing-and-canceling-jobs" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="managing-and-canceling-jobs"><span class="header-section-number">6.7</span> 🛠️ Managing and Canceling Jobs</h2>
 <p>Modify or kill active and pending jobs.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminate a specific running or pending job</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">scancel</span> <span class="op">&lt;</span>JobID<span class="op">&gt;</span></span>
@@ -386,8 +392,8 @@ Note
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Resume a paused job to let it run again</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">scontrol</span> release <span class="op">&lt;</span>JobID<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="analyzing-finished-jobs" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="analyzing-finished-jobs"><span class="header-section-number">5.8</span> 📜 Analyzing Finished Jobs</h2>
+<section id="analyzing-finished-jobs" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="analyzing-finished-jobs"><span class="header-section-number">6.8</span> 📜 Analyzing Finished Jobs</h2>
 <p>Review history and performance data after your jobs complete.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -815,7 +821,7 @@ Note
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/05-rna_workflow.html" class="pagination-link" aria-label="RNA-Seq Analysis Pipeline">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

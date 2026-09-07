@@ -155,20 +155,26 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/04-ontologies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ontologies, Databases, and Statistical Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/04-sequencing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Sequencing Revolution</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-rna_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA-Seq Analysis Pipeline</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
   </div>
 </li>
     </ul>
@@ -499,7 +505,7 @@ Figure&nbsp;1.4: The transformation hierarchy from raw measurements to biologica
 <section id="systems-medicine" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="systems-medicine"><span class="header-section-number">1.7</span> Systems Medicine</h2>
 <p>The systems perspective extends directly into modern clinical practice. Disease can be viewed as a perturbation of normal biological networks. Pathologies arise when system interactions are disrupted by genetic variations, environmental stressors, or pathogens. Network perturbations are central to cancer, neurodegenerative diseases, autoimmune disorders, and metabolic syndromes.</p>
-<p>Systems medicine integrates genomic, transcriptomic, proteomic, metabolomic, and clinical data to pinpoint network disruptions and identify novel therapeutic targets. Systems medicine serves as the foundation for a proactive healthcare paradigm known as P4 Medicine (<a href="#fig-p4-medicine" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>) <span class="citation" data-cites="Hood2012">(<a href="01-introduction.html#ref-Hood2012" role="doc-biblioref">Hood and Flores 2012</a>)</span>. The four pillars of P4 Medicine are:</p>
+<p>Systems medicine integrates genomic, transcriptomic, proteomic, metabolomic, and clinical data to pinpoint network disruptions and identify novel therapeutic targets. Systems medicine serves as the foundation for a proactive healthcare paradigm known as P4 Medicine (<a href="#fig-p4-medicine" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>) <span class="citation" data-cites="Hood2012">(<a href="01-introduction.html#ref-Hood2012" role="doc-biblioref">Hood and Tian 2012</a>)</span>. The four pillars of P4 Medicine are:</p>
 <ul>
 <li>Predictive: Forecast disease risk before clinical symptoms appear.</li>
 <li>Preventive: Intervene early in disease development to lessen impact.</li>
@@ -596,6 +602,23 @@ Figure&nbsp;1.5: The four pillars of P4 Medicine.
 <section id="references" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="references"><span class="header-section-number">1.10</span> References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Alexa2006" class="csl-entry" role="listitem">
+Alexa, Adrian, Jörg Rahnenführer, and Thomas Lengauer. 2006.
+<span>“Improved Scoring of Functional Groups from Gene Expression Data
+by Decorrelating <span>GO</span> Graph Structure.”</span>
+<em>Bioinformatics</em> 22 (13): 1600–1607.
+</div>
+<div id="ref-Ashburner2000" class="csl-entry" role="listitem">
+<span class="nocase">Ashburner, Michael, Catherine A Ball, Judith A
+Blake, et al.</span> 2000. <span>“Gene Ontology: Tool for the
+Unification of Biology.”</span> <em>Nature Genetics</em> 25 (1): 25–29.
+</div>
+<div id="ref-BenjaminiHochberg1995" class="csl-entry" role="listitem">
+Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False
+Discovery Rate: A Practical and Powerful Approach to Multiple
+Testing.”</span> <em>Journal of the Royal Statistical Society: Series B
+(Methodological)</em> 57 (1): 289–300.
+</div>
 <div id="ref-Bentley2008" class="csl-entry" role="listitem">
 <span class="nocase">Bentley, David R., Shankar Balasubramanian, Harold
 P. Swerdlow, et al.</span> 2008. <span>“Accurate Whole Human Genome
@@ -617,6 +640,11 @@ Analysis.”</span> <em>Genome Biology</em> 17 (1): 1–19.
 2009. <span>“Real-Time DNA Sequencing from Single Polymerase
 Molecules.”</span> <em>Science</em> 323 (5910): 133–38. <a href="https://doi.org/10.1126/science.1162986">https://doi.org/10.1126/science.1162986</a>.
 </div>
+<div id="ref-GeneOntologyConsortium2021" class="csl-entry" role="listitem">
+Gene Ontology Consortium. 2021. <span>“The Gene Ontology Resource:
+Enriching a <span>GO</span>ld Mine.”</span> <em>Nucleic Acids
+Research</em> 49 (D1): D325–34.
+</div>
 <div id="ref-Gertz2012" class="csl-entry" role="listitem">
 Gertz, Jason, Katherine E Varley, Nichole S Davis, et al. 2012.
 <span>“Transposase Mediated Construction of RNA-Seq Libraries.”</span>
@@ -633,16 +661,15 @@ Hansen, Kasper D, Steven E Brenner, and Sandrine Dudoit. 2010.
 Hexamer Priming.”</span> <em>Nucleic Acids Research</em> 38 (12):
 e131–31.
 </div>
-<div id="ref-Hood2012" class="csl-entry" role="listitem">
-Hood, Leroy, and Mauricio Flores. 2012. <span>“A Personal View on
-Systems Medicine and the Emergence of Proactive P4 Medicine: Predictive,
-Preventive, Personalized and Participatory.”</span> <em>New
-Biotechnology</em> 29 (6): 613–24. <a href="https://doi.org/10.1016/j.nbt.2012.03.004">https://doi.org/10.1016/j.nbt.2012.03.004</a>.
-</div>
 <div id="ref-Hood2004" class="csl-entry" role="listitem">
 Hood, Leroy, James R Heath, Michael E Phelps, and Biaoyang Lin. 2004.
 <span>“Systems Biology and New Technologies Enable Predictive and
 Preventative Medicine.”</span> <em>Science</em> 306 (5696): 640–43. <a href="https://doi.org/10.1126/science.1104635">https://doi.org/10.1126/science.1104635</a>.
+</div>
+<div id="ref-Hood2012" class="csl-entry" role="listitem">
+Hood, Leroy, and Qiang Tian. 2012. <span>“Systems Approaches to Biology
+and Disease Enable Translational Systems Medicine.”</span> <em>Genomics,
+Proteomics &amp; Bioinformatics</em> 10 (4): 181–85.
 </div>
 <div id="ref-Hwang2018" class="csl-entry" role="listitem">
 Hwang, Byungjin, Ji Hyun Lee, and Duhee Bang. 2018. <span>“Single-Cell
@@ -718,6 +745,11 @@ Reuter, Jason A., Damek V. Spacek, and Michael P. Snyder. 2015.
 <span>“High-Throughput Sequencing Technologies.”</span> <em>Molecular
 Cell</em> 58 (4): 586–97. <a href="https://doi.org/10.1016/j.molcel.2015.05.004">https://doi.org/10.1016/j.molcel.2015.05.004</a>.
 </div>
+<div id="ref-Rhee2008" class="csl-entry" role="listitem">
+Rhee, Seung Y, Valerie Wood, Kara Dolinski, and Sorin Draghici. 2008.
+<span>“Use and Misuse of the Gene Ontology Annotations.”</span>
+<em>Nature Reviews Genetics</em> 9 (7): 509–15.
+</div>
 <div id="ref-Rothberg2011" class="csl-entry" role="listitem">
 <span class="nocase">Rothberg, Jonathan M., Wolfgang Hinz, Todd M.
 Rearick, et al.</span> 2011. <span>“An Integrated Semiconductor Device
@@ -742,6 +774,12 @@ Single Cells.”</span> <em>Nature Methods</em> 14 (9): 865–68. <a href="https
 <div id="ref-Stuart2019" class="csl-entry" role="listitem">
 Stuart, Tim, and Rahul Satija. 2019. <span>“Integrative Single-Cell
 Analysis.”</span> <em>Nature Reviews Genetics</em> 20 (5): 257–72. <a href="https://doi.org/10.1038/s41576-019-0093-7">https://doi.org/10.1038/s41576-019-0093-7</a>.
+</div>
+<div id="ref-Subramanian2005" class="csl-entry" role="listitem">
+Subramanian, Aravind, Pablo Tamayo, Vamsi K Mootha, et al. 2005.
+<span>“Gene Set Enrichment Analysis: A Knowledge-Based Approach for
+Interpreting Genome-Wide Expression Profiles.”</span> <em>Proceedings of
+the National Academy of Sciences</em> 102 (43): 15545–50.
 </div>
 <div id="ref-Wang2024" class="csl-entry" role="listitem">
 <span class="nocase">Wang, et al.</span> 2024. <span>“From Tradition to
