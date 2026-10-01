@@ -67,7 +67,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7d8ad657b878717df1156ab40fed854c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -203,8 +203,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/07-metabolomics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metabolomics: A Window into Cellular Phenotype</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
   </div>
 </li>
     </ul>
@@ -251,15 +257,20 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#enrichment-within-a-hierarchical-ontology" id="toc-enrichment-within-a-hierarchical-ontology" class="nav-link" data-scroll-target="#enrichment-within-a-hierarchical-ontology"><span class="header-section-number">3.10.1</span> Enrichment Within a Hierarchical Ontology</a></li>
   </ul></li>
-  <li><a href="#common-pitfalls-in-functional-enrichment-analysis" id="toc-common-pitfalls-in-functional-enrichment-analysis" class="nav-link" data-scroll-target="#common-pitfalls-in-functional-enrichment-analysis"><span class="header-section-number">3.11</span> Common Pitfalls in Functional Enrichment Analysis</a>
+  <li><a href="#multiple-hypothesis-testing" id="toc-multiple-hypothesis-testing" class="nav-link" data-scroll-target="#multiple-hypothesis-testing"><span class="header-section-number">3.11</span> Multiple Hypothesis Testing</a>
   <ul class="collapse">
-  <li><a href="#selection-of-an-appropriate-background-population" id="toc-selection-of-an-appropriate-background-population" class="nav-link" data-scroll-target="#selection-of-an-appropriate-background-population"><span class="header-section-number">3.11.1</span> Selection of an Appropriate Background Population</a></li>
-  <li><a href="#gene-sharing-among-biological-categories" id="toc-gene-sharing-among-biological-categories" class="nav-link" data-scroll-target="#gene-sharing-among-biological-categories"><span class="header-section-number">3.11.2</span> Gene Sharing Among Biological Categories</a></li>
-  <li><a href="#annotation-quality-and-evidence" id="toc-annotation-quality-and-evidence" class="nav-link" data-scroll-target="#annotation-quality-and-evidence"><span class="header-section-number">3.11.3</span> Annotation Quality and Evidence</a></li>
+  <li><a href="#family-wise-error-rate-and-bonferroni-correction" id="toc-family-wise-error-rate-and-bonferroni-correction" class="nav-link" data-scroll-target="#family-wise-error-rate-and-bonferroni-correction"><span class="header-section-number">3.11.1</span> Family-Wise Error Rate and Bonferroni Correction</a></li>
+  <li><a href="#false-discovery-rate-fdr" id="toc-false-discovery-rate-fdr" class="nav-link" data-scroll-target="#false-discovery-rate-fdr"><span class="header-section-number">3.11.2</span> False Discovery Rate (FDR)</a></li>
   </ul></li>
-  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">3.12</span> Chapter Summary</a></li>
-  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">3.13</span> Key Terms</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.14</span> References</a></li>
+  <li><a href="#common-pitfalls-in-functional-enrichment-analysis" id="toc-common-pitfalls-in-functional-enrichment-analysis" class="nav-link" data-scroll-target="#common-pitfalls-in-functional-enrichment-analysis"><span class="header-section-number">3.12</span> Common Pitfalls in Functional Enrichment Analysis</a>
+  <ul class="collapse">
+  <li><a href="#selection-of-an-appropriate-background-population" id="toc-selection-of-an-appropriate-background-population" class="nav-link" data-scroll-target="#selection-of-an-appropriate-background-population"><span class="header-section-number">3.12.1</span> Selection of an Appropriate Background Population</a></li>
+  <li><a href="#gene-sharing-among-biological-categories" id="toc-gene-sharing-among-biological-categories" class="nav-link" data-scroll-target="#gene-sharing-among-biological-categories"><span class="header-section-number">3.12.2</span> Gene Sharing Among Biological Categories</a></li>
+  <li><a href="#annotation-quality-and-evidence" id="toc-annotation-quality-and-evidence" class="nav-link" data-scroll-target="#annotation-quality-and-evidence"><span class="header-section-number">3.12.3</span> Annotation Quality and Evidence</a></li>
+  </ul></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary"><span class="header-section-number">3.13</span> Chapter Summary</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms"><span class="header-section-number">3.14</span> Key Terms</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.15</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -311,7 +322,7 @@ window.Quarto = {
 <section id="introduction-organizing-the-biological-universe" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="introduction-organizing-the-biological-universe"><span class="header-section-number">3.2</span> Introduction: Organizing the Biological Universe</h2>
 <p>Modern high-throughput technologies generate enormous amounts of biological data. RNA sequencing experiments routinely measure the expression of tens of thousands of genes, while proteomic and metabolomic studies can quantify thousands of molecular features simultaneously. The result is often a long list of statistically significant genes, proteins, or metabolites.</p>
-<p>However, biological discovery does not emerge from the list itself. A list of 500 differentially expressed genes does not immediately explain a disease process, reveal a therapeutic target, or provide mechanistic insight. The central challenge of systems biology is therefore transforming large-scale molecular measurements into meaningful biological interpretations <span class="citation" data-cites="Hood2012">(<a href="01-introduction.html#ref-Hood2012" role="doc-biblioref">Hood and Tian 2012</a>)</span>.</p>
+<p>However, biological discovery does not emerge from the list itself. A list of 500 differentially expressed genes does not immediately explain a disease process, reveal a therapeutic target, or provide mechanistic insight. The central challenge of systems biology is therefore transforming large-scale molecular measurements into meaningful biological interpretations <span class="citation" data-cites="Hood2012ab">(<a href="01-introduction.html#ref-Hood2012ab" role="doc-biblioref">Hood and Tian 2012</a>)</span>.</p>
 <p>Three foundational resources make this possible:</p>
 <ol type="1">
 <li><strong>Biomedical ontologies</strong>, which provide standardized vocabularies for describing biological concepts and their relationships.</li>
@@ -612,6 +623,15 @@ biological process</code></pre>
 <li>(k) = number of differentially expressed genes annotated to term (T)</li>
 </ul>
 <p>The statistical significance of this overlap is commonly assessed using <strong>Fisher’s Exact Test</strong>, which evaluates whether the observed overlap exceeds that expected under random sampling.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="04-ontologies2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <section id="hypergeometric-foundation-of-ora" class="level3" data-number="3.9.1">
 <h3 data-number="3.9.1" class="anchored" data-anchor-id="hypergeometric-foundation-of-ora"><span class="header-section-number">3.9.1</span> Hypergeometric Foundation of ORA</h3>
 <p>ORA is mathematically based on the hypergeometric distribution, which describes sampling without replacement from a finite population.</p>
@@ -644,92 +664,65 @@ Estimate significance using permutations</code></pre>
 <p>Interpretation of Gene Ontology enrichment results is complicated by the hierarchical structure of the ontology itself. GO terms are connected through parent-child relationships, and annotation propagation through the True Path Rule introduces substantial dependence among categories.</p>
 <p>As a result, closely related GO terms frequently appear significant simultaneously. Some terms may achieve significance because they represent genuine biological signals, whereas others may appear enriched because they inherit annotations from more specific descendant terms.</p>
 <p>To address this issue, specialized topology-aware enrichment methods have been developed that explicitly incorporate ontology structure into their statistical frameworks <span class="citation" data-cites="Alexa2006">(<a href="01-introduction.html#ref-Alexa2006" role="doc-biblioref">Alexa et al. 2006</a>)</span>. These approaches reduce redundancy and improve identification of biologically specific signals within hierarchical ontologies.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">## Multiple Hypothesis Testing</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Functional enrichment analyses typically evaluate hundreds or thousands of biological categories simultaneously. Each category represents a separate statistical hypothesis, and the probability of obtaining false-positive results increases as the number of tests grows.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">When many hypotheses are tested independently using a significance threshold of (= 0.05), a proportion of results are expected to appear significant by chance alone. Consequently, enrichment analyses require statistical procedures that control error rates across multiple tests.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Two approaches are widely used in genomics and bioinformatics: control of the <strong>Family-Wise Error Rate (FWER)</strong> and control of the <strong>False Discovery Rate (FDR)</strong>.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">### Family-Wise Error Rate and Bonferroni Correction</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">The <strong>Family-Wise Error Rate (FWER)</strong> is the probability of making at least one false-positive discovery among all hypothesis tests performed.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">A common method for controlling the FWER is the <strong>Bonferroni correction</strong>, which adjusts the significance threshold according to the total number of tests:</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="math display">\[
+<hr>
+</section>
+</section>
+<section id="multiple-hypothesis-testing" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="multiple-hypothesis-testing"><span class="header-section-number">3.11</span> Multiple Hypothesis Testing</h2>
+<p>Functional enrichment analyses typically evaluate hundreds or thousands of biological categories simultaneously. Each category represents a separate statistical hypothesis, and the probability of obtaining false-positive results increases as the number of tests grows.</p>
+<p>When many hypotheses are tested independently using a significance threshold of (= 0.05), a proportion of results are expected to appear significant by chance alone. Consequently, enrichment analyses require statistical procedures that control error rates across multiple tests.</p>
+<p>Two approaches are widely used in genomics and bioinformatics: control of the <strong>Family-Wise Error Rate (FWER)</strong> and control of the <strong>False Discovery Rate (FDR)</strong>.</p>
+<section id="family-wise-error-rate-and-bonferroni-correction" class="level3" data-number="3.11.1">
+<h3 data-number="3.11.1" class="anchored" data-anchor-id="family-wise-error-rate-and-bonferroni-correction"><span class="header-section-number">3.11.1</span> Family-Wise Error Rate and Bonferroni Correction</h3>
+<p>The <strong>Family-Wise Error Rate (FWER)</strong> is the probability of making at least one false-positive discovery among all hypothesis tests performed.</p>
+<p>A common method for controlling the FWER is the <strong>Bonferroni correction</strong>, which adjusts the significance threshold according to the total number of tests:</p>
+<p><span class="math display">\[
 \alpha_{adjusted} =
 \frac{\alpha}{m}
-\]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">where (m) represents the number of hypotheses evaluated.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">The Bonferroni procedure provides strong protection against false-positive findings because it guarantees control of the family-wise error rate under a wide range of conditions. However, this protection comes at the cost of reduced statistical power. In genomic studies involving thousands of simultaneous tests, Bonferroni correction is often considered overly conservative because biologically meaningful signals may fail to reach significance.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">### False Discovery Rate (FDR)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Because high-throughput experiments routinely involve large numbers of statistical tests, modern genomics typically relies on control of the <strong>False Discovery Rate (FDR)</strong> <span class="citation" data-cites="BenjaminiHochberg1995">(<a href="01-introduction.html#ref-BenjaminiHochberg1995" role="doc-biblioref">Benjamini and Hochberg 1995</a>)</span>.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">The FDR is defined as the expected proportion of false-positive results among all reported significant findings. Unlike the FWER, which seeks to eliminate false positives entirely, FDR-based methods acknowledge that a limited number of false discoveries may be acceptable when large numbers of hypotheses are evaluated simultaneously.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">An FDR threshold of 0.05 indicates that approximately 5% of reported significant results are expected to be false discoveries. This approach provides a practical balance between sensitivity and reliability, making FDR control the standard strategy for enrichment analysis and most other forms of high-throughput biological data analysis.</td>
-</tr>
-</tbody>
-</table>
+\]</span></p>
+<p>where (m) represents the number of hypotheses evaluated.</p>
+<p>The Bonferroni procedure provides strong protection against false-positive findings because it guarantees control of the family-wise error rate under a wide range of conditions. However, this protection comes at the cost of reduced statistical power. In genomic studies involving thousands of simultaneous tests, Bonferroni correction is often considered overly conservative because biologically meaningful signals may fail to reach significance.</p>
+</section>
+<section id="false-discovery-rate-fdr" class="level3" data-number="3.11.2">
+<h3 data-number="3.11.2" class="anchored" data-anchor-id="false-discovery-rate-fdr"><span class="header-section-number">3.11.2</span> False Discovery Rate (FDR)</h3>
+<p>Because high-throughput experiments routinely involve large numbers of statistical tests, modern genomics typically relies on control of the <strong>False Discovery Rate (FDR)</strong> <span class="citation" data-cites="BenjaminiHochberg1995">(<a href="01-introduction.html#ref-BenjaminiHochberg1995" role="doc-biblioref">Benjamini and Hochberg 1995</a>)</span>.</p>
+<p>The FDR is defined as the expected proportion of false-positive results among all reported significant findings. Unlike the FWER, which seeks to eliminate false positives entirely, FDR-based methods acknowledge that a limited number of false discoveries may be acceptable when large numbers of hypotheses are evaluated simultaneously.</p>
+<p>An FDR threshold of 0.05 indicates that approximately 5% of reported significant results are expected to be false discoveries. This approach provides a practical balance between sensitivity and reliability, making FDR control the standard strategy for enrichment analysis and most other forms of high-throughput biological data analysis.</p>
+<hr>
 </section>
 </section>
-<section id="common-pitfalls-in-functional-enrichment-analysis" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="common-pitfalls-in-functional-enrichment-analysis"><span class="header-section-number">3.11</span> Common Pitfalls in Functional Enrichment Analysis</h2>
+<section id="common-pitfalls-in-functional-enrichment-analysis" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="common-pitfalls-in-functional-enrichment-analysis"><span class="header-section-number">3.12</span> Common Pitfalls in Functional Enrichment Analysis</h2>
 <p>Functional enrichment methods provide powerful tools for biological interpretation, but their results are highly dependent on the quality of the underlying data, annotations, and statistical assumptions. Misapplication of enrichment methods can lead to misleading conclusions even when statistical procedures are implemented correctly.</p>
-<section id="selection-of-an-appropriate-background-population" class="level3" data-number="3.11.1">
-<h3 data-number="3.11.1" class="anchored" data-anchor-id="selection-of-an-appropriate-background-population"><span class="header-section-number">3.11.1</span> Selection of an Appropriate Background Population</h3>
+<section id="selection-of-an-appropriate-background-population" class="level3" data-number="3.12.1">
+<h3 data-number="3.12.1" class="anchored" data-anchor-id="selection-of-an-appropriate-background-population"><span class="header-section-number">3.12.1</span> Selection of an Appropriate Background Population</h3>
 <p>One of the most common sources of error in enrichment analysis is the use of an inappropriate background population.</p>
 <p>The background population should consist of all genes that could realistically have been observed in the experiment. For example, if an RNA-sequencing analysis quantified expression for 1,000 genes, those 1,000 genes should define the statistical universe used for enrichment testing.</p>
 <p>Using all genes in the genome as a background when only a subset was measurable can substantially bias statistical estimates and artificially inflate significance. Consequently, careful definition of the background population is essential for valid enrichment analysis.</p>
 </section>
-<section id="gene-sharing-among-biological-categories" class="level3" data-number="3.11.2">
-<h3 data-number="3.11.2" class="anchored" data-anchor-id="gene-sharing-among-biological-categories"><span class="header-section-number">3.11.2</span> Gene Sharing Among Biological Categories</h3>
+<section id="gene-sharing-among-biological-categories" class="level3" data-number="3.12.2">
+<h3 data-number="3.12.2" class="anchored" data-anchor-id="gene-sharing-among-biological-categories"><span class="header-section-number">3.12.2</span> Gene Sharing Among Biological Categories</h3>
 <p>Genes frequently participate in multiple biological processes and pathways. As a result, enrichment analyses often identify clusters of related categories that share many of the same genes.</p>
 <p>This overlap is particularly common within the Gene Ontology because of its hierarchical structure and the propagation of annotations through the True Path Rule. Consequently, significant categories should not always be interpreted as independent biological discoveries. Rather, collections of related terms should be evaluated collectively to identify broader biological themes.</p>
 </section>
-<section id="annotation-quality-and-evidence" class="level3" data-number="3.11.3">
-<h3 data-number="3.11.3" class="anchored" data-anchor-id="annotation-quality-and-evidence"><span class="header-section-number">3.11.3</span> Annotation Quality and Evidence</h3>
+<section id="annotation-quality-and-evidence" class="level3" data-number="3.12.3">
+<h3 data-number="3.12.3" class="anchored" data-anchor-id="annotation-quality-and-evidence"><span class="header-section-number">3.12.3</span> Annotation Quality and Evidence</h3>
 <p>The validity of biological interpretation depends on the quality of the underlying annotations. Gene Ontology annotations vary in both their evidence base and level of curation.</p>
 <p>Annotations supported by direct experimental evidence generally provide stronger biological support than annotations inferred computationally. Understanding annotation provenance and evidence codes therefore remains an important component of enrichment interpretation.</p>
 <p>Researchers should consider both statistical significance and annotation quality when drawing biological conclusions from enrichment results.</p>
 <hr>
 </section>
 </section>
-<section id="chapter-summary" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">3.12</span> Chapter Summary</h2>
+<section id="chapter-summary" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="chapter-summary"><span class="header-section-number">3.13</span> Chapter Summary</h2>
 <p>Interpretation of high-throughput biological data relies on the integration of structured biological knowledge, curated annotation resources, and rigorous statistical methodology. Biomedical ontologies provide formal representations of biological concepts and their relationships, while annotations connect genes and proteins to those concepts. The Gene Ontology serves as a widely adopted framework for organizing biological knowledge through a Directed Acyclic Graph structure and supports annotation propagation through the True Path Rule.</p>
 <p>Biological databases such as UniProtKB, NCBI Gene, IntAct, and PANTHER provide curated molecular information that supports annotation and downstream analysis. These resources form the foundation for functional enrichment methods that evaluate whether particular biological categories are represented more frequently than expected by chance.</p>
 <p>Over-Representation Analysis and Gene Set Enrichment Analysis represent two complementary approaches for biological interpretation. ORA evaluates enrichment using threshold-defined gene sets and statistical overlap tests, whereas GSEA analyzes entire ranked datasets without requiring arbitrary cutoffs. Because enrichment analyses involve large numbers of simultaneous statistical tests, appropriate control of false-positive discoveries through methods such as FDR correction is essential.</p>
 <p>Successful functional interpretation ultimately depends not only on statistical significance but also on appropriate background selection, careful consideration of ontology structure, and critical evaluation of annotation quality.</p>
 <hr>
 </section>
-<section id="key-terms" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">3.13</span> Key Terms</h2>
+<section id="key-terms" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="key-terms"><span class="header-section-number">3.14</span> Key Terms</h2>
 <ul>
 <li>Ontology</li>
 <li>Annotation</li>
@@ -739,11 +732,7 @@ Estimate significance using permutations</code></pre>
 <li>Molecular Function</li>
 <li>Cellular Component</li>
 <li>True Path Rule</li>
-<li>Biological Database</li>
 <li>UniProtKB</li>
-<li>Gene Set</li>
-<li>Gene Association File (GAF)</li>
-<li>Evidence Code</li>
 <li>Functional Enrichment Analysis</li>
 <li>Over-Representation Analysis (ORA)</li>
 <li>Fisher’s Exact Test</li>
@@ -755,8 +744,8 @@ Estimate significance using permutations</code></pre>
 </ul>
 <hr>
 </section>
-<section id="references" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="references"><span class="header-section-number">3.14</span> References</h2>
+<section id="references" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="references"><span class="header-section-number">3.15</span> References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Alexa2006" class="csl-entry" role="listitem">
 Alexa, Adrian, Jörg Rahnenführer, and Thomas Lengauer. 2006. <span>“Improved Scoring of Functional Groups from Gene Expression Data by Decorrelating <span>GO</span> Graph Structure.”</span> <em>Bioinformatics</em> 22 (13): 1600–1607.
@@ -770,7 +759,7 @@ Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False Discov
 <div id="ref-GeneOntologyConsortium2021" class="csl-entry" role="listitem">
 Gene Ontology Consortium. 2021. <span>“The Gene Ontology Resource: Enriching a <span>GO</span>ld Mine.”</span> <em>Nucleic Acids Research</em> 49 (D1): D325–34.
 </div>
-<div id="ref-Hood2012" class="csl-entry" role="listitem">
+<div id="ref-Hood2012ab" class="csl-entry" role="listitem">
 Hood, Leroy, and Qiang Tian. 2012. <span>“Systems Approaches to Biology and Disease Enable Translational Systems Medicine.”</span> <em>Genomics, Proteomics &amp; Bioinformatics</em> 10 (4): 181–85.
 </div>
 <div id="ref-Rhee2008" class="csl-entry" role="listitem">

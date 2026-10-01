@@ -66,7 +66,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7d8ad657b878717df1156ab40fed854c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -199,8 +199,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/07-metabolomics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Metabolomics: A Window into Cellular Phenotype</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/80-suppl1_HPC_Commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">HPC Quick Reference Guide</span></span></a>
   </div>
 </li>
     </ul>
@@ -287,8 +293,8 @@ window.Quarto = {
 </section>
 <section id="introduction-the-genomic-paradigm-shift" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="introduction-the-genomic-paradigm-shift"><span class="header-section-number">4.2</span> Introduction: The Genomic Paradigm Shift</h2>
-<p>The ability to read the precise sequence of nucleotides in a DNA molecule is a cornerstone of modern biology and medicine. For nearly three decades following its inception in 1977, genomic science was defined by Frederick Sanger’s chain-termination method <span class="citation" data-cites="Sanger1977">(<a href="01-introduction.html#ref-Sanger1977" role="doc-biblioref">Sanger et al. 1977</a>)</span>. While Sanger sequencing successfully delivered the first draft of the human genome, the approach was fundamentally limited: it could only process one DNA fragment per capillary at a time. The monumental effort to sequence that first human genome took over a decade and cost approximately $2.7 billion, highlighting the limitations of this approach for large-scale genomic inquiry <span class="citation" data-cites="Reuter2015">(<a href="01-introduction.html#ref-Reuter2015" role="doc-biblioref">Reuter et al. 2015</a>)</span>.</p>
-<p>The early 2000s saw a paradigm shift driven by the invention of <strong>High-Throughput Sequencing (HTS)</strong>, commonly referred to as Next-Generation Sequencing (NGS) <span class="citation" data-cites="Soon2013">(<a href="01-introduction.html#ref-Soon2013" role="doc-biblioref">Soon et al. 2013</a>)</span>. By parallelizing millions to billions of sequencing reactions simultaneously on a solid flow-cell surface, NGS plummeted the cost of sequencing a human genome faster than Moore’s Law—down to under $1,000 in less than a day.</p>
+<p>The ability to read the precise sequence of nucleotides in a DNA molecule is a cornerstone of modern biology and medicine. For nearly three decades following its inception in 1977, genomic science was defined by Frederick Sanger’s chain-termination method <span class="citation" data-cites="Sanger1977">[@Sanger1977]</span>. While Sanger sequencing successfully delivered the first draft of the human genome, the approach was fundamentally limited: it could only process one DNA fragment per capillary at a time. The monumental effort to sequence that first human genome took over a decade and cost approximately $2.7 billion, highlighting the limitations of this approach for large-scale genomic inquiry <span class="citation" data-cites="Reuter2015">[@Reuter2015]</span>.</p>
+<p>The early 2000s saw a paradigm shift driven by the invention of <strong>High-Throughput Sequencing (HTS)</strong>, commonly referred to as Next-Generation Sequencing (NGS) <span class="citation" data-cites="Soon2013">[@Soon2013]</span>. By parallelizing millions to billions of sequencing reactions simultaneously on a solid flow-cell surface, NGS plummeted the cost of sequencing a human genome faster than Moore’s Law—down to under $1,000 in less than a day.</p>
 <p>For a modern researcher, the objective is not to memorize obsolete chemical protocols, but to master the fundamental <strong>technological trade-offs</strong> of these platforms:</p>
 <ol type="1">
 <li><p><strong>Read Length vs.&nbsp;Accuracy vs.&nbsp;Cost:</strong> How short quantitative reads (Illumina) contrast with single-molecule long reads (PacBio, ONT).</p></li>
@@ -358,7 +364,7 @@ Table&nbsp;4.1: Comparison of sequencing generations and technological trade-off
 </section>
 <section id="first-generation-sequencing-sanger-sequencing" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="first-generation-sequencing-sanger-sequencing"><span class="header-section-number">4.4</span> First-Generation Sequencing (Sanger Sequencing)</h2>
-<p>Sanger sequencing is based on <em>in vitro</em> DNA replication using a carefully balanced mixture of standard deoxynucleotides (dNTPs) and modified dideoxynucleotides (ddNTPs) <span class="citation" data-cites="Sanger1977">(<a href="01-introduction.html#ref-Sanger1977" role="doc-biblioref">Sanger et al. 1977</a>)</span>.</p>
+<p>Sanger sequencing is based on <em>in vitro</em> DNA replication using a carefully balanced mixture of standard deoxynucleotides (dNTPs) and modified dideoxynucleotides (ddNTPs) <span class="citation" data-cites="Sanger1977">[@Sanger1977]</span>.</p>
 <section id="the-chemistry-of-chain-termination" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="the-chemistry-of-chain-termination"><span class="header-section-number">4.4.1</span> The Chemistry of Chain Termination</h3>
 <p>The core chemical mechanism relies on the structural difference between dNTPs and ddNTPs. Standard dNTPs possess a 3’-hydroxyl (-OH) group on the deoxyribose sugar, which is chemically required by DNA polymerase to form a phosphodiester bond with the next incoming nucleotide. In contrast, ddNTPs lack this 3’-OH group.</p>
@@ -377,19 +383,19 @@ Table&nbsp;4.1: Comparison of sequencing generations and technological trade-off
 </section>
 <section id="second-generation-sequencing-massively-parallel-short-read-platforms" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="second-generation-sequencing-massively-parallel-short-read-platforms"><span class="header-section-number">4.5</span> Second-Generation Sequencing (Massively Parallel Short-Read Platforms)</h2>
-<p>Second-generation sequencing (NGS) completely bypassed the single-capillary bottleneck by performing clonal amplification and sequencing-by-synthesis on flat solid surfaces <span class="citation" data-cites="Soon2013">(<a href="01-introduction.html#ref-Soon2013" role="doc-biblioref">Soon et al. 2013</a>)</span>.</p>
+<p>Second-generation sequencing (NGS) completely bypassed the single-capillary bottleneck by performing clonal amplification and sequencing-by-synthesis on flat solid surfaces <span class="citation" data-cites="Soon2013">[@Soon2013]</span>.</p>
 <section id="the-illumina-flow" class="level3" data-number="4.5.1">
 <h3 data-number="4.5.1" class="anchored" data-anchor-id="the-illumina-flow"><span class="header-section-number">4.5.1</span> The Illumina Flow</h3>
 <p>The dominant short-read workflow involves three unified stages:</p>
 <ol type="1">
 <li><p><strong>Library Preparation:</strong> Genomic DNA is fragmented (200–500 bp), end-repaired, A-tailed, and ligated to synthetic adapters. These adapters contain unique <strong>barcodes</strong> (or indices) that allow researchers to pool hundreds of different samples into a single sequencing run (multiplexing).</p></li>
 <li><p><strong>Clonal Amplification (Bridge PCR):</strong> To generate a signal strong enough for optical detection, single molecules must be amplified <em>in situ</em>. Library fragments are loaded onto a glass flow cell coated with a lawn of oligonucleotides. Individual strands bend over to hybridize with adjacent complementary oligos, forming “bridges.” Repeated cycles of solid-phase PCR amplify each single molecule into a localized “cluster” containing thousands of identical clonal copies.</p></li>
-<li><p><strong>Sequencing-by-Synthesis (SBS):</strong> Universal primers hybridize to the clusters. The flow cell is flooded with a mixture of four nucleotides, each containing a unique fluorescent dye and a reversible chemical block on the 3’-OH group <span class="citation" data-cites="Bentley2008">(<a href="01-introduction.html#ref-Bentley2008" role="doc-biblioref"><span class="nocase">Bentley et al.</span> 2008</a>)</span>. DNA polymerase incorporates exactly one complementary nucleotide into each cluster. The 3’ block prevents further incorporation. A laser excites the dyes, a camera captures the cluster’s color, the fluorescent tag and 3’ block are chemically cleaved to regenerate a free 3’-OH, and the cycle repeats.</p></li>
+<li><p><strong>Sequencing-by-Synthesis (SBS):</strong> Universal primers hybridize to the clusters. The flow cell is flooded with a mixture of four nucleotides, each containing a unique fluorescent dye and a reversible chemical block on the 3’-OH group <span class="citation" data-cites="Bentley2008">[@Bentley2008]</span>. DNA polymerase incorporates exactly one complementary nucleotide into each cluster. The 3’ block prevents further incorporation. A laser excites the dyes, a camera captures the cluster’s color, the fluorescent tag and 3’ block are chemically cleaved to regenerate a free 3’-OH, and the cycle repeats.</p></li>
 </ol>
 </section>
 <section id="the-semiconductor-alternative-ion-torrent" class="level3" data-number="4.5.2">
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="the-semiconductor-alternative-ion-torrent"><span class="header-section-number">4.5.2</span> The Semiconductor Alternative: Ion Torrent</h3>
-<p>Instead of relying on fluorescence and expensive optical cameras, the Ion Torrent platform translates chemical reactions directly into digital information on a semiconductor chip <span class="citation" data-cites="Rothberg2011">(<a href="01-introduction.html#ref-Rothberg2011" role="doc-biblioref"><span class="nocase">Rothberg et al.</span> 2011</a>)</span>.</p>
+<p>Instead of relying on fluorescence and expensive optical cameras, the Ion Torrent platform translates chemical reactions directly into digital information on a semiconductor chip <span class="citation" data-cites="Rothberg2011">[@Rothberg2011]</span>.</p>
 <ul>
 <li><p><strong>The Chemistry:</strong> During natural DNA polymerization, the incorporation of a dNTP releases a single hydrogen ion (<span class="math inline">\(H^+\)</span>) as a byproduct of phosphodiester bond formation.</p></li>
 <li><p><strong>The Sensor:</strong> Clonally amplified templates on beads are loaded into millions of microwells on an <strong>Ion Chip™</strong>. Beneath each well lies an <strong>Ion-Sensitive Field-Effect Transistor (ISFET)</strong>—essentially a highly sensitive pH meter. As the sequencer floods the chip with individual dNTPs sequentially, any incorporation releases an <span class="math inline">\(H^+\)</span> ion, altering the local pH. The ISFET translates this chemical pH shift directly into a voltage spike, bypassing the need for lasers, dyes, and cameras.</p></li>
@@ -397,32 +403,32 @@ Table&nbsp;4.1: Comparison of sequencing generations and technological trade-off
 </section>
 <section id="why-roche-454-matters-historically" class="level3" data-number="4.5.3">
 <h3 data-number="4.5.3" class="anchored" data-anchor-id="why-roche-454-matters-historically"><span class="header-section-number">4.5.3</span> Why Roche 454 Matters Historically</h3>
-<p>The Roche 454 pyrosequencing platform (released in 2005) was the historically pioneering next-generation sequencer <span class="citation" data-cites="Margulies2005">(<a href="01-introduction.html#ref-Margulies2005" role="doc-biblioref">Margulies et al. 2005</a>)</span>. It introduced the concept of <strong>emulsion PCR (emPCR)</strong>—clonally amplifying single DNA fragments on microscopic beads inside water-in-oil droplets—and detected nucleotide incorporation via a light-emitting enzymatic cascade (pyrosequencing).</p>
+<p>The Roche 454 pyrosequencing platform (released in 2005) was the historically pioneering next-generation sequencer <span class="citation" data-cites="Margulies2005">[@Margulies2005]</span>. It introduced the concept of <strong>emulsion PCR (emPCR)</strong>—clonally amplifying single DNA fragments on microscopic beads inside water-in-oil droplets—and detected nucleotide incorporation via a light-emitting enzymatic cascade (pyrosequencing).</p>
 <p>While historically revolutionary for breaking the Sanger capillary bottleneck, Roche 454 was discontinued over a decade ago. It suffered from high reagent costs and, like Ion Torrent, struggled with <strong>homopolymer regions</strong> (stretches of identical nucleotides like AAAAAA). Because all identical bases in a homopolymer incorporate simultaneously, the system had to estimate the run length based on the magnitude of the light flash or voltage spike. This non-linear signal response introduced high rates of insertion and deletion (indel) errors.</p>
 </section>
 <section id="the-short-read-trade-off-high-throughput-vs.-assembly-blind-spots" class="level3" data-number="4.5.4">
 <h3 data-number="4.5.4" class="anchored" data-anchor-id="the-short-read-trade-off-high-throughput-vs.-assembly-blind-spots"><span class="header-section-number">4.5.4</span> The Short-Read Trade-off: High Throughput vs.&nbsp;Assembly Blind Spots</h3>
 <p>Short-read platforms produce billions of highly accurate (<span class="math inline">\(Q30+\)</span>, or <span class="math inline">\(&gt;99.9\%\)</span>) reads. This makes them exceptionally powerful for quantitative “counting” applications, such as counting transcript abundance (RNA-seq) or mapping protein-DNA interactions (ChIP-seq).</p>
-<p>However, because the reads are short (50–300 bp), they are fundamentally blind to large structural variations, gene duplications, and repetitive elements. Assembling a complex genome with short reads is akin to putting together a massive jigsaw puzzle made of millions of tiny, identical blue-sky pieces <span class="citation" data-cites="Reuter2015">(<a href="01-introduction.html#ref-Reuter2015" role="doc-biblioref">Reuter et al. 2015</a>)</span>.</p>
+<p>However, because the reads are short (50–300 bp), they are fundamentally blind to large structural variations, gene duplications, and repetitive elements. Assembling a complex genome with short reads is akin to putting together a massive jigsaw puzzle made of millions of tiny, identical blue-sky pieces <span class="citation" data-cites="Reuter2015">[@Reuter2015]</span>.</p>
 <hr>
 </section>
 </section>
 <section id="third-generation-sequencing-native-single-molecule-long-reads" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="third-generation-sequencing-native-single-molecule-long-reads"><span class="header-section-number">4.6</span> Third-Generation Sequencing (Native Single-Molecule Long Reads)</h2>
-<p>Third-generation sequencing solved the assembly puzzle by generating exceptionally long reads (tens of kilobases to megabases) from single, native DNA or RNA molecules, completely bypassing PCR amplification and its associated GC-content biases <span class="citation" data-cites="Reuter2015">(<a href="01-introduction.html#ref-Reuter2015" role="doc-biblioref">Reuter et al. 2015</a>)</span>.</p>
+<p>Third-generation sequencing solved the assembly puzzle by generating exceptionally long reads (tens of kilobases to megabases) from single, native DNA or RNA molecules, completely bypassing PCR amplification and its associated GC-content biases <span class="citation" data-cites="Reuter2015">[@Reuter2015]</span>.</p>
 <section id="pacific-biosciences-pacbio-smrt-sequencing" class="level3" data-number="4.6.1">
 <h3 data-number="4.6.1" class="anchored" data-anchor-id="pacific-biosciences-pacbio-smrt-sequencing"><span class="header-section-number">4.6.1</span> Pacific Biosciences (PacBio) SMRT Sequencing</h3>
-<p>PacBio SMRT (Single-Molecule, Real-Time) sequencing utilizes nanoscale observation chambers called <strong>Zero-Mode Waveguides (ZMWs)</strong> <span class="citation" data-cites="Eid2009">(<a href="01-introduction.html#ref-Eid2009" role="doc-biblioref"><span class="nocase">Eid et al.</span> 2009</a>)</span>.</p>
+<p>PacBio SMRT (Single-Molecule, Real-Time) sequencing utilizes nanoscale observation chambers called <strong>Zero-Mode Waveguides (ZMWs)</strong> <span class="citation" data-cites="Eid2009">[@Eid2009]</span>.</p>
 <ul>
 <li><p><strong>The Chemistry:</strong> ZMWs are tiny holes in a metal film deposited on a glass slide. The physics of the ZMW restricts the laser illumination volume to the bottom few zeptoliters of the chamber. A single DNA polymerase is anchored at the bottom.</p></li>
 <li><p><strong>Phospholinked Nucleotides:</strong> PacBio uses nucleotides where the fluorescent dye is attached to the terminal phosphate chain, rather than the base. As the polymerase incorporates a nucleotide, the dye is held in the ZMW’s detection zone for milliseconds, emitting a stable light pulse. When the phosphodiester bond forms, the polymerase cleaves the phosphate chain, releasing the dye, which naturally diffuses away. This leaves a completely unmodified, natural DNA strand, allowing the polymerase to synthesize continuously over tens of kilobases.</p></li>
-<li><p><strong>High-Fidelity (HiFi) Reads:</strong> To overcome the historically high raw error rate (~1%) of single-molecule sequencing, PacBio developed <strong>Circular Consensus Sequencing (CCS)</strong>. Linear DNA is circularized with hairpin adapters into a template called a <strong>SMRTbell™</strong>. The polymerase sequences around the circular template continuously. By aligning and comparing these multiple “passes” of the same molecule, random stochastic errors are computationally averaged out, yielding 15–20 kb long reads with an accuracy exceeding 99.9% (<span class="math inline">\(Q30\)</span>), matching Illumina accuracy <span class="citation" data-cites="Jain2018">(<a href="01-introduction.html#ref-Jain2018" role="doc-biblioref"><span class="nocase">Jain et al.</span> 2018</a>)</span>.</p></li>
+<li><p><strong>High-Fidelity (HiFi) Reads:</strong> To overcome the historically high raw error rate (~1%) of single-molecule sequencing, PacBio developed <strong>Circular Consensus Sequencing (CCS)</strong>. Linear DNA is circularized with hairpin adapters into a template called a <strong>SMRTbell™</strong>. The polymerase sequences around the circular template continuously. By aligning and comparing these multiple “passes” of the same molecule, random stochastic errors are computationally averaged out, yielding 15–20 kb long reads with an accuracy exceeding 99.9% (<span class="math inline">\(Q30\)</span>), matching Illumina accuracy <span class="citation" data-cites="Jain2018">[@Jain2018]</span>.</p></li>
 <li><p><strong>Direct Methylation Detection:</strong> Because the instrument monitors the polymerase in real-time, it can measure the exact time between fluorescent pulses, known as the <strong>interpulse duration (IPD)</strong>. When the polymerase encounters a methylated base (e.g., 5mC or 6mA) on the native template, it hesitates. This kinetic signature allows PacBio to map the epigenome directly during sequencing without bisulfite conversion.</p></li>
 </ul>
 </section>
 <section id="oxford-nanopore-technologies-ont" class="level3" data-number="4.6.2">
 <h3 data-number="4.6.2" class="anchored" data-anchor-id="oxford-nanopore-technologies-ont"><span class="header-section-number">4.6.2</span> Oxford Nanopore Technologies (ONT)</h3>
-<p>ONT represents a complete departure from sequencing-by-synthesis. It measures disruptions in an electrical current as a single-stranded native DNA or RNA molecule is pulled through a biological protein nanopore embedded in an electrically resistant synthetic membrane <span class="citation" data-cites="Jain2018">(<a href="01-introduction.html#ref-Jain2018" role="doc-biblioref"><span class="nocase">Jain et al.</span> 2018</a>)</span>.</p>
+<p>ONT represents a complete departure from sequencing-by-synthesis. It measures disruptions in an electrical current as a single-stranded native DNA or RNA molecule is pulled through a biological protein nanopore embedded in an electrically resistant synthetic membrane <span class="citation" data-cites="Jain2018">[@Jain2018]</span>.</p>
 <ul>
 <li><p><strong>The Mechanism:</strong> A constant voltage is applied across the membrane, establishing a baseline ionic current through the nanopore. A motor protein unwinds the double helix and feeds a single strand through the pore.</p></li>
 <li><p><strong>The Signal:</strong> As different combinations of nucleotides pass through the physical bottleneck of the pore, they block the ionic flow to varying degrees. This block creates characteristic current disruptions. Sophisticated deep-learning algorithms (neural networks) translate these electrical current squiggles into base calls in real-time.</p></li>
@@ -433,7 +439,7 @@ Table&nbsp;4.1: Comparison of sequencing generations and technological trade-off
 </section>
 <section id="single-cell-rna-sequencing-scrna-seq" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="single-cell-rna-sequencing-scrna-seq"><span class="header-section-number">4.7</span> Single-Cell RNA Sequencing (scRNA-seq)</h2>
-<p>While bulk transcriptomics measures the <em>average</em> expression profile of millions of homogenized cells, single-cell RNA sequencing (scRNA-seq) profiles the transcriptomes of thousands of individual cells, resolving cellular heterogeneity <span class="citation" data-cites="Hwang2018">(<a href="01-introduction.html#ref-Hwang2018" role="doc-biblioref">Hwang et al. 2018</a>)</span>.</p>
+<p>While bulk transcriptomics measures the <em>average</em> expression profile of millions of homogenized cells, single-cell RNA sequencing (scRNA-seq) profiles the transcriptomes of thousands of individual cells, resolving cellular heterogeneity <span class="citation" data-cites="Hwang2018">[@Hwang2018]</span>.</p>
 <div id="fig-rna-analogy" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rna-analogy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -450,7 +456,7 @@ Figure&nbsp;4.1: Bulk vs.&nbsp;Single-Cell RNA-seq Fruit Analogy
 <p>To understand single-cell quantification, we need to grasp the distinct functions of two barcodes on these primers:</p>
 <ol type="1">
 <li><p><strong>Cell Barcode (CB):</strong> A shared sequence unique to all primers on a single bead. All mRNA transcripts captured within a single droplet receive this identical Cell Barcode during reverse transcription. This allows researchers to pool all molecules for sequencing and later group the reads back to their cell of origin.</p></li>
-<li><p><strong>Unique Molecular Identifier (UMI):</strong> A short, highly random sequence unique to each individual primer molecule on the bead <span class="citation" data-cites="Hwang2018">(<a href="01-introduction.html#ref-Hwang2018" role="doc-biblioref">Hwang et al. 2018</a>)</span>. Every captured mRNA transcript is tagged with a distinct UMI <em>prior</em> to PCR amplification.</p></li>
+<li><p><strong>Unique Molecular Identifier (UMI):</strong> A short, highly random sequence unique to each individual primer molecule on the bead <span class="citation" data-cites="Hwang2018">[@Hwang2018]</span>. Every captured mRNA transcript is tagged with a distinct UMI <em>prior</em> to PCR amplification.</p></li>
 </ol>
 <!--$$\text{Total Counts} \neq \text{Total PCR Reads}$$-->
 <p>Because PCR amplifies different sequences unevenly (PCR bias), simply counting reads overestimates highly amplified transcripts. By collapsing identical reads that share both the same Cell Barcode and the same UMI, bioinformaticians count the absolute number of original mRNA molecules, achieving true digital transcript quantification.</p>
@@ -472,18 +478,18 @@ Figure&nbsp;4.1: Bulk vs.&nbsp;Single-Cell RNA-seq Fruit Analogy
 <h3 data-number="4.8.2" class="anchored" data-anchor-id="single-cell-multi-omics"><span class="header-section-number">4.8.2</span> Single-Cell Multi-omics</h3>
 <p>Rather than measuring just one molecular layer, researchers can now profile multiple “omes” within the exact same single cell:</p>
 <ul>
-<li><p><strong>CITE-seq:</strong> Uses antibody-derived DNA tags to simultaneously measure cell-surface proteins and the whole transcriptome from single cells <span class="citation" data-cites="Stoeckius2017">(<a href="01-introduction.html#ref-Stoeckius2017" role="doc-biblioref">Stoeckius et al. 2017</a>)</span>.</p></li>
-<li><p><strong>Single-Cell Multiome:</strong> Integrates chromatin accessibility (scATAC-seq) and gene expression (scRNA-seq) from the same cell, allowing researchers to directly link transcription factor binding and open chromatin structures with actual transcript output <span class="citation" data-cites="Stuart2019">(<a href="01-introduction.html#ref-Stuart2019" role="doc-biblioref">Stuart and Satija 2019</a>)</span>.</p></li>
+<li><p><strong>CITE-seq:</strong> Uses antibody-derived DNA tags to simultaneously measure cell-surface proteins and the whole transcriptome from single cells <span class="citation" data-cites="Stoeckius2017">[@Stoeckius2017]</span>.</p></li>
+<li><p><strong>Single-Cell Multiome:</strong> Integrates chromatin accessibility (scATAC-seq) and gene expression (scRNA-seq) from the same cell, allowing researchers to directly link transcription factor binding and open chromatin structures with actual transcript output <span class="citation" data-cites="Stuart2019">[@Stuart2019]</span>.</p></li>
 </ul>
 <hr>
 </section>
 </section>
 <section id="clinical-and-translational-applications" class="level2" data-number="4.9">
 <h2 data-number="4.9" class="anchored" data-anchor-id="clinical-and-translational-applications"><span class="header-section-number">4.9</span> Clinical and Translational Applications</h2>
-<p>High-throughput sequencing has fundamentally reshaped clinical diagnostics, moving medicine away from reactive, broad-spectrum interventions toward highly tailored, predictive therapies <span class="citation" data-cites="Soon2013 Lightbody2019">(<a href="01-introduction.html#ref-Soon2013" role="doc-biblioref">Soon et al. 2013</a>; <a href="01-introduction.html#ref-Lightbody2019" role="doc-biblioref">Lightbody et al. 2019</a>)</span>.</p>
+<p>High-throughput sequencing has fundamentally reshaped clinical diagnostics, moving medicine away from reactive, broad-spectrum interventions toward highly tailored, predictive therapies <span class="citation" data-cites="Soon2013 Lightbody2019">[@Soon2013; @Lightbody2019]</span>.</p>
 <section id="clinical-oncology-tumor-profiling" class="level3" data-number="4.9.1">
 <h3 data-number="4.9.1" class="anchored" data-anchor-id="clinical-oncology-tumor-profiling"><span class="header-section-number">4.9.1</span> Clinical Oncology &amp; Tumor Profiling</h3>
-<p>NGS panels allow clinicians to perform <strong>Comprehensive Genomic Profiling (CGP)</strong> on tumor biopsies <span class="citation" data-cites="Lightbody2019">(<a href="01-introduction.html#ref-Lightbody2019" role="doc-biblioref">Lightbody et al. 2019</a>)</span>.</p>
+<p>NGS panels allow clinicians to perform <strong>Comprehensive Genomic Profiling (CGP)</strong> on tumor biopsies <span class="citation" data-cites="Lightbody2019">[@Lightbody2019]</span>.</p>
 <ul>
 <li><p><strong>Targeted Therapies:</strong> Identifying specific “driver” mutations guide targeted drug prescriptions. For example, a non-small cell lung cancer patient harboring an <em>EGFR</em> mutation will receive EGFR tyrosine kinase inhibitors, while a melanoma patient with a <em>BRAF</em> V600E mutation will receive BRAF inhibitors. This maximizes therapeutic efficacy while sparing patients the systemic toxicity of standard chemotherapy.</p></li>
 <li><p><strong>Liquid Biopsies:</strong> By sequencing circulating tumor DNA (ctDNA) shed by cancer cells into the peripheral bloodstream, clinicians can non-invasively monitor treatment response, detect minimal residual disease (MRD), and identify drug-resistance mutations months before they manifest on clinical scans.</p></li>
@@ -491,7 +497,7 @@ Figure&nbsp;4.1: Bulk vs.&nbsp;Single-Cell RNA-seq Fruit Analogy
 </section>
 <section id="resolving-the-rare-disease-diagnostic-odyssey" class="level3" data-number="4.9.2">
 <h3 data-number="4.9.2" class="anchored" data-anchor-id="resolving-the-rare-disease-diagnostic-odyssey"><span class="header-section-number">4.9.2</span> Resolving the Rare Disease “Diagnostic Odyssey”</h3>
-<p>For pediatric and Mendelian disorders, Whole-Exome Sequencing (WES) and Whole-Genome Sequencing (WGS) have revolutionized clinical genetics. By sequencing the patient and their unaffected parents (trio sequencing), geneticists can filter out common variants and identify rare <em>de novo</em> or inherited causative mutations. WES and WGS routinely deliver a definitive molecular diagnosis for 30–40% of historically undiagnosed cases, ending years of painful, expensive diagnostic uncertainty for families <span class="citation" data-cites="Lightbody2019">(<a href="01-introduction.html#ref-Lightbody2019" role="doc-biblioref">Lightbody et al. 2019</a>)</span>.</p>
+<p>For pediatric and Mendelian disorders, Whole-Exome Sequencing (WES) and Whole-Genome Sequencing (WGS) have revolutionized clinical genetics. By sequencing the patient and their unaffected parents (trio sequencing), geneticists can filter out common variants and identify rare <em>de novo</em> or inherited causative mutations. WES and WGS routinely deliver a definitive molecular diagnosis for 30–40% of historically undiagnosed cases, ending years of painful, expensive diagnostic uncertainty for families <span class="citation" data-cites="Lightbody2019">[@Lightbody2019]</span>.</p>
 </section>
 <section id="pharmacogenomics-pgx" class="level3" data-number="4.9.3">
 <h3 data-number="4.9.3" class="anchored" data-anchor-id="pharmacogenomics-pgx"><span class="header-section-number">4.9.3</span> Pharmacogenomics (PGx)</h3>
@@ -501,43 +507,8 @@ Figure&nbsp;4.1: Bulk vs.&nbsp;Single-Cell RNA-seq Fruit Analogy
 </section>
 <section id="references" class="level2" data-number="4.10">
 <h2 data-number="4.10" class="anchored" data-anchor-id="references"><span class="header-section-number">4.10</span> References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-Bentley2008" class="csl-entry" role="listitem">
-<span class="nocase">Bentley, David R., Shankar Balasubramanian, Harold P. Swerdlow, et al.</span> 2008. <span>“Accurate Whole Human Genome Sequencing Using Reversible Terminator Chemistry.”</span> <em>Nature</em> 456 (7218): 53–59. <a href="https://doi.org/10.1038/nature07517">https://doi.org/10.1038/nature07517</a>.
-</div>
-<div id="ref-Eid2009" class="csl-entry" role="listitem">
-<span class="nocase">Eid, John, Adrian Fehr, Jeremy Gray, et al.</span> 2009. <span>“Real-Time DNA Sequencing from Single Polymerase Molecules.”</span> <em>Science</em> 323 (5910): 133–38. <a href="https://doi.org/10.1126/science.1162986">https://doi.org/10.1126/science.1162986</a>.
-</div>
-<div id="ref-Hwang2018" class="csl-entry" role="listitem">
-Hwang, Byungjin, Ji Hyun Lee, and Duhee Bang. 2018. <span>“Single-Cell RNA Sequencing Technologies and Bioinformatics Pipelines.”</span> <em>Experimental &amp; Molecular Medicine</em> 50 (8): 1–14. <a href="https://doi.org/10.1038/s12276-018-0071-8">https://doi.org/10.1038/s12276-018-0071-8</a>.
-</div>
-<div id="ref-Jain2018" class="csl-entry" role="listitem">
-<span class="nocase">Jain, Miten, Sergey Koren, Karen H. Miga, et al.</span> 2018. <span>“Nanopore Sequencing and Assembly of a Human Genome with Ultra-Long Reads.”</span> <em>Nature Biotechnology</em> 36 (4): 338–45. <a href="https://doi.org/10.1038/nbt.4060">https://doi.org/10.1038/nbt.4060</a>.
-</div>
-<div id="ref-Lightbody2019" class="csl-entry" role="listitem">
-Lightbody, Gaye, Valeriia Haberland, Fiona Browne, et al. 2019. <span>“Review of Applications of High-Throughput Sequencing in Personalized Medicine: Barriers and Facilitators of Future Progress in Research and Clinical Application.”</span> <em>Briefings in Bioinformatics</em> 20 (5): 1795–811. <a href="https://doi.org/10.1093/bib/bby051">https://doi.org/10.1093/bib/bby051</a>.
-</div>
-<div id="ref-Margulies2005" class="csl-entry" role="listitem">
-Margulies, Marcel, Michael Egholm, William E. Altman, et al. 2005. <span>“Genome Sequencing in Microfabricated High-Density Picolitre Reactors.”</span> <em>Nature</em> 437 (7057): 376–80. <a href="https://doi.org/10.1038/nature03959">https://doi.org/10.1038/nature03959</a>.
-</div>
-<div id="ref-Reuter2015" class="csl-entry" role="listitem">
-Reuter, Jason A., Damek V. Spacek, and Michael P. Snyder. 2015. <span>“High-Throughput Sequencing Technologies.”</span> <em>Molecular Cell</em> 58 (4): 586–97. <a href="https://doi.org/10.1016/j.molcel.2015.05.004">https://doi.org/10.1016/j.molcel.2015.05.004</a>.
-</div>
-<div id="ref-Rothberg2011" class="csl-entry" role="listitem">
-<span class="nocase">Rothberg, Jonathan M., Wolfgang Hinz, Todd M. Rearick, et al.</span> 2011. <span>“An Integrated Semiconductor Device Enabling Non-Optical Genome Sequencing.”</span> <em>Nature</em> 475 (7356): 348–52. <a href="https://doi.org/10.1038/nature10242">https://doi.org/10.1038/nature10242</a>.
-</div>
-<div id="ref-Sanger1977" class="csl-entry" role="listitem">
-Sanger, Frederick, Steven Nicklen, and Alan R. Coulson. 1977. <span>“DNA Sequencing with Chain-Terminating Inhibitors.”</span> <em>Proceedings of the National Academy of Sciences</em> 74 (12): 5463–67. <a href="https://doi.org/10.1073/pnas.74.12.5463">https://doi.org/10.1073/pnas.74.12.5463</a>.
-</div>
-<div id="ref-Soon2013" class="csl-entry" role="listitem">
-Soon, Wendy Weijia, Manoj Hariharan, and Michael P. Snyder. 2013. <span>“High-Throughput Sequencing for Biology and Medicine.”</span> <em>Molecular Systems Biology</em> 9 (1): 640. <a href="https://doi.org/10.1038/msb.2012.61">https://doi.org/10.1038/msb.2012.61</a>.
-</div>
-<div id="ref-Stoeckius2017" class="csl-entry" role="listitem">
-Stoeckius, Marlon, Christoph Hafemeister, William Stephenson, et al. 2017. <span>“Simultaneous Epitope and Transcriptome Measurement in Single Cells.”</span> <em>Nature Methods</em> 14 (9): 865–68. <a href="https://doi.org/10.1038/nmeth.4380">https://doi.org/10.1038/nmeth.4380</a>.
-</div>
-<div id="ref-Stuart2019" class="csl-entry" role="listitem">
-Stuart, Tim, and Rahul Satija. 2019. <span>“Integrative Single-Cell Analysis.”</span> <em>Nature Reviews Genetics</em> 20 (5): 257–72. <a href="https://doi.org/10.1038/s41576-019-0093-7">https://doi.org/10.1038/s41576-019-0093-7</a>.
-</div>
+<div id="refs" role="list" style="display: none">
+
 </div>
 
 
